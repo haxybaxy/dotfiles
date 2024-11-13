@@ -1,0 +1,175 @@
+{
+  // Python Settings
+  "python.defaultInterpreterPath": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+
+  // Git Settings
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.decorations.enabled": true,
+
+  // Editor Appearance
+  "editor.fontFamily": "MesloLGS NF",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.indentation": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "auto",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-nomo-dark",
+  "workbench.sideBar.location": "right",
+
+
+  // Editor Behavior
+  "editor.linkedEditing": true,
+  "editor.snippetSuggestions": "top",
+  "editor.hover.delay": 1500,
+  "editor.hover.enabled": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.selectionHighlight": false,
+  "editor.occurrencesHighlight": "off",
+  "editor.renderLineHighlight": "none",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.renderControlCharacters": false,
+  "editor.accessibilitySupport": "off",
+
+  // Terminal Settings
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.env.osx": {},
+
+  // File Handling
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "explorer.confirmDelete": false,
+
+  // Search and Navigation
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.filePath": "off",
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/vendor/{[^l],?[^ai]}*": true,
+    "**/public/{[^i],?[^n]}*": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/_ide_helper.php": true,
+    "**/composer.lock": true,
+    "**/package-lock.json": true,
+    "storage": true,
+    ".phpunit.result.cache": true
+  },
+
+  // Font Family Settings for Different UI Elements
+  "scm.inputFontFamily": "MesloLGS NF",
+  "chat.editor.fontFamily": "MesloLGS NF",
+  "debug.console.fontFamily": "MesloLGS NF",
+  "editor.codeLensFontFamily": "MesloLGS NF",
+  "notebook.output.fontFamily": "MesloLGS NF",
+  "markdown.preview.fontFamily": "MesloLGS NF",
+  "editor.inlayHints.fontFamily": "MesloLGS NF",
+  "apc.font.family": "MesloLGS NF",
+
+  // CMake Settings
+  "cmake.configureOnOpen": true,
+  "cmake.options.statusBarVisibility": "icon",
+  "cmake.showOptionsMovedNotification": false,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+
+  // Window and Workspace Settings
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+  "window.newWindowDimensions": "inherit",
+  "window.nativeFullScreen": true,
+  "workbench.tips.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.activityBar.iconClickBehavior": "toggle",
+  "editor.titleBar.enabled": false,
+
+  // Appearance Customization (APC) Settings
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "customButtonsOnHover"
+
+  },
+  "apc.header": {
+    "height": 37
+  },
+  "apc.sidebar.titlebar": {
+    "height": 37
+  },
+  "apc.activityBar": {
+    "size": 77,
+    "itemSize": 48,
+    "itemMargin": 0
+  },
+  "apc.stylesheet": {
+    ".custom-sidebar-titlebar .sidebar .composite.title": "padding-left: 0;",
+    // ".monaco-workbench .part.statusbar>.items-container>.statusbar-item.left.first-visible-item": "padding-left: 0;",
+    // ".statusbar #status\\.host": "display: block !important; width: calc(var(--activity-bar-action-size) - 1px); background: #555 !important;",
+    // ".statusbar #status\\.host .codicon": "margin: 0 auto;",
+
+    ".monaco-editor .scroll-decoration": {
+      "box-shadow": "0px 0px 20px rgba(0, 0, 0, .75) !important",
+      "top": "-6px !important"
+    },
+
+    ".monaco-workbench .part.sidebar .title-actions .actions-container": {
+      "display": "none"
+    },
+
+    ".quick-input-widget": {
+      "transform": "translateY(-50%) !important",
+      "top": "50% !important",
+      "box-shadow": "0px 8px 20px rgba(0, 0, 0, .45) !important",
+      "padding": "10px 10px 18px 10px !important",
+      "background": "rgba(0, 0, 0, 0.15) !important",
+      "backdrop-filter": "blur(3px) !important",
+      "border-radius": "20px !important"
+    },
+
+    ".titlebar-right > *": {
+      "display": "none !important"
+    },
+
+    ".monaco-list-rows": {
+      "background": "transparent !important"
+    }
+
+
+
+  },
+
+  // Markdown Specific Settings
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+
+  // Go To Location Settings
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+  // Preview Settings
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+
+  // Problem Decoration Settings
+  "problems.decorations.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "none",
+  "editor.lineNumbers": "relative"
+}
