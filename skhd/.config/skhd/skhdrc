@@ -1,5 +1,5 @@
 # -- Opening apps
-alt - t : open -a 'WezTerm'
+alt - t : open -a 'Ghostty'
 alt - c : open -a 'Cursor'
 alt - f : open -a 'Firefox'
 alt - e : open -a 'Finder'
