@@ -1,7 +1,3 @@
-vim.cmd("set number")  --show current line number
-vim.cmd("set relativenumber") -- relative numbers for the rest
-vim.g.mapleader = " "
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins") -- lazy setup
+require("vim-options")
+require("lazy").setup("plugins")
 
 
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>') -- neotree keybind

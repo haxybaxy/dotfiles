@@ -5,5 +5,8 @@ return {
     		"nvim-lua/plenary.nvim",
     		"nvim-tree/nvim-web-devicons",
     		"MunifTanjim/nui.nvim",
-  			}
+  			},
+	config = function()
+		vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {}) -- neotree keybind
+	end
 }
