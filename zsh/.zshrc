@@ -154,7 +154,7 @@ alias cat="bat"
 #eval "$(oh-my-posh init zsh --config ~/craver.omp.json)"
 
 #for tmux
-export EDITOR=vim
+export EDITOR=nvim
 export PATH="$HOME/.emacs.d/bin:$PATH" #Doom Emacs
 
 export XDG_CONFIG_HOME="/Users/zaidsaheb/.config"

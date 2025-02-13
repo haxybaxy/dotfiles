@@ -18,10 +18,10 @@ return {
 		vim.keymap.set("n", "<C-w>", function()
 			harpoon:list():select(2)
 		end)
-		vim.keymap.set("n", "<C-e>", function()
+		vim.keymap.set("n", "<C-r>", function()
 			harpoon:list():select(3)
 		end)
-		vim.keymap.set("n", "<C-r>", function()
+		vim.keymap.set("n", "<C-t>", function()
 			harpoon:list():select(4)
 		end)
 
