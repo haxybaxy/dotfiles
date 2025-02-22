@@ -18,7 +18,7 @@ sketchybar --bar position=top height=40 blur_radius=0 color=0x00000000
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=5
+  padding_left=0
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
   label.font="FiraCode Nerd Font:Regular:17.0"
@@ -38,10 +38,11 @@ sketchybar --default "${default[@]}"
 
 #space names
 declare -A space_names=(
-    [1]="web"
-    [2]="term"
+    [1]="term"
+    [2]="web"
     [3]="comms"
-    [4]="misc"
+    [4]="gen"
+    [5]="misc"
 )
 
 
@@ -65,7 +66,7 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     icon.shadow.distance=4 \
     icon.shadow.color=0xA0000000 \
     label.font="sketchybar-app-font:Regular:16.0" \
-    label.padding_right=20 \
+    label.padding_right=20\
     label.padding_left=0 \
     label.y_offset=-1 \
     label.shadow.drawing=off \
@@ -93,7 +94,7 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
 done
 
 sketchybar --add item space_separator left \
-  --set space_separator icon=">" \
+  --set space_separator icon="~" \
   icon.padding_left=4 \
   label.drawing=off \
   background.drawing=off \
