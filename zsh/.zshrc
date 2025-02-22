@@ -147,6 +147,9 @@ eval $(thefuck --alias fuck)
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+#vim alias
+alias v="nvim"
+
 #better cat command
 alias cat="bat"
 
@@ -155,6 +158,5 @@ alias cat="bat"
 
 #for tmux
 export EDITOR=nvim
-export PATH="$HOME/.emacs.d/bin:$PATH" #Doom Emacs
 
 export XDG_CONFIG_HOME="/Users/zaidsaheb/.config"

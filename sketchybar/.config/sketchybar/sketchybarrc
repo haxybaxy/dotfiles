@@ -21,7 +21,7 @@ default=(
   padding_left=5
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
-  label.font="MesloLGL Nerd Font:Regular:17.0"
+  label.font="FiraCode Nerd Font:Regular:17.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -35,6 +35,16 @@ sketchybar --default "${default[@]}"
 ##### Adding aeropsace layouts #####
 
 # Add the aerospace_workspace_change event we specified in aerospace.toml
+
+#space names
+declare -A space_names=(
+    [1]="web"
+    [2]="term"
+    [3]="comms"
+    [4]="misc"
+)
+
+
 sketchybar --add event aerospace_workspace_change
 
 # This only works for single monitor configs!
@@ -50,7 +60,7 @@ for sid in $(aerospace list-workspaces --monitor 1); do
     background.border_color=0xAAFFFFFF \
     background.border_width=0 \
     background.height=25 \
-    icon="$sid" \
+    icon="${space_names[$sid]:-$sid}" \
     icon.padding_left=10 \
     icon.shadow.distance=4 \
     icon.shadow.color=0xA0000000 \

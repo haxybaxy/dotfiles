@@ -1,4 +1,3 @@
-# NOT IN USE
 for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \

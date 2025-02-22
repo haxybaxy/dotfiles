@@ -229,6 +229,9 @@ function icon_map() {
   "Fusion")
     icon_result=":fusion:"
     ;;
+  "Ghostty")
+    icon_result=":terminal:"
+    ;;
   "System Preferences" | "System Settings" | "系统设置" | "Réglages Système")
     icon_result=":gear:"
     ;;
