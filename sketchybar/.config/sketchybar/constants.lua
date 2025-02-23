@@ -10,12 +10,9 @@ local events <const> = {
 
 local items <const> = {
   SPACES = "workspaces",
-  MENU = "menu",
-  MENU_TOGGLE = "menu_toggle",
   FRONT_APPS = "front_apps",
   MESSAGE = "message",
   VOLUME = "widgets.volume",
-  WIFI = "widgets.wifi",
   BATTERY = "widgets.battery",
   CALENDAR = "widgets.calendar",
 }
