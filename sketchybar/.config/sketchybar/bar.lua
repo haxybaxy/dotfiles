@@ -3,7 +3,7 @@ local settings = require("config.settings")
 sbar.bar({
 	topmost = "window",
 	height = settings.dimens.graphics.bar.height,
-	color = settings.colors.bar.transparent,
+	color = "#00000000",
 	padding_right = settings.dimens.padding.right,
 	padding = settings.dimens.padding.bar,
 	padding_left = settings.dimens.padding.left,
