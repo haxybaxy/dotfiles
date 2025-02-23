@@ -12,12 +12,14 @@ after-login-command = [
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 on-focus-changed = [
+  	'exec-and-forget /bin/bash -c /opt/homebrew/bin/sketchybar --trigger front_app_switched',
+  	'exec-and-forget sketchybar --trigger update_windows'
 ]
 
 exec-on-workspace-change = [
   '/bin/zsh',
   '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+  'sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 # Start AeroSpace at login
 start-at-login = true 
