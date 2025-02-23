@@ -8,7 +8,7 @@ local calendar = sbar.add("item", constants.items.CALENDAR, {
 
 calendar:subscribe({ "forced", "routine", "system_woke" }, function(env)
   calendar:set({
-    label = os.date("%a %d %b, %H:%M"),
+    label = os.date("[%H:%M]"),
   })
 end)
 
