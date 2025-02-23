@@ -21,7 +21,7 @@ default=(
   padding_left=0
   padding_right=5
   icon.font="Hack Nerd Font:Bold:17.0"
-  label.font="FiraCode Nerd Font:Regular:17.0"
+  label.font="Hack Nerd Font:Regular:17.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -40,7 +40,7 @@ sketchybar --default "${default[@]}"
 declare -A space_names=(
     [1]="term"
     [2]="web"
-    [3]="comms"
+    [3]="comm"
     [4]="gen"
     [5]="misc"
 )

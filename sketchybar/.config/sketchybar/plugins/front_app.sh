@@ -8,7 +8,8 @@
 if [ "$SENDER" = "front_app_switched" ]; then
   # Get the icon for the app
   icon=$("$CONFIG_DIR/plugins/icon_map_fn.sh" "$INFO")
+  lowercase_info=$(echo "$INFO" | tr '[:upper:]' '[:lower:]')
 
   # Update both icon and label
-  sketchybar --set "$NAME" icon="$icon" label="$INFO"
+  sketchybar --set "$NAME" icon="$icon" label="$lowercase_info"
 fi
