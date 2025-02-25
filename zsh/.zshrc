@@ -160,3 +160,6 @@ alias cat="bat"
 export EDITOR=nvim
 
 export XDG_CONFIG_HOME="/Users/zaidsaheb/.config"
+
+#env variables
+[ -f ~/.env.local.zsh ] && source ~/.env.local.zsh

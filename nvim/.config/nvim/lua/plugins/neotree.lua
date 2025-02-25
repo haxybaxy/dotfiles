@@ -8,5 +8,10 @@ return {
   			},
 	config = function()
 		vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {}) -- neotree keybind
+require('neo-tree').setup {
+  filesystem = {
+    filtered_items = {
+      visible = true,
+    }}}
 	end
 }
