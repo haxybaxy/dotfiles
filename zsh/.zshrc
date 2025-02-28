@@ -149,6 +149,8 @@ alias cd="z"
 
 #vim alias
 alias v="nvim"
+alias nv="neovide &"
+
 
 #better cat command
 alias cat="bat"
@@ -163,3 +165,11 @@ export XDG_CONFIG_HOME="/Users/zaidsaheb/.config"
 
 #env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
+
+#fzf skip directories :D
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target,Library,Applications,Music
+  --preview 'tree -C {}'"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/zaidsaheb/.lmstudio/bin"
