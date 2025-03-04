@@ -171,5 +171,6 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/zaidsaheb/.lmstudio/bin"
+#obsidian location
+
+alias obs="cd /Users/zaidsaheb/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"
