@@ -1,5 +1,5 @@
 keybind = global:cmd+/=toggle_quick_terminal
-theme = catppuccin-frappe
+theme = carbonfox 
 macos-titlebar-style = hidden
 window-padding-y = 10
 window-padding-x = 10

@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -32,7 +25,7 @@ ZSH_THEME="lambda"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -78,12 +71,11 @@ ZSH_THEME="lambda"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-)
+        git
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+       )
 
-ZSH_TMUX_AUTOSTART=false
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -115,35 +107,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# Conda setup
-#source ~/.bash_profile
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/opt/anaconda3/envs/ros/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/opt/anaconda3/envs/ros/etc/profile.d/conda.sh" ]; then
-#        . "/opt/anaconda3/envs/ros/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/opt/anaconda3/envs/ros/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
-# <<< conda initialize <<<
-
-
-export NVM_DIR="$HOME/.nvm" 
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" 
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-#fuck alias
-eval $(thefuck --alias fuck)
-
-#better cd command
+# better cd
 eval "$(zoxide init zsh)"
 alias cd="z"
 
@@ -151,22 +115,13 @@ alias cd="z"
 alias v="nvim"
 alias nv="neovide &"
 
-
 #better cat command
 alias cat="bat"
-
-#ohmyposh
-#eval "$(oh-my-posh init zsh --config ~/craver.omp.json)"
-
-#for tmux
-export EDITOR=nvim
-
-export XDG_CONFIG_HOME="/Users/zaidsaheb/.config"
 
 #env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
 
-#fzf skip directories :D
+#fzf ignore paths
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
