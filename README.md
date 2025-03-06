@@ -1,11 +1,11 @@
 # My Dotfiles
-These are my MacOS Dotfiles, managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC4o&ab_channel=typecraft)
+These are my MacOS Dotfiles, managed with [GNU Stow](https://www.youtube.com/watch?v=NoFiYOqnC4o&ab_channel=typecraft)
 
 - Top Bar: [SketchyBar](https://github.com/FelixKratz/SketchyBar) with [SbarLua](https://github.com/FelixKratz/SbarLua)
-- Window Manager: [Aerospace](https://github.com/nikitabobko/AeroSpace)
+- Window Manager: [AeroSpace](https://github.com/nikitabobko/AeroSpace)
 - Terminal: [Ghostty](https://ghostty.org/)
-- Firefox Theme: [Potatofox](https://codeberg.org/awwpotato/potatofox)
-- Editor: [Neovim](https://neovim.io/) follwing this [setup guide](https://www.youtube.com/watch?v=zHTeCSVAFNY&ab_channel=typecraft)
+- Firefox Theme: [PotatoFox](https://codeberg.org/awwpotato/potatofox)
+- Editor: [Neovim](https://neovim.io/) following this [Setup Guide](https://www.youtube.com/watch?v=zHTeCSVAFNY&ab_channel=typecraft)
 
 ## Previews
 
