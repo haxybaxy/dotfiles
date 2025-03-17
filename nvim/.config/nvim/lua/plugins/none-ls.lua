@@ -52,11 +52,7 @@ return {
 					command = "pylint",
 					debounce = 100,
 					extra_args = function()
-						local args = {"--disable=C0111"}
-						if is_django_project() then
-							table.insert(args, "--load-plugins=pylint_django")
-							table.insert(args, "--django-settings-module=" .. find_django_settings())
-						end
+						local args = {"--disable=C0111", "--generated-members=(cv2.*)"}
 						return args
 					end,
 				}),

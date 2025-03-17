@@ -17,10 +17,10 @@ local currentWorkspaceWatcher = sbar.add("item", {
 -- copy "Icons" from the nerd fonts cheat sheet and replace icon and name accordingly below
 -- https://www.nerdfonts.com/cheat-sheet
 local spaceConfigs <const> = {
-  ["1"] = { icon = "", name = "term" },
-  ["2"] = { icon = "󰖟", name = "web" },
-  ["3"] = { icon = "󰛮", name = "chat" },
-  ["4"] = { icon = "󰀶", name = "gen" },
+  ["1"] = { icon = "󱅊", name = "term" },
+  ["2"] = { icon = "󱅋", name = "web" },
+  ["3"] = { icon = "󱅌", name = "chat" },
+  ["4"] = { icon = "󱅍", name = "gen" },
   ["5"] = { icon = "󱅎" , name = "misc"},
 }
 

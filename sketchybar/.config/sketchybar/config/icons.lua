@@ -274,6 +274,7 @@ local apps <const> = {
   ["Yuque"] = ":yuque:",
   ["语雀"] = ":yuque:",
   ["Zed"] = ":zed:",
+  ["Zen"] = ":firefox:",
   ["Zeplin"] = ":zeplin:",
   ["zoom.us"] = ":zoom:",
   ["Zotero"] = ":zotero:",
