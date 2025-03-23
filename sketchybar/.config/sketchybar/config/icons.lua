@@ -48,6 +48,7 @@ local apps <const> = {
   ["Color Picker"] = ":color_picker:",
   ["数码测色计"] = ":color_picker:",
   ["CotEditor"] = ":coteditor:",
+  ["Cursor"] = ":vim:",
   ["Cypress"] = ":cypress:",
   ["DataGrip"] = ":datagrip:",
   ["DataSpell"] = ":dataspell:",
