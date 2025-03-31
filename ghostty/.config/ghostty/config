@@ -2,4 +2,4 @@ keybind = global:cmd+/=toggle_quick_terminal
 theme = mathias
 macos-titlebar-style = hidden
 window-padding-y = 10
-window-padding-x = 10
+window-padding-x = 16
