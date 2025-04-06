@@ -15,7 +15,7 @@ local colors <const> = {
   dark_grey = 0xff2b2736,
   transparent = 0x00000000,
   bar = {
-    bg = 0xff000000,
+    bg = 0xff282C34,
     border = 0xff2c2e34,
   },
   popup = {
