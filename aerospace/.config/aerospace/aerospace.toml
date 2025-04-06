@@ -177,16 +177,13 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 3'
 
-
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace 1'
 
-
 [[on-window-detected]]
 if.app-id = 'com.chabomakers.Antinote'
 run = 'layout floating'
-
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
