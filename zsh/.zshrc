@@ -1,4 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
+
+export EDITOR='nvim'
+
 ZSH_THEME="lambda"
 plugins=(
         git
@@ -21,8 +24,6 @@ alias cd="z"
 alias v="nvim"
 alias nv="neovide &"
 
-#better cat command
-alias cat="bat"
 
 #env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
