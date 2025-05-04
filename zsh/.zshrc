@@ -20,6 +20,12 @@ fi
 eval "$(zoxide init zsh)"
 alias cd="z"
 
+#better Ls
+alias ls="lsd"
+
+#fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #vim alias
 alias v="nvim"
 alias nv="neovide &"
