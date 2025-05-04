@@ -15,6 +15,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
-require("lazy").setup("plugins")
+
+if vim.g.vscode then
+  require("lazy").setup("plugins.vscode")
+else
+  require("lazy").setup("plugins")
+end
 
 
