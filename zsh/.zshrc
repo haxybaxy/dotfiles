@@ -30,6 +30,8 @@ alias ls="lsd"
 alias v="nvim"
 alias nv="neovide &"
 
+#lazygit alias
+alias lg="lazygit"
 
 #env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
@@ -39,9 +41,14 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
 
+
+# carapace
+eval "$(carapace _carapace zsh)"
+
+
 #obsidian location
 
-alias obs="cd /Users/zaidsaheb/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"
+alias obsidian="cd /Users/zaidsaheb/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"
 
 #nvm setup
 
