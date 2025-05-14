@@ -1,7 +1,7 @@
 # My Dotfiles
 My various configs managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC4o)
 
-- **top bar**: [Sketchybar](https://github.com/FelixKratz/SketchyBar) + [SbarLua)[https://github.com/FelixKratz/SbarLua]
+- **top bar**: [Sketchybar](https://github.com/FelixKratz/SketchyBar) + [SbarLua](https://github.com/FelixKratz/SbarLua)
 - **window manager**: [Aerospace](https://github.com/nikitabobko/AeroSpace)
 - **hotkey daemon**: [skhd](https://github.com/koekeishiya/skhd)
 - **terminal**: [ghostty](https://github.com/ghostty-org/ghostty)
