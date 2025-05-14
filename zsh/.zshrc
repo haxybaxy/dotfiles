@@ -41,17 +41,13 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
 
-
 # carapace
 eval "$(carapace _carapace zsh)"
 
-
 #obsidian location
-
-alias obsidian="cd /Users/zaidsaheb/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"
+alias obsidian="cd /Users/zaidsaheb/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/vault16"
 
 #nvm setup
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
