@@ -13,7 +13,18 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "cssls", "eslint", "graphql", "html", "jsonls", "pyright",  },
+				ensure_installed = {
+					"lua_ls",
+					"ts_ls",
+					"tailwindcss",
+					"cssls",
+					"eslint",
+					"graphql",
+					"html",
+					"jsonls",
+					"pyright",
+					"ruff",
+				},
 			})
 		end,
 	},
@@ -56,13 +67,9 @@ return {
 				capabilities = capabilities,
 			})
 
-		--	lspconfig.pyright.setup({
-		--		capabilities = capabilities,
-		--	})
-
-		--	lspconfig.basedpyright.setup({
-		--		capabilities = capabilities,
-		--	})
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}) -- show info in a hover
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {}) -- go to definition

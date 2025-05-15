@@ -1,65 +1,31 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = {
-		"nvimtools/none-ls-extras.nvim",
-	},
+  "nvimtools/none-ls.nvim",
+  dependencies = {
+    "nvimtools/none-ls-extras.nvim",
+    "jay-babu/mason-null-ls.nvim",
+  },
 
-	config = function()
-		local function is_django_project()
-			-- Check for common Django project indicators
-			local indicators = {
-				"manage.py",
-				"django_settings.py",
-				"settings.py",
-			}
-			for _, file in ipairs(indicators) do
-				local handle = io.popen(string.format("find . -name '%s' 2>/dev/null | head -n 1", file))
-				if handle then
-					local result = handle:read("*a")
-					handle:close()
-					if result and result ~= "" then
-						return true
-					end
-				end
-			end
-			return false
-		end
+  config = function()
+    local null_ls = require("null-ls")
+    require("mason-null-ls").setup({
+      ensure_installed = {
+        "stylua",
+        "prettier",
+        "ruff",
+      },
+      automatic_installation = true,
+    })
 
-		local function find_django_settings()
-			local handle = io.popen("find . -name settings.py | head -n 1")
-			if handle then
-				local result = handle:read("*a")
-				handle:close()
-				if result and result ~= "" then
-					result = result:gsub("%./", "") -- Remove leading "./"
-					result = result:gsub("/settings.py", "") -- Remove file name
-					result = result.gsub(result, "%s+", "")
-					return result:gsub("/", ".") .. ".settings" -- Convert to module format
-				end
-			end
-			return "main.settings" -- Default fallback
-		end
-
-		local null_ls = require("null-ls")
-
-		null_ls.setup({
-			sources = {
-				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.completion.spell,
-				require("none-ls.diagnostics.eslint"),
-				null_ls.builtins.diagnostics.pylint.with({
-					command = "pylint",
-					debounce = 100,
-					extra_args = function()
-						local args = {"--disable=C0111", "--generated-members=(cv2.*)"}
-						return args
-					end,
-				}),
-				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.isort,
-			},
-		})
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-	end,
+    null_ls.setup({
+      sources = {
+        require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
+        require("none-ls.formatting.ruff_format"),
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
+        null_ls.builtins.completion.spell,
+        require("none-ls.diagnostics.eslint"),
+      },
+    })
+    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+  end,
 }
