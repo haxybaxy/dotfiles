@@ -3,6 +3,7 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    animate = { enabled = true,},
     bigfile = { enabled = true },
     quickfle = { enabled = true },
     explorer = { enabled = true },
@@ -19,15 +20,15 @@ return {
         explorer = {
           include = { ".*", "hidden" },
           layout = {
+            preset = "ivy",
             layout = {
-              position = "right",
+              position = "bottom",
             },
           },
         },
       },
     },
   },
-  ---@module 'snacks'
   keys = {
     -- Top Pickers & Explorer
     { "<leader>n",  function() Snacks.picker.notifications() end,    desc = "Notification History" },
