@@ -130,6 +130,9 @@ alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 
+alt-n = 'workspace next'
+alt-p = 'workspace prev'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -217,4 +220,3 @@ run= [
 3 = 1  
 4 = 1  
 5 = 1  
-6 = 2  
