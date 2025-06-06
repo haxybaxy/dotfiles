@@ -1,5 +1,5 @@
 keybind = global:cmd+/=toggle_quick_terminal
 macos-titlebar-style = hidden
-theme = dark:nord,light:AtomOneLight
+theme = dark:OneHalfDark,light:AtomOneLight
 window-padding-y = 10
 window-padding-x = 10 
