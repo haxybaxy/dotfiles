@@ -35,3 +35,11 @@ end
 -- vim.api.nvim_set_keymap('i','<Down>','<Nop>', { noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('i','<Left>','<Nop>', { noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('i','<Right>','<Nop>', { noremap = true, silent = true})
+
+-- Yank to system clipboard in normal mode with <leader>y
+vim.keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true })
+
+-- Yank to system clipboard in visual mode with <leader>y
+vim.keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true })
+
