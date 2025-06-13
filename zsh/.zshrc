@@ -57,3 +57,7 @@ fpath=(/Users/zaidalsaheb/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+export JAVA_HOME=$(/usr/libexec/java_home -v17)
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
