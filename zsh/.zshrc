@@ -42,7 +42,9 @@ export FZF_ALT_C_OPTS="
   --preview 'tree -C {}'"
 
 # carapace
-eval "$(carapace _carapace zsh)"
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 #obsidian location
 alias obsidian="cd /Users/zaidsaheb/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/vault16"
@@ -58,6 +60,3 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
-export JAVA_HOME=$(/usr/libexec/java_home -v17)
-export PATH=$JAVA_HOME/bin:$PATH
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"

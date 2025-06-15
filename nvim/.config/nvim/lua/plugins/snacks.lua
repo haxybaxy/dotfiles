@@ -20,9 +20,8 @@ return {
         explorer = {
           include = { ".*", "hidden" },
           layout = {
-            preset = "ivy",
             layout = {
-              position = "bottom",
+              position = "right",
             },
           },
         },
