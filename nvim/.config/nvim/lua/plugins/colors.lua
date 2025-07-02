@@ -1,11 +1,10 @@
 return {
   {
-    "vague2k/vague.nvim",
+    "navarasu/onedark.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme vague")
+      vim.cmd("colorscheme onedark")
     end
   }
 }
-
