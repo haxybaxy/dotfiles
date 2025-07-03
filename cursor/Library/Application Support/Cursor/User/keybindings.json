@@ -1,0 +1,153 @@
+// Place your key bindings in this file to override the defaults
+[
+  //vim pane navigation
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "ctrl-h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl-l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl-k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl-j",
+    "command": "workbench.action.navigateDown"
+  },
+
+  //open file explorer
+  {
+    "key": "space e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    },
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
+  },
+  {
+    "key": "space e",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "space e",
+    "when": "vim.mode == 'Normal' && editorTextFocus && foldersViewVisible",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+
+  //close composer with esc
+  {
+    "key": "escape",
+    "command": "composer.closeComposerTab",
+    "when": "composerFocused && !editorTextFocus || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  },
+
+  //toggle lazygit
+  {
+    "key": "space l g",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "lazygit-vscode.toggle",
+  },
+
+  //go to definition
+  {
+    "key": "space g d",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.revealDefinition"
+  },
+
+  //go to references
+  {
+    "key": "space g r",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.goToReferences"
+  },
+
+  //format document
+  {
+    "key": "space g f",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.formatDocument"
+  },
+
+  //autofix
+  {
+    "key": "space g a",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.autoFix"
+  },
+
+  //file grep
+  {
+    "key": "space f g",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "periscope.search"
+  },
+
+  //telescope filesearch
+  {
+    "key": "space f f",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "television.ToggleFileFinder",
+  }, 
+
+  //harpoon
+  {
+    "key": "space a",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.addEditor"
+  },
+
+  {
+    "key": "space p h",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.editEditors"
+  },
+
+  {
+    "key": "space h",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.editorQuickPick"
+  },
+
+  {
+    "key": "space 1",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.gotoEditor1"
+  },
+
+  {
+    "key": "space 2",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.gotoEditor2"
+  },
+
+  {
+    "key": "space 3",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.gotoEditor3"
+  },
+
+  {
+    "key": "space 4",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "vscode-harpoon.gotoEditor4"
+  },
+ 
+]

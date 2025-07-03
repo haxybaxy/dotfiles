@@ -1,0 +1,132 @@
+{
+    //Cosmetics
+    "workbench.sideBar.location": "right",
+    "git.autofetch": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ], 
+    "editor.renderLineHighlight": "none",
+    "editor.stickyScroll.enabled": false,
+    "material-icon-theme.opacity": 1,
+    "git.enableSmartCommit": true,
+    "editor.lineNumbers": "relative",
+    "git.confirmSync": false,
+    "gitlens.views.scm.grouped.views": {
+        "commits": false,
+        "branches": true,
+        "remotes": false,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": false,
+        "searchAndCompare": false,
+        "launchpad": false
+    },
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "workbench.activityBar.orientation": "vertical",
+    "workbench.activityBar.location": "hidden",
+
+    
+    //Vim Settings
+    "vim.incsearch": true,
+    "vim.smartRelativeLine": true,
+    "vim.surround": true,
+    "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    },
+    "vim.highlightedyank.enable": true,
+
+    //Color theme
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.preferredLightColorTheme": "Atom One Light",
+    "breadcrumbs.enabled": false,
+    "window.autoDetectColorScheme": true,
+    "editor.accessibilitySupport": "off",
+
+    //Best Extension Ever
+    "searchPreview.search.excludePatterns": [
+
+        "**/*.min.js",
+        "**/*.log",
+        "**/*.lock",
+        "**/package-lock.json"
+
+    ],
+
+    "searchPreview.search.excludeDirectories": [
+
+
+        "node_modules",
+        ".next",
+        ".git",
+        "venv",
+        "env",
+        "dist",
+        "build",
+        "android",
+        "ios"
+    ],
+
+    //Python Formatting
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+
+    //Prettier formatter
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    //misc
+    "cursor.cpp.enablePartialAccepts": true,
+    "editor.guides.indentation": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+
+    //extra linters
+    "[django-html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.replaceTagsWhenPull": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
+}
