@@ -79,6 +79,13 @@
     "command": "editor.action.revealDefinition"
   },
 
+  //show docs
+  {
+    "key": "shift+k",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.showHover"
+  },
+
   //go to references
   {
     "key": "space g r",
