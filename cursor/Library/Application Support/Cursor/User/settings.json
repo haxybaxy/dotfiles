@@ -35,6 +35,7 @@
     "workbench.navigationControl.enabled": false,
     "workbench.activityBar.orientation": "vertical",
     "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "single",
 
     
     //Vim Settings
@@ -48,7 +49,7 @@
 
     //Color theme
     "workbench.colorTheme": "Atom One Dark",
-    "workbench.preferredDarkColorTheme": "Atom One Dark",
+    "workbench.preferredDarkColorTheme": "One Dark Pro Flat",
     "workbench.preferredLightColorTheme": "Atom One Light",
     "breadcrumbs.enabled": false,
     "window.autoDetectColorScheme": true,
