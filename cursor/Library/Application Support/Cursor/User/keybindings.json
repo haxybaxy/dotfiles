@@ -121,6 +121,13 @@
     "command": "television.ToggleFileFinder"
   },
 
+  //pick
+  {
+    "key": "space f b",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+  },
+
   //harpoon
   {
     "key": "space a",

@@ -33,7 +33,7 @@
     },
     "workbench.layoutControl.enabled": false,
     "workbench.navigationControl.enabled": false,
-    "workbench.activityBar.orientation": "vertical",
+    "workbench.activityBar.orientation": "vertical", //needs to be vertical to work in with ctrl+hjkl pane navigation
     "workbench.activityBar.location": "hidden",
     "workbench.editor.showTabs": "single",
 
