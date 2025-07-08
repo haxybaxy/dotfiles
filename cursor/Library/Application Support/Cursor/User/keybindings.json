@@ -169,5 +169,15 @@
     "key": "space 4",
     "when": "vim.mode == 'Normal' && editorTextFocus",
     "command": "vscode-harpoon.gotoEditor4"
-  }
+  },
+  {
+    "key": "shift+backspace",
+    "command": "-extension.vim_shift+backspace",
+    "when": "editorTextFocus && vim.active && vim.use<S-BS> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+backspace",
+    "command": "extension.vim_backspace",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
 ]
