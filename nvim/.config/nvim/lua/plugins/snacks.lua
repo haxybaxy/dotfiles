@@ -26,7 +26,17 @@ return {
     --     },
     --   },
     -- },
+
+  styles = {
+
+    lazygit = {
+      height = 0.9,
+      width = 0.9,
+      backdrop = 100,
+    },
   },
+  },
+
 
   keys = {
     -- { "<leader>e",  function() Snacks.explorer() end,                desc = "File Explorer" },
