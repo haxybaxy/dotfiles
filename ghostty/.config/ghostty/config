@@ -1,6 +1,6 @@
 # keybind = global:cmd+/=toggle_quick_terminal
 macos-titlebar-style = hidden
-theme = dark:Github Dark,light:Github
+theme = dark:Github-Dark-Default,light:Github-Light-Default
 window-padding-y = 10
 window-padding-x = 10 
 font-family = "JetBrainsMono Nerd Font"
