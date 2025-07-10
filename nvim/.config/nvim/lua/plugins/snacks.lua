@@ -9,7 +9,6 @@ return {
     explorer = { enabled = true },
     terminal = { enabled = true },
     image = { enabled = true },
-    input = { enabled = true },
     notifier = {
       enabled = true,
       timeout = 3000,
