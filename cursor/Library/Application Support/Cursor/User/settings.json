@@ -50,7 +50,6 @@
     //Color theme
     "workbench.colorTheme": "Atom One Dark",
     "workbench.preferredLightColorTheme": "Atom One Light",
-    "breadcrumbs.enabled": false,
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
