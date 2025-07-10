@@ -103,12 +103,13 @@ return {
 				filetypes = {
 					"html",
 					"htmldjango",
-					"css",
+					"css", 
 					"scss",
-					"javascript",
-					"javascriptreact",
-					"typescript",
-					"typescriptreact",
+					-- Removed JS/TS files to prevent aggressive HTML tag suggestions
+					-- "javascript",
+					-- "javascriptreact", 
+					-- "typescript",
+					-- "typescriptreact",
 				},
 			})
 
