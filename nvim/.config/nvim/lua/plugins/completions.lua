@@ -42,7 +42,7 @@ return {
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = cmp.mapping(function(fallback)
+					["<Tab>"] = cmp.mapping(function(fallback) -- Tab and shift tab to traverse completion items
 						if cmp.visible() then
 							cmp.select_next_item()
 						else

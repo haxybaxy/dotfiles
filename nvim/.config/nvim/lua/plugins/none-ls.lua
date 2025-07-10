@@ -22,7 +22,6 @@ return {
         require("none-ls.formatting.ruff_format"),
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
-        null_ls.builtins.completion.spell,
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
