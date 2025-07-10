@@ -14,24 +14,23 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = {
-      sources = {
-        files = { hidden = true },
-        explorer = {
-          include = { ".*", "hidden" },
-          layout = {
-            layout = {
-              position = "right",
-            },
-          },
-        },
-      },
-    },
+   -- picker = {
+   --   sources = {
+   --     files = { hidden = true },
+   --     explorer = {
+   --       include = { ".*", "hidden" },
+   --       layout = {
+   --         layout = {
+   --           position = "right",
+   --         },
+   --       },
+   --     },
+   --   },
+   -- },
   },
   keys = {
     -- Top Pickers & Explorer
     { "<leader>n",  function() Snacks.picker.notifications() end,    desc = "Notification History" },
-    { "<leader>e",  function() Snacks.explorer() end,                desc = "File Explorer" },
     -- find
     { "<leader>z",  function() Snacks.zen() end,                     desc = "Toggle Zen Mode" },
     { "<leader>Z",  function() Snacks.zen.zoom() end,                desc = "Toggle Zoom" },
@@ -41,7 +40,7 @@ return {
     { "<leader>bd", function() Snacks.bufdelete() end,               desc = "Delete Buffer" },
     { "<leader>cR", function() Snacks.rename.rename_file() end,      desc = "Rename File" },
     { "<leader>gB", function() Snacks.gitbrowse() end,               desc = "Git Browse",               mode = { "n", "v" } },
-    { "<leader>gg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
+    { "<leader>lg", function() Snacks.lazygit() end,                 desc = "Lazygit" },
     { "<leader>un", function() Snacks.notifier.hide() end,           desc = "Dismiss All Notifications" },
     { "<leader>t",  function() Snacks.terminal() end,                desc = "Toggle Terminal" },
     { "<c-_>",      function() Snacks.terminal() end,                desc = "which_key_ignore" },

@@ -28,7 +28,12 @@
     "command": "workbench.action.closeOtherEditors",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
-
+  //open netrw
+  {
+    "key": "-",
+    "command": "vsnetrw.open",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
   //open file explorer
   {
     "key": "space e",
