@@ -78,12 +78,12 @@ return {
 				capabilities = capabilities,
 			})
 
-			-- lspconfig.eslint.setup({
-			-- 	capabilities = capabilities,
-			-- 	settings = {
-			-- 		workingDirectories = { mode = "auto" },
-			-- 	},
-			-- })
+			 lspconfig.eslint.setup({
+			 	capabilities = capabilities,
+			 	settings = {
+			 		workingDirectories = { mode = "auto" },
+			 	},
+			 })
 
 			lspconfig.graphql.setup({
 				capabilities = capabilities,
