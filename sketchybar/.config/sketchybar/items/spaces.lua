@@ -20,7 +20,7 @@ local spaceConfigs <const> = {
   ["1"] = { icon = "1", name = "term" },
   ["2"] = { icon = "2", name = "web" },
   ["3"] = { icon = "3", name = "chat" },
-  ["4"] = { icon = "4", name = "gen" },
+  ["4"] = { icon = "4", name = "org" },
   ["5"] = { icon = "5" , name = "misc"},
 }
 
