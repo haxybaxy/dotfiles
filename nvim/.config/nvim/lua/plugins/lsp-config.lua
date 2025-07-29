@@ -78,6 +78,17 @@ return {
 				capabilities = capabilities,
 			})
 
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+        rootpatterns = {
+          "package.json",
+          "tsconfig.json",
+          "jsconfig.json",
+          ".git",
+        },
+      })
+
 			 lspconfig.eslint.setup({
 			 	capabilities = capabilities,
 			 	settings = {
