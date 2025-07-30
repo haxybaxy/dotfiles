@@ -4,6 +4,7 @@ return {
 		lazy = false,
 		priority = 999,
 	},
+
 	{
 		"projekt0n/github-nvim-theme",
 		name = "github-theme",
