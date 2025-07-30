@@ -1,9 +1,14 @@
-# keybind = global:cmd+/=toggle_quick_terminal
 background-opacity = 0.9
+background-blur = true
+
 macos-titlebar-style = hidden
-theme = dark:Github-Dark-Default,light:AtomOneLight
+
 window-padding-y = 10
 window-padding-x = 10 
+
+theme = dark:Github-Dark-Default,light:AtomOneLight
+
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
 
+# keybind = global:cmd+/=toggle_quick_terminal
