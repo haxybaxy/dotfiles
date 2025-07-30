@@ -1,5 +1,6 @@
 vim.g.mapleader = " " -- Set leader key to space
 
+vim.cmd("set number") -- Show line numbers
 vim.cmd("set relativenumber") -- relative numbers for the rest
 
 vim.cmd("set expandtab") -- spaces instead of tabs
