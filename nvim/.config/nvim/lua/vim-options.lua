@@ -17,6 +17,7 @@ vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 -- Paste from system clipboard in normal mode and visual mode with <leader>p
 vim.keymap.set({ 'n', 'v', 'x' }, "<leader>p", '"+p', { noremap = true, silent = true })
 
+-- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
