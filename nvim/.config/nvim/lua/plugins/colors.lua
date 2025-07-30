@@ -10,6 +10,16 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+      require("github-theme").setup({
+        options = {
+          transparent = true,
+          darken = {
+            sidebars = {
+              enable = false,
+            },
+          },
+        }
+      })
 			vim.cmd("colorscheme github_dark_default")
 		end,
 	},
@@ -31,20 +41,4 @@ return {
 		end,
 	},
 
-	{
-		"xiyaowong/transparent.nvim",
-		config = function()
-			require("transparent").setup({
-				enable = true,
-				extra_groups = {
-					"GitSignsAdd",
-					"GitSignsChange",
-					"GitSignsDelete",
-				},
-				icons = false,
-				hiLine = "Normal",
-				hiGroup = "Normal",
-			})
-		end,
-	},
 }
