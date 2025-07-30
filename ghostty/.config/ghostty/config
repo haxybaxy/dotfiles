@@ -1,4 +1,5 @@
 # keybind = global:cmd+/=toggle_quick_terminal
+background-opacity = 0.9
 macos-titlebar-style = hidden
 theme = dark:Github-Dark-Default,light:AtomOneLight
 window-padding-y = 10
