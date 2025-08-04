@@ -28,6 +28,7 @@ alias ls="lsd"
 
 #vim alias
 alias v="nvim"
+alias vim="nvim"
 alias nv="neovide &"
 
 #lazygit alias
