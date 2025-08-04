@@ -27,6 +27,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Right arrow key to accept Copilot suggestion in insert mode
+vim.api.nvim_set_keymap('i', '<Right>', 'copilot#Accept(<Tab>)', {expr=true, silent=true})
+
 -- neovide gui settings with macOS keybinds
 if vim.g.neovide then
   vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
