@@ -8,6 +8,8 @@ vim.cmd("set tabstop=2") -- 2 spaces for a tab
 vim.cmd("set softtabstop=2") -- 2 spaces for soft tab
 vim.cmd("set shiftwidth=2") -- 2 spaces for autoindent
 
+vim.opt.winborder = "rounded" -- Set window border style to rounded
+
 vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
