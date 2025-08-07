@@ -28,7 +28,6 @@ return {
     },
 
     styles = {
-
       lazygit = {
         height = 0.9,
         width = 0.9,
@@ -38,58 +37,13 @@ return {
   },
 
   keys = {
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "File Explorer",
-    },
-    {
-      "<leader>bd",
-      function()
-        Snacks.bufdelete()
-      end,
-      desc = "Delete Buffer",
-    },
-
-    {
-      "<leader>lg",
-      function()
-        Snacks.lazygit()
-      end,
-      desc = "Lazygit",
-    },
-
-    {
-      "<leader>un",
-      function()
-        Snacks.notifier.hide()
-      end,
-      desc = "Dismiss All Notifications",
-    },
-    {
-      "<leader>n",
-      function()
-        Snacks.notifier.show_history()
-      end,
-      desc = "Notification History",
-    },
-
-    {
-      "<leader>.",
-      function()
-        Snacks.scratch()
-      end,
-      desc = "Toggle Scratch Buffer",
-    },
-    {
-      "<leader>S",
-      function()
-        Snacks.scratch.select()
-      end,
-      desc = "Select Scratch Buffer",
-    },
+    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
+    { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
+    { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications", },
+    { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History", },
+    { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer", },
+    { "<leader>S", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer", },
 
     config = function()
       vim.api.nvim_create_autocmd("User", {
