@@ -38,6 +38,10 @@ return {
   },
 
   keys = {
+    { "<leader><space>", function() Snacks.picker.recent() end, desc = "Recent" },
+    { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+    { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
     { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
