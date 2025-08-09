@@ -8,6 +8,7 @@ return {
     quickfle = { enabled = true },
     explorer = { enabled = true },
     terminal = { enabled = true },
+    input = { enabled = true },
     dashboard = { enabled = true },
     image = { enabled = true },
     notifier = {
