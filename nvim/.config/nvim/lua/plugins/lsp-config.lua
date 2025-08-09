@@ -114,7 +114,7 @@ return {
 				filetypes = {
 					"html",
 					"htmldjango",
-					"css", 
+					"css",
 					"scss",
 					-- Removed JS/TS files to prevent aggressive HTML tag suggestions
 					-- "javascript",
@@ -139,8 +139,6 @@ return {
 			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}) -- rename symbol
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}) -- go to type definition
 			vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, {}) -- show diagnostics
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {}) -- go to previous diagnostic
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {}) -- go to next diagnostic
 		end,
 	},
 }
