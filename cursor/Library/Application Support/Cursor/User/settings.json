@@ -127,4 +127,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+    "breadcrumbs.enabled": false,
 }
