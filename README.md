@@ -5,6 +5,8 @@ My various configs managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC
 - **window manager**: [Aerospace](https://github.com/nikitabobko/AeroSpace)
 - **hotkey daemon**: [skhd](https://github.com/koekeishiya/skhd)
 - **terminal**: [ghostty](https://github.com/ghostty-org/ghostty)
-- **color scheme**: One Dark
-<img width="1470" alt="SCR-20250514-uqje" src="https://github.com/user-attachments/assets/0c54652d-b852-4e08-a2d3-3999346b99fb" />
-<img width="1470" alt="SCR-20250514-uqha" src="https://github.com/user-attachments/assets/a3423e8c-b47c-4eee-83bc-cf06e50df225" />
+- **color scheme**: Github Dark
+- **wallpapers**: [repo](https://github.com/haxybaxy/wallpapers)
+
+
+<img width="1470" height="956" alt="SCR-20250809-sjul" src="https://github.com/user-attachments/assets/4abf39f8-8bb1-4889-9be3-2d2b5877fba5" />
