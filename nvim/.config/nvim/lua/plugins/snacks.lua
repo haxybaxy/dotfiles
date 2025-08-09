@@ -50,6 +50,8 @@ return {
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
     { "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
 
+    { "<leader>t", function() Snacks.terminal() end, desc = "Toggle Terminal" },
+
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications", },
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History", },
 
