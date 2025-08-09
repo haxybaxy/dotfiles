@@ -14,3 +14,5 @@ My various configs managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC
 <img width="1470" height="956" alt="SCR-20250809-sjul" src="https://github.com/user-attachments/assets/4abf39f8-8bb1-4889-9be3-2d2b5877fba5" />
 
 <img width="1470" height="956" alt="SCR-20250809-splw" src="https://github.com/user-attachments/assets/507b9737-9a73-413a-b25a-5e78dbf2bd52" />
+
+![SCR-20250809-stjw](https://github.com/user-attachments/assets/b70d36f9-f259-4cf4-826c-f73caf77b110)
