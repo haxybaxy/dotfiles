@@ -15,6 +15,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
+
     picker = {
       ui_select = true,
       sources = {
