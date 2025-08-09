@@ -15,4 +15,8 @@ My various configs managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC
 
 <img width="1470" height="956" alt="SCR-20250809-splw" src="https://github.com/user-attachments/assets/507b9737-9a73-413a-b25a-5e78dbf2bd52" />
 
-![SCR-20250809-stjw](https://github.com/user-attachments/assets/b70d36f9-f259-4cf4-826c-f73caf77b110)
+<img width="1470" height="956" alt="SCR-20250809-tavs" src="https://github.com/user-attachments/assets/e9e53af5-1a30-43d6-b4f8-1c5ddd6deb73" />
+
+
+![SCR-20250809-tbst](https://github.com/user-attachments/assets/fd7ff5ae-2855-4996-9a14-6962e450455c)
+
