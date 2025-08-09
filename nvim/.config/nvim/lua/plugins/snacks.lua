@@ -15,6 +15,7 @@ return {
       timeout = 3000,
     },
     picker = {
+      ui_select = true,
       sources = {
         files = { hidden = true },
         explorer = {
