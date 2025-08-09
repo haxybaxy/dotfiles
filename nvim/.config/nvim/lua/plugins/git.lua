@@ -10,6 +10,10 @@ return {
 		},
 	},
 
+  { -- Diffview for viewing git diffs
+	"sindrets/diffview.nvim",
+  },
+
 	{ -- Octo.nvim for GitHub integration
 		"pwntester/octo.nvim",
 		requires = {
