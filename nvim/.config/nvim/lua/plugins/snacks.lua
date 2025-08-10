@@ -18,6 +18,8 @@ return {
 
     picker = {
       ui_select = true,
+      hidden = true,
+      ignored = true,
       sources = {
         files = { hidden = true },
         explorer = {
