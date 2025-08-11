@@ -23,7 +23,7 @@ return {
       sources = {
         files = { hidden = true },
         explorer = {
-          include = { ".*", "hidden" },
+          include = { ".*", "hidden", "ignored" },
           layout = {
             layout = {
               position = "right",
