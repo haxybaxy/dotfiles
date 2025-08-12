@@ -12,4 +12,5 @@ font-family = "JetBrainsMono Nerd Font"
 font-size = 14
 
 shell-integration = fish
+cursor-style = bar
 # keybind = global:cmd+/=toggle_quick_terminal
