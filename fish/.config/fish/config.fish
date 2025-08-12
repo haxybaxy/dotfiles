@@ -1,25 +1,30 @@
 if status is-interactive
 
-# better cd
-zoxide init fish | source
-alias cd="z"
+  # Set fish shell options
+  export EDITOR='nvim'
 
-#better Ls
-alias ls="lsd"
+  # better cd
+  zoxide init fish | source
+  alias cd="z"
 
-#vim alias
-alias v="nvim"
-alias vim="nvim"
-alias nv="neovide &"
+  #better Ls
+  alias ls="lsd"
 
-#lazygit alias
-alias lg="lazygit"
+  #vim alias
+  alias v="nvim"
+  alias vim="nvim"
+  alias nv="neovide &"
 
-#fzf ignore paths
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_ALT_C_OPTS="
-  --walker-skip .git,node_modules,target,Library,Applications,Music
-  --preview 'tree -C {}'"
+  #lazygit alias
+  alias lg="lazygit"
+
+  #fzf ignore paths
+  fzf --fish | source
+  export FZF_ALT_C_OPTS="
+    --walker-skip .git,node_modules,target,Library,Applications,Music
+    --preview 'tree -C {}'"
+
+  #starship prompt
+  starship init fish | source
 
 end
-starship init fish | source

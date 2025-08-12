@@ -11,4 +11,5 @@ theme = dark:Github-Dark-Default,light:AtomOneLight
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
 
+shell-integration = fish
 # keybind = global:cmd+/=toggle_quick_terminal
