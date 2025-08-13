@@ -1,5 +1,5 @@
-# background-opacity = 0.9
-# background-blur = true
+background-opacity = 0.9
+background-blur = true
 
 macos-titlebar-style = hidden
 
