@@ -48,8 +48,9 @@
     "vim.highlightedyank.enable": true,
 
     //Color theme
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "GitHub Dark Default",
     "workbench.preferredLightColorTheme": "Atom One Light",
+    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
@@ -126,6 +127,16 @@
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "breadcrumbs.enabled": false,
+
+    "background.enabled": true,
+    "background.fullscreen": {
+        "images": ["file:///Users/zaidalsaheb/wallpapers/mikuspace.jpg"],
+        "opacity": 0.1,
+        "size": "cover",
+        "position": "center",
+        "interval": 0,
+        "random": false
+    }
+
 }
