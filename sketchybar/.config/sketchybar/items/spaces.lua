@@ -13,11 +13,10 @@ local currentWorkspaceWatcher = sbar.add("item", {
   updates = true,
 })
 
--- Modify this file with Visual Studio Code - at least vim does have problems with the icons
 -- copy "Icons" from the nerd fonts cheat sheet and replace icon and name accordingly below
 -- https://www.nerdfonts.com/cheat-sheet
 local spaceConfigs <const> = {
-  ["1"] = { icon = "", name = "term" },
+  ["1"] = { icon = "󰇳", name = "term" },
   ["2"] = { icon = "󰖟", name = "web" },
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
@@ -72,8 +71,6 @@ local function addWorkspaceItem(workspaceName)
     },
     click_script = "aerospace workspace " .. workspaceName,
   })
-
-
 
   sbar.add("item", spaceName .. ".padding", {
     width = settings.dimens.padding.label
