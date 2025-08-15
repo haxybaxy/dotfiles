@@ -25,7 +25,7 @@ local graphics <const> = {
     width = 200,
     large_width = 300,
   },
-  blur_radius = 30,
+  blur_radius = 0,
 }
 
 local text <const> = {
