@@ -20,8 +20,11 @@ fi
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-#better Ls
+#better ls
 alias ls="lsd"
+
+#better cat
+alias cat="bat"
 
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
