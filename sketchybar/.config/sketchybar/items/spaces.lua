@@ -37,7 +37,7 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
         background = { 
           color = settings.colors.bg1,
           border_color = isSelected and settings.colors.white or settings.colors.grey,
-          border_width = 1,
+          border_width = 1
         },
       })
     end
