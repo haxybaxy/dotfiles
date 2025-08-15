@@ -33,8 +33,8 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
         label = { color = settings.colors.white },
         background = { 
           color = settings.colors.bg1,
-          border_color = isSelected and settings.colors.white or settings.colors.transparent,
-          border_width = isSelected and 1 or 0,
+          border_color = isSelected and settings.colors.white or settings.colors.grey,
+          border_width = 1,
         },
       })
     end
