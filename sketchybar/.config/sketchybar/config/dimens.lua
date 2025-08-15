@@ -16,7 +16,7 @@ local graphics <const> = {
   },
   background = {
     height = 24,
-    corner_radius = 3,
+    corner_radius = 5,
   },
   slider = {
     height = 20,
