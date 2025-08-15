@@ -2,6 +2,17 @@ local constants = require("constants")
 local colors = require("config.colors")
 local icons = require("config.icons")
 
+-- Text truncation configuration
+local MAX_TEXT_LENGTH = 35 -- Maximum characters to display
+
+-- Function to truncate text
+local function truncate_text(text)
+  if #text <= MAX_TEXT_LENGTH then
+    return text
+  end
+  return string.sub(text, 1, MAX_TEXT_LENGTH - 3) .. "..."
+end
+
 -- Simple media control widget using media-control
 local media = sbar.add("item", "media_ctrl.anchor", {
   position = "right",
@@ -40,13 +51,16 @@ media:subscribe("routine", function()
           media_text = track .. " - " .. artist
         end
 
+        -- Truncate text if too long
+        local display_text = truncate_text(media_text)
+
         -- Update play/pause icon
         local play_icon = playing and icons.text.media.pause or icons.text.media.play
         
         -- Show the widget with media info
         media:set({
           icon = { string = play_icon },
-          label = { string = media_text },
+          label = { string = display_text },
           drawing = true,
         })
       else
