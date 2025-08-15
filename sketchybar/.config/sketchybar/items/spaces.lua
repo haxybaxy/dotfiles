@@ -29,9 +29,13 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
     if item ~= nil then
       local isSelected = sid == constants.items.SPACES .. "." .. focusedWorkspaceName
       item:set({
-        icon = { color = isSelected and settings.colors.bg1 or settings.colors.white },
-        label = { color = isSelected and settings.colors.bg1 or settings.colors.white },
-        background = { color = isSelected and settings.colors.white or settings.colors.bg1 },
+        icon = { color = settings.colors.white },
+        label = { color = settings.colors.white },
+        background = { 
+          color = settings.colors.bg1,
+          border_color = isSelected and settings.colors.white or settings.colors.transparent,
+          border_width = isSelected and 1 or 0,
+        },
       })
     end
   end
