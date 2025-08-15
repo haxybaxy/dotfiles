@@ -1,6 +1,7 @@
 local constants = require("constants")
 local colors = require("config.colors")
 local icons = require("config.icons")
+local settings = require("config.settings")
 
 -- Text truncation configuration
 local MAX_TEXT_LENGTH = 35 -- Maximum characters to display
@@ -20,10 +21,19 @@ local media = sbar.add("item", "media_ctrl.anchor", {
   label = {
     string = "No Media",
     color = colors.white,
+    padding_left = 8,
+    padding_right = 8,
   },
   icon = {
     string = icons.text.media.pause,
     color = colors.white,
+    padding_left = 8,
+  },
+  background = {
+    color = 0x11000000, -- keep it kind of transparent to make it clickable 
+    border_width = 0,
+    corner_radius = 6,
+    height = 24,
   },
   drawing = true, -- Always show initially
 })
