@@ -7,8 +7,11 @@ if status is-interactive
   zoxide init fish | source
   alias cd="z"
 
-  #better Ls
+  #better ls
   alias ls="lsd"
+
+  #better cat
+  alias cat="bat"
 
   #vim alias
   alias v="nvim"
