@@ -17,11 +17,11 @@ local currentWorkspaceWatcher = sbar.add("item", {
 -- copy "Icons" from the nerd fonts cheat sheet and replace icon and name accordingly below
 -- https://www.nerdfonts.com/cheat-sheet
 local spaceConfigs <const> = {
-  ["1"] = { icon = "1", name = "term" },
-  ["2"] = { icon = "2", name = "web" },
-  ["3"] = { icon = "3", name = "chat" },
-  ["4"] = { icon = "4", name = "org" },
-  ["5"] = { icon = "5" , name = "misc"},
+  ["1"] = { icon = "", name = "term" },
+  ["2"] = { icon = "󰖟", name = "web" },
+  ["3"] = { icon = "󰋎", name = "chat" },
+  ["4"] = { icon = "󰃢", name = "org" },
+  ["5"] = { icon = "󱗂" , name = "misc"},
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)
@@ -73,17 +73,7 @@ local function addWorkspaceItem(workspaceName)
     click_script = "aerospace workspace " .. workspaceName,
   })
 
-  spaces[spaceName]:subscribe("mouse.entered", function(env)
-    sbar.animate("tanh", 30, function()
-      spaces[spaceName]:set({ label = { width = "dynamic" } })
-    end)
-  end)
 
-  spaces[spaceName]:subscribe("mouse.exited", function(env)
-    sbar.animate("tanh", 30, function()
-      spaces[spaceName]:set({ label = { width = 0 } })
-    end)
-  end)
 
   sbar.add("item", spaceName .. ".padding", {
     width = settings.dimens.padding.label
