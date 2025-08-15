@@ -131,7 +131,7 @@
 
     "background.enabled": true,
     "background.fullscreen": {
-        "images": ["file:///Users/zaidalsaheb/wallpapers/mikuspace.jpg"],
+        "images": ["file:///Users/zaidalsaheb/wallpapers/koipond.jpg"],
         "opacity": 0.1,
         "size": "cover",
         "position": "center",
