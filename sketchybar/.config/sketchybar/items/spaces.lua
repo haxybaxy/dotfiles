@@ -17,7 +17,7 @@ local currentWorkspaceWatcher = sbar.add("item", {
 -- https://www.nerdfonts.com/cheat-sheet
 local spaceConfigs <const> = {
   ["1"] = { icon = "󰇳", name = "term" },
-  ["2"] = { icon = "󰖟", name = "web" },
+  ["2"] = { icon = "󰌀", name = "web" },
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
   ["5"] = { icon = "󱗂" , name = "misc"},
