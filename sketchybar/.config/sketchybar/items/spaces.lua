@@ -1,5 +1,6 @@
 local constants = require("constants")
 local settings = require("config.settings")
+local colors = require("config.colors")
 
 local spaces = {}
 
@@ -15,12 +16,12 @@ local currentWorkspaceWatcher = sbar.add("item", {
 
 -- copy "Icons" from the nerd fonts cheat sheet and replace icon and name accordingly below
 -- https://www.nerdfonts.com/cheat-sheet
-local spaceConfigs <const> = {
+local spaceConfigs = {
   ["1"] = { icon = "󰑣", name = "term" },
   ["2"] = { icon = "󰖟", name = "web" },
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
-  ["5"] = { icon = "󱗂" , name = "misc"},
+  ["5"] = { icon = "󱗂", name = "misc" },
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)
@@ -28,15 +29,15 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
     if item ~= nil then
       local isSelected = sid == constants.items.SPACES .. "." .. focusedWorkspaceName
       item:set({
-        icon = { color = settings.colors.white },
-        label = { 
-          color = settings.colors.white,
+        icon = { color = colors.white },
+        label = {
+          color = colors.white,
           width = isSelected and "dynamic" or 0,
         },
-        background = { 
-          color = settings.colors.bg1,
-          border_color = isSelected and settings.colors.white or settings.colors.grey,
-          border_width = 1
+        background = {
+          color = colors.bg1,
+          border_color = isSelected and colors.white or colors.grey,
+          border_width = 1,
         },
       })
     end
@@ -64,16 +65,16 @@ local function addWorkspaceItem(workspaceName)
     },
     icon = {
       string = spaceConfig.icon or settings.icons.apps["default"],
-      color = settings.colors.white,
+      color = colors.white,
     },
     background = {
-      color = settings.colors.bg1,
+      color = colors.bg1,
     },
     click_script = "aerospace workspace " .. workspaceName,
   })
 
   sbar.add("item", spaceName .. ".padding", {
-    width = settings.dimens.padding.label
+    width = settings.dimens.padding.label,
   })
 end
 

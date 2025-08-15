@@ -1,4 +1,4 @@
-local colors  = {
+local colors = {
   black = 0xff181819,
   white = 0xfff8f8f2,
   red = 0xf1cc3e44,
@@ -29,12 +29,17 @@ local colors  = {
   bg1 = 0xd322212c,
   bg2 = 0xff302c45,
 
-  with_alpha = function(color, alpha)
+with_alpha = function(color, alpha)
     if alpha > 1.0 or alpha < 0.0 then
-      return color
+        return color
     end
-    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
-  end,
+    local bit = require("bit")
+    return bit.bor(
+        bit.band(color, 0x00ffffff),
+        bit.lshift(math.floor(alpha * 255.0), 24)
+    )
+end,
+
 }
 
 return colors
