@@ -164,9 +164,20 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+
+# Space 1: Terminal
+
+[[on-window-detected]] 
+if.app-id = 'com.todesktop.230313mzl4w4u92' #ghostty
+run = 'move-node-to-workspace 1'
+
+# Space 2: Browser
+
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
+
+# Space 3: Communication
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
@@ -181,10 +192,6 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-id = 'app.legcord.Legcord'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
 if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm'
 run = 'move-node-to-workspace 3'
 
@@ -192,13 +199,20 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 3'
 
-[[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = 'move-node-to-workspace 1'
+# Space 4: Organization
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 4'
+
+
+# Space 5: Miscellaneous
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 5'
+
+# Floating Windows
 
 [[on-window-detected]]
 if.app-id = 'com.chabomakers.Antinote'
@@ -215,12 +229,6 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
 run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
-run= [
-  "layout tiling",
-]
 
 [workspace-to-monitor-force-assignment]
 1 = 1 
