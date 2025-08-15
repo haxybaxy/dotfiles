@@ -127,6 +127,19 @@
     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
   },
 
+  //yank to clipboard
+  { //visual mode
+    "key": "space y",
+    "when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine') && editorTextFocus",
+    "command": "editor.action.clipboardCopyAction",
+  },
+
+  { //copy whole line
+    "key": "space y y",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.clipboardCopyAction",
+  },
+
   //harpoon
   {
     "key": "space a",
