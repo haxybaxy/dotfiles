@@ -318,9 +318,10 @@ local text <const> = {
       router = "󰑩",
     },
     media = {
+      play = "",
       back = "",
       forward = "",
-      play_pause = "",
+      pause = "",
     },
     slider = {
       knob = ""

@@ -12,6 +12,7 @@ local items <const> = {
   SPACES = "workspaces",
   FRONT_APPS = "front_apps",
   MESSAGE = "message",
+  MEDIA = "widgets.media",
   VOLUME = "widgets.volume",
   BATTERY = "widgets.battery",
   CALENDAR = "widgets.calendar",
