@@ -39,6 +39,13 @@ if status is-interactive
   #for lazygit and others
   export XDG_CONFIG_HOME="$HOME/.config"
 
+  function nvm
+  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+  end
+
+  set -x NVM_DIR ~/.nvm
+  nvm use default --silent
+
   # disable fish_greeting
   function fish_greeting
   end
