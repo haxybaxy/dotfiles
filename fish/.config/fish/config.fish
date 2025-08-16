@@ -36,6 +36,9 @@ if status is-interactive
   set fish_cursor_replace_one underscore
   set fish_cursor_visual block
 
+  #for lazygit and others
+  export XDG_CONFIG_HOME="$HOME/.config"
+
   # disable fish_greeting
   function fish_greeting
   end
