@@ -14,6 +14,8 @@ vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
+vim.o.showbreak="↪" -- Show a special character for wrapped lines
+
 -- Yank to system clipboard in normal and visual mode with <leader>y
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 
