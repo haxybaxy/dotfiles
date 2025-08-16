@@ -1,5 +1,4 @@
 local constants = require("constants")
-local settings = require("config.settings")
 local icons = require("config.icons")
 
 local function get_clock_icon()
