@@ -1,5 +1,6 @@
 local constants = require("constants")
 local settings = require("config.settings")
+local icons = require("config.icons")
 
 local frontApps = {}
 
@@ -36,7 +37,7 @@ local function updateWindows(windows)
 
     local windowId = parsedWindow["id"]
     local windowName = parsedWindow["name"]
-    local icon = settings.icons.apps[windowName] or settings.icons.apps["default"]
+    local icon = icons.apps[windowName] or settings.icons.apps["default"]
 
     frontApps[windowName] = sbar.add("item", constants.items.FRONT_APPS .. "." .. windowName, {
       label = {
