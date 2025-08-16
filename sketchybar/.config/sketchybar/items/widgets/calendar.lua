@@ -1,4 +1,5 @@
 local constants = require("constants")
+local settings = require("config.settings")
 local icons = require("config.icons")
 
 local function get_clock_icon()
@@ -14,13 +15,14 @@ end
 local calendar = sbar.add("item", constants.items.CALENDAR, {
 	position = "right",
 	update_freq = 1,
-	icon = { string = get_clock_icon(), padding_left = 0, padding_right = 0 },
+	icon = { string = get_clock_icon() },
+	label = { padding_left = 0 },
 })
 
 calendar:subscribe({ "forced", "routine", "system_woke" }, function(env)
 	calendar:set({
 		icon = { string = get_clock_icon() },
-		label = os.date("%H:%M"),
+		label = { string = os.date("%H:%M") },
 	})
 end)
 
