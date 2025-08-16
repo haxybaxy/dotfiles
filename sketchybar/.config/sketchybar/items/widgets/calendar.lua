@@ -1,17 +1,29 @@
 local constants = require("constants")
+local icons = require("config.icons")
+
+local function get_clock_icon()
+	local hour = tonumber(os.date("%H"))
+	local hour_12 = hour % 12
+	if hour_12 == 0 then
+		hour_12 = 12
+	end
+
+	return icons.text.clock["_" .. hour_12] or "?"
+end
 
 local calendar = sbar.add("item", constants.items.CALENDAR, {
-  position = "right",
-  update_freq = 1,
-  icon = { padding_left = 0, padding_right = 0 }
+	position = "right",
+	update_freq = 1,
+	icon = { string = get_clock_icon(), padding_left = 0, padding_right = 0 },
 })
 
 calendar:subscribe({ "forced", "routine", "system_woke" }, function(env)
-  calendar:set({
-    label = os.date("[%H:%M]"),
-  })
+	calendar:set({
+		icon = { string = get_clock_icon() },
+		label = os.date("%H:%M"),
+	})
 end)
 
 calendar:subscribe("mouse.clicked", function(env)
-  sbar.exec("open -a 'Calendar'")
+	sbar.exec("open -a 'Calendar'")
 end)
