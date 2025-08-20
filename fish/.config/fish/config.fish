@@ -16,8 +16,7 @@ if status is-interactive
   #vim alias
   alias v="nvim"
   alias vim="nvim"
-  alias nv="neovide &"
-
+  alias nv="open -n -a Neovide --args "
   #lazygit alias
   alias lg="lazygit"
 
