@@ -34,6 +34,9 @@ vim.api.nvim_set_keymap('i', '<Right>', 'copilot#Accept(<Tab>)', {expr=true, sil
 
 -- neovide gui settings with macOS keybinds
 if vim.g.neovide then
+  vim.defer_fn(function()
+    vim.cmd("NeovideFocus")
+  end, 25)
   vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
   vim.keymap.set("v", "<D-c>", '"+y') -- Copy
   vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
