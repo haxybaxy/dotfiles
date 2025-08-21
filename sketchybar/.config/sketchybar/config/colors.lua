@@ -26,7 +26,7 @@ local colors = {
     bg = 0xf1151320,
     border = 0xff2c2e34,
   },
-  bg1 = 0xd322212c,
+  bg1 = 0xd3282c34,
   bg2 = 0xff302c45,
 
 with_alpha = function(color, alpha)
