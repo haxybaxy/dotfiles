@@ -18,13 +18,13 @@ local calendar = sbar.add("item", constants.items.CALENDAR, {
 	label = { padding_left = 0 },
 })
 
-calendar:subscribe({ "forced", "routine", "system_woke" }, function(env)
+calendar:subscribe({ "forced", "routine", "system_woke" }, function()
 	calendar:set({
 		icon = { string = get_clock_icon() },
 		label = { string = os.date("%H:%M") },
 	})
 end)
 
-calendar:subscribe("mouse.clicked", function(env)
+calendar:subscribe("mouse.clicked", function()
 	sbar.exec("open -a 'Calendar'")
 end)
