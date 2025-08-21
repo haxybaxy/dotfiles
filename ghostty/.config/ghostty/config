@@ -6,10 +6,10 @@ macos-titlebar-style = hidden
 window-padding-y = 10
 window-padding-x = 10 
 
-theme = dark:OneHalfDark,light:AtomOneLight
+theme = dark:Ghostty Default StyleDark,light:AtomOneLight
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 16 
+font-size = 14
 
 shell-integration = fish
 cursor-style = bar
