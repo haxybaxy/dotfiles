@@ -6,7 +6,7 @@ macos-titlebar-style = hidden
 window-padding-y = 10
 window-padding-x = 10 
 
-theme = dark:Github-Dark-Default,light:AtomOneLight
+theme = dark:Kanagawa Wave,light:AtomOneLight
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
