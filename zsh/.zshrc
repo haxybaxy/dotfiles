@@ -5,15 +5,15 @@ export EDITOR='nvim'
 # Custom theme
 ZSH_THEME="zaid"
 
-
-
 plugins=(
         git
         zsh-autosuggestions
         zsh-syntax-highlighting
        )
+
 source $ZSH/oh-my-zsh.sh
-# Make valid commands appear in blue
+
+# Make valid commands appear in blue for zsh-syntax-highlighting
 ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
@@ -70,4 +70,3 @@ fpath=(/Users/zaidalsaheb/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-#
