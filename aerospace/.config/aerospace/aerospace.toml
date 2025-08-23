@@ -168,7 +168,7 @@ alt-shift-l = ['join-with right', 'mode main']
 # Space 1: Terminal
 
 [[on-window-detected]] 
-if.app-id = 'com.todesktop.230313mzl4w4u92' #ghostty
+if.app-id = 'com.mitchellh.ghostty' #ghostty
 run = 'move-node-to-workspace 1'
 
 # Space 2: Browser
