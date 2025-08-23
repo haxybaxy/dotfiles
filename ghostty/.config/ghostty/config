@@ -9,7 +9,7 @@ window-padding-x = 10
 theme = dark:Ghostty Default StyleDark,light:AtomOneLight
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 16
 
 shell-integration = fish
 cursor-style = bar
