@@ -2,14 +2,21 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR='nvim'
 
+# Custom theme
 ZSH_THEME="zaid"
+
+
+
 plugins=(
         git
         zsh-autosuggestions
         zsh-syntax-highlighting
        )
-
 source $ZSH/oh-my-zsh.sh
+# Make valid commands appear in blue
+ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
 
 # Preferred terminal for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -64,7 +71,3 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 #
-# # Make valid commands appear in blue
-ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
