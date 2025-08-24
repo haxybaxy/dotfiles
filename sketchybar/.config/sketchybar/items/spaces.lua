@@ -3,6 +3,7 @@ local settings = require("config.settings")
 local colors = require("config.colors")
 
 local spaces = {}
+local monitors = {}
 
 local swapWatcher = sbar.add("item", {
   drawing = false,
@@ -22,6 +23,7 @@ local spaceConfigs = {
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
   ["5"] = { icon = "󱗂", name = "misc" },
+  ["6"] = { icon = "", name = "extra" },
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)
@@ -53,9 +55,9 @@ local function findAndSelectCurrentWorkspace()
   end)
 end
 
-local function addWorkspaceItem(workspaceName)
+local function addWorkspaceItem(workspaceName, monitorId)
   local spaceName = constants.items.SPACES .. "." .. workspaceName
-  local spaceConfig = spaceConfigs[workspaceName]
+  local spaceConfig = spaceConfigs[workspaceName] or spaceConfigs["0"] -- fallback to misc
 
   spaces[spaceName] = sbar.add("item", spaceName, {
     label = {
@@ -70,20 +72,41 @@ local function addWorkspaceItem(workspaceName)
     background = {
       color = colors.bg1,
     },
+    display = monitorId, -- Assign to specific monitor
     click_script = "aerospace workspace " .. workspaceName,
   })
 
   sbar.add("item", spaceName .. ".padding", {
     width = settings.dimens.padding.label,
+    display = monitorId, -- Assign padding to same monitor
   })
 end
 
-local function createWorkspaces()
-  sbar.exec(constants.aerospace.LIST_ALL_WORKSPACES, function(workspacesOutput)
+local function createWorkspacesForMonitor(monitorId)
+  local command = constants.aerospace.LIST_WORKSPACES_FOR_MONITOR .. " " .. monitorId
+  sbar.exec(command, function(workspacesOutput)
     for workspaceName in workspacesOutput:gmatch("[^\r\n]+") do
-      addWorkspaceItem(workspaceName)
+      if workspaceName ~= "" then
+        addWorkspaceItem(workspaceName, monitorId)
+      end
     end
+  end)
+end
 
+local function createWorkspacesForAllMonitors()
+  sbar.exec(constants.aerospace.LIST_MONITORS, function(monitorsOutput)
+    for monitorLine in monitorsOutput:gmatch("[^\r\n]+") do
+      if monitorLine ~= "" then
+        -- Extract monitor ID from the line (first field)
+        local monitorId = monitorLine:match("^(%S+)")
+        if monitorId then
+          monitors[#monitors + 1] = monitorId
+          createWorkspacesForMonitor(monitorId)
+        end
+      end
+    end
+    
+    -- After creating all workspaces, select the current one
     findAndSelectCurrentWorkspace()
   end)
 end
@@ -98,4 +121,25 @@ currentWorkspaceWatcher:subscribe(constants.events.AEROSPACE_WORKSPACE_CHANGED, 
   sbar.trigger(constants.events.UPDATE_WINDOWS)
 end)
 
-createWorkspaces()
+-- Also subscribe to display changes to handle monitor connections/disconnections
+local displayWatcher = sbar.add("item", {
+  drawing = false,
+  updates = true,
+})
+
+displayWatcher:subscribe("display_change", function()
+  -- Clear existing spaces
+  for sid, item in pairs(spaces) do
+    if item ~= nil then
+      sbar.remove(sid)
+      sbar.remove(sid .. ".padding")
+    end
+  end
+  spaces = {}
+  monitors = {}
+  
+  -- Recreate workspaces for all monitors
+  createWorkspacesForAllMonitors()
+end)
+
+createWorkspacesForAllMonitors()

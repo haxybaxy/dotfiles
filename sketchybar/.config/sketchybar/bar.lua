@@ -12,4 +12,5 @@ sbar.bar({
 	y_offset = settings.dimens.graphics.bar.offset,
 	blur_radius = settings.dimens.graphics.blur_radius,
 	border_width = 0,
+	display = "all", -- Display on all monitors
 })

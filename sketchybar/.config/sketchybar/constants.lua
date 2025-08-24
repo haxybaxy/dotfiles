@@ -23,6 +23,8 @@ local aerospace = {
   GET_CURRENT_WORKSPACE = "aerospace list-workspaces --focused",
   LIST_WINDOWS = 'aerospace list-windows --workspace focused --format "id=%{window-id}, name=%{app-name}"',
   GET_CURRENT_WINDOW = "aerospace list-windows --focused --format %{app-name}",
+  LIST_MONITORS = "aerospace list-monitors",
+  LIST_WORKSPACES_FOR_MONITOR = "aerospace list-workspaces --monitor",
 }
 
 return {
