@@ -53,7 +53,7 @@ export FZF_ALT_C_OPTS="
   --preview 'tree -C {}'"
 
 # carapace
-export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
