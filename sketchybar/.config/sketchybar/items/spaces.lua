@@ -23,7 +23,7 @@ local spaceConfigs = {
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
   ["5"] = { icon = "󱗂", name = "misc" },
-  ["6"] = { icon = "", name = "extra" },
+  ["6"] = { icon = "󰓠", name = "extra" },
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)
@@ -105,7 +105,7 @@ local function createWorkspacesForAllMonitors()
         end
       end
     end
-    
+
     -- After creating all workspaces, select the current one
     findAndSelectCurrentWorkspace()
   end)
@@ -137,7 +137,7 @@ displayWatcher:subscribe("display_change", function()
   end
   spaces = {}
   monitors = {}
-  
+
   -- Recreate workspaces for all monitors
   createWorkspacesForAllMonitors()
 end)
