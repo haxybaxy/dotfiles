@@ -57,7 +57,7 @@ end
 
 local function addWorkspaceItem(workspaceName, monitorId)
   local spaceName = constants.items.SPACES .. "." .. workspaceName
-  local spaceConfig = spaceConfigs[workspaceName] or spaceConfigs["0"] -- fallback to misc
+  local spaceConfig = spaceConfigs[workspaceName] or spaceConfigs["1"] -- fallback to term 
 
   spaces[spaceName] = sbar.add("item", spaceName, {
     label = {
