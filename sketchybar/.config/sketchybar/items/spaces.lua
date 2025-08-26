@@ -23,7 +23,6 @@ local spaceConfigs = {
   ["3"] = { icon = "󰋎", name = "chat" },
   ["4"] = { icon = "󰃢", name = "org" },
   ["5"] = { icon = "󱗂", name = "misc" },
-  ["6"] = { icon = "󰓠", name = "extra" },
 }
 
 local function selectCurrentWorkspace(focusedWorkspaceName)
