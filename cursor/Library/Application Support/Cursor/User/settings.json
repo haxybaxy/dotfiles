@@ -50,7 +50,6 @@
     //Color theme
     "workbench.colorTheme": "GitHub Dark Default",
     "workbench.preferredLightColorTheme": "Atom One Light",
-    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
@@ -137,6 +136,7 @@
         "position": "center",
         "interval": 0,
         "random": false
-    }
+    },
+    "workbench.preferredDarkColorTheme": "One Dark Pro"
 
 }
