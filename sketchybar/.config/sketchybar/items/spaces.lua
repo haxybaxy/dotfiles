@@ -20,8 +20,8 @@ local currentWorkspaceWatcher = sbar.add("item", {
 local spaceConfigs = {
   ["1"] = { icon = "󰘧", name = "term" },
   ["2"] = { icon = "󰖟", name = "web" },
-  ["3"] = { icon = "󰋎", name = "chat" },
-  ["4"] = { icon = "󰃢", name = "org" },
+  ["3"] = { icon = "󰃢", name = "org" },
+  ["4"] = { icon = "󰋎", name = "chat" },
   ["5"] = { icon = "󱗂", name = "misc" },
 }
 
