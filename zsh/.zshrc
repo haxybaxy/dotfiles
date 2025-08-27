@@ -18,55 +18,54 @@ ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
 
+# For lazygit and other apps to find config
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Preferred terminal for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export TERM='xterm-256color'
 fi
 
-# better cd
+# Better cd
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-#better ls
+# Better ls
 alias ls="lsd"
 
-#better cat
+# Better cat
 alias cat="bat"
 
-#fzf
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#vim alias
+# vim alias
 alias v="nvim"
 alias vim="nvim"
 alias nv="neovide &"
 
-#lazygit alias
+# Lazygit alias
 alias lg="lazygit"
 
-#env variables
+# Env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
 
-#fzf ignore paths
+# Fzf ignore paths
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
 
-# carapace
+# Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
-#obsidian location
-alias obsidian="cd /Users/zaidsaheb/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/vault16"
-
-#nvm setup
+# NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
 
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# Docker CLI completions
 fpath=(/Users/zaidalsaheb/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
