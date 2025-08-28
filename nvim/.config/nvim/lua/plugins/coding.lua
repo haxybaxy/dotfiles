@@ -38,6 +38,13 @@ return {
 		},
 	},
 
+	{ -- highlight todo comments like FIXME, TODO, etc.
+    {
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		},
+	},
+
 	{ -- render whitespace characters in visual mode
 		"mcauley-penney/visual-whitespace.nvim",
 		config = true,
