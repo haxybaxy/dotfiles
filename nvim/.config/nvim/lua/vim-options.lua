@@ -29,6 +29,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- tab new and tabclose keybinds
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true })
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
+
 -- Right arrow key to accept Copilot suggestion in insert mode
 vim.api.nvim_set_keymap('i', '<Right>', 'copilot#Accept(<Tab>)', {expr=true, silent=true})
 
