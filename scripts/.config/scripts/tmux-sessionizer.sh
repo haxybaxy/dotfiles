@@ -27,12 +27,8 @@ else
         if [[ -n $current_dir ]]; then
             other_dirs=$(echo "$all_dirs" | grep -v "^$current_dir$")
             selected=$(printf "%s\n%s" "$other_dirs" "$current_dir" | sed "s|$HOME/||" | fzf --header="Current session: $current_session")
-            # Add the home path back
-            selected="$HOME/$selected"
         else
             selected=$(echo "$all_dirs" | sed "s|$HOME/||" | fzf)
-            # Add the home path back
-            selected="$HOME/$selected"
         fi
     else
         selected=$(echo "$all_dirs" | fzf)
@@ -42,6 +38,8 @@ fi
 if [[ -z $selected ]]; then
     exit 0
 fi
+
+selected="$HOME/$selected"
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
