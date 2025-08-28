@@ -26,9 +26,11 @@ if [[ -n $SSH_CONNECTION ]]; then
   export TERM='xterm-256color'
 fi
 
-# Better cd
-eval "$(zoxide init zsh)"
-alias cd="z"
+# Better cd 
+if [ -z "$DISABLE_ZOXIDE" ]; then
+  eval "$(zoxide init --cmd cd zsh)"
+  alias cd="z"
+fi
 
 # Better ls
 alias ls="lsd"
