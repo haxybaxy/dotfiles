@@ -1,28 +1,27 @@
 # My Dotfiles
 My various configs managed with [stow](https://www.youtube.com/watch?v=NoFiYOqnC4o)
 
-- **top bar**: [Sketchybar](https://github.com/FelixKratz/SketchyBar) + [SbarLua](https://github.com/FelixKratz/SbarLua)
-  - to function properly this needs:
-    - [media-control cli](https://github.com/ungive/media-control) for the media player widget (works for spotify, youtube, and lots of other sources)
-    - [switchaudio-osx](https://formulae.brew.sh/formula/switchaudio-osx) for the volume widget to show which device is currently playing the audio
-    - [Aerospace](https://github.com/nikitabobko/AeroSpace) for the spaces widget and front app widgets
-- **editors**: Neovim and Cursor with highly vim-ified settings
+- **top bar**: [Sketchybar](https://github.com/FelixKratz/SketchyBar) + [SbarLua](https://github.com/FelixKratz/SbarLua), with these dependencies:
+  - [media-control cli](https://github.com/ungive/media-control) for the media player widget (works for spotify, youtube, and lots of other sources)
+  - [switchaudio-osx](https://formulae.brew.sh/formula/switchaudio-osx) for the volume widget to show which device is currently playing the audio
+  - [Aerospace](https://github.com/nikitabobko/AeroSpace) for the spaces widget and front app widgets
+- **editors**: [Neovim](https://neovim.io/) and [Cursor](https://cursor.com/) with [highly vim-ified settings](https://github.com/haxybaxy/dotfiles/tree/master/cursor/Library/Application%20Support/Cursor/User)
 - **window manager**: [Aerospace](https://github.com/nikitabobko/AeroSpace)
 - **hotkey daemon**: [skhd](https://github.com/koekeishiya/skhd)
-- **terminal**: [ghostty](https://github.com/ghostty-org/ghostty)
-- **color scheme**: Catppuccin
+- **terminal**: [ghostty](https://github.com/ghostty-org/ghostty) + [tmux](https://github.com/tmux/tmux/wiki)
+  - tmux uses the [tmux-sessionizer](https://github.com/haxybaxy/dotfiles/blob/master/scripts/.config/scripts/tmux-sessionizer.sh) and [open in github](https://github.com/haxybaxy/dotfiles/blob/master/scripts/.config/scripts/open_github.sh) scripts
+- **browser**: [Zen](https://zen-browser.app/) + [Vimium C](https://addons.mozilla.org/en-US/firefox/addon/vimium-c/)
+- **colorscheme**: [Catppuccin](https://catppuccin.com/)
 - **wallpapers**: [repo](https://github.com/haxybaxy/wallpapers)
 
 ---
 
-<img width="1470" height="956" alt="SCR-20250809-sjul" src="https://github.com/user-attachments/assets/4abf39f8-8bb1-4889-9be3-2d2b5877fba5" />
-
-<img width="1470" height="956" alt="SCR-20250809-splw" src="https://github.com/user-attachments/assets/507b9737-9a73-413a-b25a-5e78dbf2bd52" />
-
-<img width="1470" height="956" alt="SCR-20250809-tavs" src="https://github.com/user-attachments/assets/e9e53af5-1a30-43d6-b4f8-1c5ddd6deb73" />
+![SCR-20250830-pyiz](https://github.com/user-attachments/assets/bdda0966-5fa0-4f2f-a3d3-06248be2fd5e)
+<img width="1470" height="956" alt="SCR-20250830-pynx" src="https://github.com/user-attachments/assets/e5a79fd5-ee50-4888-b930-a181c13e0b33" />
+<img width="1470" height="956" alt="SCR-20250830-qabt" src="https://github.com/user-attachments/assets/b76c361e-a58a-4dd9-be46-f609f74acde4" />
 
 
-![SCR-20250809-tbst](https://github.com/user-attachments/assets/fd7ff5ae-2855-4996-9a14-6962e450455c)
+
 
 
 
