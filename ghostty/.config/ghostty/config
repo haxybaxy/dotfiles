@@ -6,7 +6,7 @@ macos-titlebar-style = hidden
 window-padding-y = 10
 window-padding-x = 10 
 
-theme = dark:Ghostty Default StyleDark,light:AtomOneLight
+theme = dark:catppuccin-mocha,light:catppuccin-latte
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 16

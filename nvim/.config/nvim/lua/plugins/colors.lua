@@ -1,14 +1,10 @@
 return {
   {
-    "navarasu/onedark.nvim",
+    "catppuccin/nvim",
     lazy = false,
     priority = 999,
     config = function()
-      require("onedark").setup({
-        transparent = true,
-        ending_tildes = true,
-      })
-    vim.cmd("colorscheme onedark")
+    vim.cmd("colorscheme catppuccin")
     end,
   },
 }

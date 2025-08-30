@@ -128,7 +128,7 @@
     },
     "breadcrumbs.enabled": false,
 
-    "background.enabled": true,
+    "background.enabled": false,
     "background.fullscreen": {
         "images": ["file:///Users/zaidalsaheb/wallpapers/koipond.jpg"],
         "opacity": 0.1,
@@ -137,6 +137,6 @@
         "interval": 0,
         "random": false
     },
-    "workbench.preferredDarkColorTheme": "One Dark Pro"
+    "workbench.preferredDarkColorTheme": "Catppuccin Mocha"
 
 }
