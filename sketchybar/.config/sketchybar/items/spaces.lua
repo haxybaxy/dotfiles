@@ -11,7 +11,7 @@ local currentWorkspaceWatcher = sbar.add("item", {
 local function createSpaces()
   for i = 1, 5 do
     local spaceName = constants.items.SPACES .. "." .. i
-    
+
     spaces[spaceName] = sbar.add("item", spaceName, {
       icon = {
         font = {
@@ -29,7 +29,7 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
   for i = 1, 5 do
     local spaceName = constants.items.SPACES .. "." .. i
     local item = spaces[spaceName]
-    
+
     if item ~= nil then
       local isSelected = tostring(i) == focusedWorkspaceName
       item:set({
@@ -56,3 +56,4 @@ end)
 -- Initialize spaces and select current workspace
 createSpaces()
 findAndSelectCurrentWorkspace()
+
