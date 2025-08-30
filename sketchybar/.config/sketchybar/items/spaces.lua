@@ -35,6 +35,7 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
 			item:set({
 				icon = {
 					string = isSelected and "" or "",
+					color = isSelected and colors.orange or colors.white,
 				},
 			})
 		end
