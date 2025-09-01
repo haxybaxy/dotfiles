@@ -34,7 +34,7 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
 			local isSelected = tostring(i) == focusedWorkspaceName
 			item:set({
 				icon = {
-					string = isSelected and "" or "",
+					string = isSelected and "󰱫" or "󰚛",
 					color = isSelected and colors.orange or colors.white,
 				},
 			})
