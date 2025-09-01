@@ -32,7 +32,7 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
       label = charge .. "%"
     end
 
-    local color = settings.colors.green
+    local color = settings.colors.blue
     local charging, _, _ = batteryInfo:find("AC Power")
 
     isCharging = charging
