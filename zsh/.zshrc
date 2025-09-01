@@ -28,7 +28,7 @@ fi
 
 # Better cd 
 if [ -z "$DISABLE_ZOXIDE" ]; then
-  eval "$(zoxide init --cmd cd zsh)"
+  eval "$(zoxide init zsh)"
   alias cd="z"
 fi
 

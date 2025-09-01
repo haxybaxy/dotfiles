@@ -4,14 +4,11 @@ local events = {
   SWAP_MENU_AND_SPACES = "swap_menu_and_spaces",
   FRONT_APP_SWITCHED = "front_app_switched",
   UPDATE_WINDOWS = "update_windows",
-  SEND_MESSAGE = "send_message",
-  HIDE_MESSAGE = "hide_message",
 }
 
 local items = {
   SPACES = "workspaces",
   FRONT_APPS = "front_apps",
-  MESSAGE = "message",
   MEDIA = "widgets.media",
   VOLUME = "widgets.volume",
   BATTERY = "widgets.battery",

@@ -181,41 +181,42 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 2'
 
-# Space 3: Communication
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace 3'
-
-# Space 4: Organization
+# Space 3: Organization
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'md.obisidian'
+run = 'move-node-to-workspace 3'
+
+# Space 4: Communication
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 4'
+
 
 # Space 5: Miscellaneous
 

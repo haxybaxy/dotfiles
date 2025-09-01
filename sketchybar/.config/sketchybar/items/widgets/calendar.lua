@@ -24,7 +24,3 @@ calendar:subscribe({ "forced", "routine", "system_woke" }, function()
 		label = { string = os.date("%H:%M") },
 	})
 end)
-
-calendar:subscribe("mouse.clicked", function()
-	sbar.exec("open -a 'Calendar'")
-end)
