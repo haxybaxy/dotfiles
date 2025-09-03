@@ -195,6 +195,10 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'md.obisidian'
 run = 'move-node-to-workspace 3'
 
+[[on-window-detected]]
+if.app-id = 'come.linear'
+run = 'move-node-to-workspace 3'
+
 # Space 4: Communication
 
 [[on-window-detected]]
