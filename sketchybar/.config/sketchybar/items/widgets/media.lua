@@ -1,8 +1,7 @@
-local constants = require("constants")
 local colors = require("config.colors")
 local icons = require("config.icons")
 
-local MAX_TEXT_LENGTH = 35
+local MAX_TEXT_LENGTH = 40
 
 local current_playing = false
 local current_media_text = ""
