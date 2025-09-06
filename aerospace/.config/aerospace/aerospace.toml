@@ -70,7 +70,17 @@ alt-tab = 'workspace-back-and-forth'
 
 alt-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service'] # command to notify sketchybar of mode change
 
+alt-t = '''exec-and-forget sh -c "open -a 'Ghostty'"'''
+alt-c = '''exec-and-forget sh -c "open -a 'Cursor'"'''
+alt-z = '''exec-and-forget sh -c "open -a 'Zen'"'''
+alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''
+alt-o = '''exec-and-forget sh -c "open -a 'Obsidian'"'''
+alt-s = '''exec-and-forget sh -c "open -a 'Simulator'"'''
+alt-m = '''exec-and-forget sh -c "open -a 'Spotify'"'''
+
+
 [mode.service.binding]
+
 esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 r = ['reload-config', 'flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
 f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
