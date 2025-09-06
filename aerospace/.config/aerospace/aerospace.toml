@@ -12,7 +12,7 @@ exec-on-workspace-change = [
   '-c',
   'sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
-# Start AeroSpace at login
+
 start-at-login = true 
 
 enable-normalization-flatten-containers = true
@@ -74,7 +74,7 @@ alt-shift-5 = 'move-node-to-workspace 5'
 
 alt-tab = 'workspace-back-and-forth'
 
-alt-shift-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service']
+alt-shift-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service'] # command to notify sketchybar of mode change
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
