@@ -17,11 +17,7 @@ local modeWatcher = sbar.add("item", {
 local function createModeIndicator()
 	modeIndicator = sbar.add("item", constants.items.MODE_INDICATOR, {
 		icon = {
-			string = "M",
-			font = {
-				size = 16.0,
-			},
-			color = colors.grey,
+			string = "?",
 			padding_right = 0,
 		},
 	})
@@ -68,9 +64,9 @@ end
 local function updateModeIndicator(currentMode)
 	if modeIndicator ~= nil then
 		local mode = currentMode or "main"
-		local displayLetter = mode == "main" and "M" or mode == "service" and "S" or "?"
+		local displayLetter = mode == "main" and "󰱫" or mode == "service" and "󰱰" or "?"
 		local modeColor = mode == "main" and colors.white or colors.orange
-		
+
 		modeIndicator:set({
 			icon = {
 				string = displayLetter,
