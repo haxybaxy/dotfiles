@@ -14,7 +14,7 @@ local function getWorkspaceColors(isActive, mode)
 	if isActive then
 		return mode == "main" and colors.orange or colors.green
 	else
-		return mode == "main" and colors.white or colors.purple
+		return mode == "main" and colors.white or colors.orange
 	end
 end
 
