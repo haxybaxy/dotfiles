@@ -64,7 +64,7 @@ end
 local function updateModeIndicator(currentMode)
 	if modeIndicator ~= nil then
 		local mode = currentMode or "main"
-		local displayLetter = mode == "main" and "󰱱" or mode == "service" and "󰱫" or "?"
+		local displayLetter = mode == "main" and "" or mode == "service" and "" or "?"
 		local modeColor = mode == "main" and colors.white or colors.orange
 
 		modeIndicator:set({
