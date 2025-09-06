@@ -71,16 +71,16 @@ alt-tab = 'workspace-back-and-forth'
 alt-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service'] # command to notify sketchybar of mode change
 
 [mode.service.binding]
-esc = ['mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-r = ['reload-config','flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
+esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+r = ['reload-config', 'flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
 f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
 backspace = ['close-all-windows-but-current', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
-1 = ['move-node-to-workspace 1', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-2 = ['move-node-to-workspace 2', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-3 = ['move-node-to-workspace 3', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-4 = ['move-node-to-workspace 4', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-5 = ['move-node-to-workspace 5', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+1 = ['move-node-to-workspace 1', 'workspace 1', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+2 = ['move-node-to-workspace 2', 'workspace 2', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+3 = ['move-node-to-workspace 3', 'workspace 3', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+4 = ['move-node-to-workspace 4', 'workspace 4', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+5 = ['move-node-to-workspace 5', 'workspace 5', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
 alt-h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 alt-j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
