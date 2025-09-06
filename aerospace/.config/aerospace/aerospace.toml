@@ -74,18 +74,18 @@ alt-shift-5 = 'move-node-to-workspace 5'
 
 alt-tab = 'workspace-back-and-forth'
 
-alt-shift-semicolon = ['mode service']
+alt-shift-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service']
 
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] 
-f = ['layout floating tiling', 'mode main'] 
-backspace = ['close-all-windows-but-current', 'mode main']
+esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+r = ['flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
+f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
+backspace = ['close-all-windows-but-current', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
-alt-h = ['join-with left', 'mode main']
-alt-j = ['join-with down', 'mode main']
-alt-k = ['join-with up', 'mode main']
-alt-l = ['join-with right', 'mode main']
+alt-h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+alt-j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+alt-k = ['join-with up', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+alt-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
 
 # Space 1: Terminal
