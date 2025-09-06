@@ -27,7 +27,7 @@ local media = sbar.add("item", "media_ctrl.anchor", {
     color = colors.white,
     padding_left = 8,
   },
-  drawing = true, -- Always show initially
+  drawing = true,
 })
 
 media:subscribe("routine", function()
@@ -45,7 +45,6 @@ media:subscribe("routine", function()
         local track = parts[1] or ""
         local artist = parts[2] or ""
         local playing_str = parts[3] or "false"
-        -- Trim whitespace and check for true
         local playing = string.lower(string.gsub(playing_str or "", "%s+", "")) == "true"
 
         if track ~= "" and track ~= "null" and track ~= "nil" then
@@ -84,7 +83,6 @@ media:subscribe("routine", function()
 end)
 
 media:subscribe("mouse.clicked", function()
-  -- Only handle clicks if we have valid media
   if current_media_text ~= "" then
     -- Immediately toggle the visual state for instant feedback
     current_playing = not current_playing
