@@ -338,6 +338,10 @@ local text = {
 			forward = "",
 			pause = "",
 		},
+    spaces = {
+      active = "",
+      inactive = "",
+    },
 		slider = {
 			knob = "",
 		},

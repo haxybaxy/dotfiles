@@ -1,5 +1,6 @@
 local constants = require("constants")
 local colors = require("config.colors")
+local icons = require("config.icons")
 
 local spaces = {}
 
@@ -13,17 +14,6 @@ local function createSpaces()
 		local spaceName = constants.items.SPACES .. "." .. i
 
 		spaces[spaceName] = sbar.add("item", spaceName, {
-			icon = {
-				string = "?",
-				font = {
-					size = 16.0,
-				},
-				color = colors.white,
-				padding_left = 0,
-				padding_right = 2,
-			},
-			padding_left = 2,
-			padding_right = 0,
 			click_script = "aerospace workspace " .. i,
 		})
 	end
@@ -38,7 +28,7 @@ local function selectCurrentWorkspace(focusedWorkspaceName)
 			local isSelected = tostring(i) == focusedWorkspaceName
 			item:set({
 				icon = {
-					string = isSelected and "" or "",
+					string = isSelected and icons.text.spaces.active or icons.text.spaces.inactive,
 					color = isSelected and colors.orange or colors.white,
 				},
 			})
