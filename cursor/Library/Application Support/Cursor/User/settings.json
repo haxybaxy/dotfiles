@@ -49,7 +49,7 @@
 
     //Color theme
     "workbench.colorTheme": "GitHub Dark Default",
-    "workbench.preferredLightColorTheme": "Atom One Light",
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
