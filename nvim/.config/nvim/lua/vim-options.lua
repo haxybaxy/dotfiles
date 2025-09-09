@@ -14,6 +14,10 @@ vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
+vim.o.showmode = false -- Don't show mode since we have a statusline
+
+vim.o.cursorline = true -- Highlight the current line
+
 vim.o.showbreak="↪" -- Show a special character for wrapped lines
 
 -- Yank to system clipboard in normal and visual mode with <leader>y
@@ -48,5 +52,4 @@ if vim.g.neovide then
   vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
   vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
-
 
