@@ -63,16 +63,6 @@ end)
 
 media:subscribe("mouse.clicked", function()
   if current_media_text ~= "" then
-    -- Immediately toggle the visual state for instant feedback
-    current_playing = not current_playing
-    local immediate_icon = current_playing and icons.text.media.pause or icons.text.media.play
-
-    media:set({
-      icon = { string = immediate_icon },
-      label = { string = current_media_text },
-      drawing = true,
-    })
-
     sbar.exec("media-control toggle-play-pause")
   end
 end)
