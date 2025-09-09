@@ -218,7 +218,8 @@ return {
 				},
 
 				files = {
-					include = { ".*", "hidden", "ignored" },
+          hidden = true,
+          ignored = true,
 					layout = function()
 						return M.get_window_relative_flow_config()
 					end,
