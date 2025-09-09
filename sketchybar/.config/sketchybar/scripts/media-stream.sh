@@ -3,7 +3,8 @@ media-control stream | \
         if [ "$(jq -r '.diff == false' <<< "$line")" = "true" ]; then
             title=$(jq -r '.payload.title' <<< "$line")
             artist=$(jq -r '.payload.artist' <<< "$line")
-            sketchybar --trigger media_stream_changed title="$title" artist="$artist"
+            playing=$(jq -r '.payload.playing' <<< "$line")
+            sketchybar --trigger media_stream_changed title="$title" artist="$artist" playing="$playing"
         fi
     done
 

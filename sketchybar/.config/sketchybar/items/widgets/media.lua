@@ -32,6 +32,7 @@ local media = sbar.add("item", "media_ctrl.anchor", {
 media:subscribe("media_stream_changed", function(env)
   local title = env.title or ""
   local artist = env.artist or ""
+  local playing = env.playing == "true"
   
   if title ~= "" and title ~= "null" then
     local media_text = title
@@ -41,25 +42,14 @@ media:subscribe("media_stream_changed", function(env)
     
     local display_text = truncate_text(media_text)
     current_media_text = display_text
+    current_playing = playing
     
-    -- Get current playing state from media-control for the icon
-    sbar.exec(
-      'media-control get 2>/dev/null | jq -r "if . == null then \"false\" else (if .playing then \"true\" else \"false\" end) end"',
-      function(result, exit_code)
-        local playing = false
-        if exit_code == 0 and result then
-          playing = string.lower(string.gsub(result or "", "%s+", "")) == "true"
-        end
-        
-        current_playing = playing
-        local play_icon = playing and icons.text.media.pause or icons.text.media.play
-        
-        media:set({
-          icon = { string = play_icon },
-          label = { string = display_text },
-        })
-      end
-    )
+    local play_icon = playing and icons.text.media.pause or icons.text.media.play
+    
+    media:set({
+      icon = { string = play_icon },
+      label = { string = display_text },
+    })
   else
     -- No media playing
     current_playing = false
