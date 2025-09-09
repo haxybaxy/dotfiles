@@ -2,6 +2,7 @@ start-at-login = true
 
 after-login-command = [
 	"exec-and-forget sketchybar",
+  'exec-and-forget sh ~/.config/sketchybar/scripts/media-stream.sh'
 ]
 
 on-focus-changed = [

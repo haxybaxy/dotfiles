@@ -15,7 +15,6 @@ end
 
 local media = sbar.add("item", "media_ctrl.anchor", {
   position = "right",
-  update_freq = 2,
   label = {
     string = "No Media",
     color = colors.white,
@@ -30,56 +29,46 @@ local media = sbar.add("item", "media_ctrl.anchor", {
   drawing = true,
 })
 
-media:subscribe("routine", function()
-  sbar.exec(
-    'media-control get 2>/dev/null | jq -r \'if . == null then "||false" else .title + "|" + (.artist // "") + "|" + (if .playing then "true" else "false" end) end\'',
-    function(result, exit_code)
-      local has_valid_media = false
-
-      if exit_code == 0 and result and result ~= "" and result ~= "null|null|null" and result ~= "||false" then
-        local parts = {}
-        for part in result:gmatch("([^|]*)") do
-          table.insert(parts, part)
+media:subscribe("media_stream_changed", function(env)
+  local title = env.title or ""
+  local artist = env.artist or ""
+  
+  if title ~= "" and title ~= "null" then
+    local media_text = title
+    if artist ~= "" and artist ~= "null" then
+      media_text = artist .. " - " .. title
+    end
+    
+    local display_text = truncate_text(media_text)
+    current_media_text = display_text
+    
+    -- Get current playing state from media-control for the icon
+    sbar.exec(
+      'media-control get 2>/dev/null | jq -r "if . == null then \"false\" else (if .playing then \"true\" else \"false\" end) end"',
+      function(result, exit_code)
+        local playing = false
+        if exit_code == 0 and result then
+          playing = string.lower(string.gsub(result or "", "%s+", "")) == "true"
         end
-
-        local track = parts[1] or ""
-        local artist = parts[2] or ""
-        local playing_str = parts[3] or "false"
-        local playing = string.lower(string.gsub(playing_str or "", "%s+", "")) == "true"
-
-        if track ~= "" and track ~= "null" and track ~= "nil" then
-          has_valid_media = true
-
-          local media_text = track
-          if artist ~= "" and artist ~= "null" and artist ~= "nil" then
-            media_text = track .. " - " .. artist
-          end
-
-          local display_text = truncate_text(media_text)
-
-          current_playing = playing
-          current_media_text = display_text
-
-          local play_icon = playing and icons.text.media.pause or icons.text.media.play
-
-          media:set({
-            icon = { string = play_icon },
-            label = { string = display_text },
-          })
-        end
-      end
-
-      -- Show empty content if no valid media (but keep widget visible in order to keep polling)
-      if not has_valid_media then
-        current_playing = false
-        current_media_text = ""
+        
+        current_playing = playing
+        local play_icon = playing and icons.text.media.pause or icons.text.media.play
+        
         media:set({
-          icon = { string = "" },
-          label = { string = "" },
+          icon = { string = play_icon },
+          label = { string = display_text },
         })
       end
-    end
-  )
+    )
+  else
+    -- No media playing
+    current_playing = false
+    current_media_text = ""
+    media:set({
+      icon = { string = "" },
+      label = { string = "" },
+    })
+  end
 end)
 
 media:subscribe("mouse.clicked", function()

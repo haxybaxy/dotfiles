@@ -4,6 +4,7 @@ local events = {
   AEROSPACE_SWITCH = "aerospace_switch",
   FRONT_APP_SWITCHED = "front_app_switched",
   UPDATE_WINDOWS = "update_windows",
+  MEDIA_STREAM_CHANGED = "media_stream_changed",
 }
 
 local items = {
