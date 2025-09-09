@@ -1,4 +1,5 @@
 return {
+  ---@module "snacks"
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
@@ -16,33 +17,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
-
-    picker = {
-      exclude = { -- add folder names here to exclude
-        ".git",
-        "node_modules",
-        "ios",
-        "android",
-        "dist"
-      },
-      ui_select = true,
-      hidden = true,
-      ignored = true,
-      sources = {
-        files = { hidden = true },
-        explorer = {
-          include = { ".*", "hidden", "ignored" },
-          layout = {
-            layout = {
-              position = "right",
-            },
-          },
-        },
-      },
-    },
-
   },
-
   keys = {
     { "<leader><space>", function() Snacks.picker.recent() end,         desc = "Recent" },
     { "<leader>ff",      function() Snacks.picker.files() end,          desc = "Find Files" },
