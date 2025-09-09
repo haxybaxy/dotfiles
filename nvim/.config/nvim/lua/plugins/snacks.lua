@@ -11,6 +11,7 @@ return {
     input = { enabled = true },
     dashboard = { enabled = true },
     image = { enabled = true },
+    statuscolumn = { enabled = true},
     notifier = {
       enabled = true,
       timeout = 3000,
