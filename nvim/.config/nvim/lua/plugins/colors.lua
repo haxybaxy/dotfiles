@@ -4,7 +4,18 @@ return {
     lazy = false,
     priority = 999,
     config = function()
-    vim.cmd("colorscheme catppuccin")
+      require("catppuccin").setup({
+        transparent_background = true,
+        float = {
+          transparent = true,
+          solid = false,
+        },
+        integrations = {
+          snacks = true,
+        },
+      })
+      vim.cmd("colorscheme catppuccin")
+      vim.cmd(":hi statusline guibg=NONE")
     end,
   },
 }
