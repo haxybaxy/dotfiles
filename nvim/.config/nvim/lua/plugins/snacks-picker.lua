@@ -230,6 +230,18 @@ return {
           end,
         },
 
+        recent = {
+          layout = function()
+            return M.get_window_relative_flow_config()
+          end,
+        },
+
+        buffers = {
+          layout = function()
+            return M.get_window_relative_flow_config()
+          end,
+        },
+
 				explorer = {
 					include = { ".*", "hidden", "ignored" },
 					layout = {
