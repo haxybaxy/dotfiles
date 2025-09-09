@@ -20,6 +20,9 @@ return {
       exclude = { -- add folder names here to exclude
         ".git",
         "node_modules",
+        "ios",
+        "android",
+        "dist"
       },
       ui_select = true,
       hidden = true,
