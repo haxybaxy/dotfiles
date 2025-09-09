@@ -37,13 +37,6 @@ return {
       },
     },
 
-    styles = {
-      lazygit = {
-        height = 0.9,
-        width = 0.9,
-        backdrop = 100,
-      },
-    },
   },
 
   keys = {
