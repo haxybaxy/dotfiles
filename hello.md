@@ -13,5 +13,5 @@
 
 
 
-!mention but if you go back and change a comment, it will recomment it...
+!mention but if you go back and change a comment, it will recomment it... just like this!
 
