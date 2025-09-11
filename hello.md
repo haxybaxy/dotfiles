@@ -9,4 +9,5 @@
 
 
 
+!mention it keeps track of your old comments, so that nothing gets recommented!
 
