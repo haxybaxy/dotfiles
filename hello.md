@@ -5,4 +5,4 @@
 !this worked no?
 
 
-!mention hey @haxybaxy
+!mention hey @haxybaxy this is outdated no?
