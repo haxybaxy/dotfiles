@@ -1,0 +1,14 @@
+name: PR Comment Scanner
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  scan-comments:
+    runs-on: ubuntu-latest
+    steps:      
+      - name: Run PR Comment Scanner
+        uses: haxybaxy/holla-at-your-boy@new-approach
+        with:
+          comment-prefix: "!holla "  # Optional: customize your trigger
