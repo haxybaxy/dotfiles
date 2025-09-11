@@ -96,9 +96,6 @@ return {
       },
     }
 
-    -- Middle separator
-    ins_left { function() return "%=" end }
-
     -- Right side
     ins_right {
       "branch",
