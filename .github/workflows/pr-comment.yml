@@ -1,0 +1,16 @@
+name: PR Comment Scanner
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  scan-comments:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run PR Comment Scanner
+        uses: haxybaxy/holla-at-your-boy@v1.4
+        with:
+          comment-prefix: "!holla "  
