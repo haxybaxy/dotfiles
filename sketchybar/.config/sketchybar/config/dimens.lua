@@ -29,7 +29,7 @@ local graphics = {
 }
 
 local text ={
-  icon = 14.0,
+  icon = 16.0,
   label = 14.0,
 }
 
