@@ -12,6 +12,6 @@ jobs:
       pull-requests: write
     steps:      
       - name: Run PR Comment Scanner
-        uses: haxybaxy/holla-at-your-boy@main
+        uses: A-Murchison/holla-at-your-boy@main
         with:
           comment-prefix: "!mention "  # Optional: customize your trigger
