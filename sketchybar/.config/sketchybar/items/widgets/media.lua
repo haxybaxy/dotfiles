@@ -36,7 +36,7 @@ media:subscribe("media_stream_changed", function(env)
   if title ~= "" and title ~= "null" then
     local media_text = title
     if artist ~= "" and artist ~= "null" then
-      media_text = artist .. " - " .. title
+      media_text = title .. " - " ..  artist
     end
 
     local display_text = truncate_text(media_text)
