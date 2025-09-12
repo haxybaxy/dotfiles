@@ -39,10 +39,17 @@ return {
 	},
 
 	{ -- highlight todo comments like FIXME, TODO, etc.
-    {
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		{
+			"folke/todo-comments.nvim",
+			dependencies = { "nvim-lua/plenary.nvim" },
+      config = function ()
+        require('nvim-highlight-colors').setup({})
+      end
 		},
+	},
+
+	{
+		"brenoprata10/nvim-highlight-colors",
 	},
 
 	{ -- render whitespace characters in visual mode

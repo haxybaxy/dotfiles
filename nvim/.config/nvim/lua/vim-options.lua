@@ -20,6 +20,8 @@ vim.o.cursorline = true -- Highlight the current line
 
 vim.o.showbreak="↪" -- Show a special character for wrapped lines
 
+vim.opt.termguicolors = true -- Enable true color support
+
 -- Yank to system clipboard in normal and visual mode with <leader>y
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
 
