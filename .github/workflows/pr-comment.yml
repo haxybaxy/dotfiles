@@ -1,0 +1,17 @@
+name: PR Comment Scanner
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  scan-comments:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:      
+      - name: Run PR Comment Scanner
+        uses: A-Murchison/holla-at-your-boy@main
+        with:
+          comment-prefix: "!mention "  # Optional: customize your trigger

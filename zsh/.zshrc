@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 
 # Custom theme
-ZSH_THEME="zaid"
+ZSH_THEME="lambda"
 
 plugins=(
         git
@@ -12,11 +12,6 @@ plugins=(
        )
 
 source $ZSH/oh-my-zsh.sh
-
-# Make valid commands appear in blue for zsh-syntax-highlighting
-ZSH_HIGHLIGHT_STYLES[command]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=blue'
 
 # For lazygit and other apps to find config
 export XDG_CONFIG_HOME="$HOME/.config"

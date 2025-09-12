@@ -8,14 +8,13 @@ return {
         transparent_background = true,
         float = {
           transparent = true,
-          solid = true,
+          solid = false,
         },
         integrations = {
           snacks = true,
         },
       })
       vim.cmd("colorscheme catppuccin")
-      vim.cmd(":hi statusline guibg=NONE")
     end,
   },
 }

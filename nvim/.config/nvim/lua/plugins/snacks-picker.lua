@@ -69,6 +69,7 @@ return {
 	opts = {
 		picker = {
 			exclude = {
+        ".DS_Store",
 				".git",
 				"node_modules",
 				"ios",

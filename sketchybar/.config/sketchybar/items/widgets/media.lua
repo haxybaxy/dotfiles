@@ -3,7 +3,6 @@ local icons = require("config.icons")
 
 local MAX_TEXT_LENGTH = 40
 
-local current_playing = false
 local current_media_text = ""
 
 local function truncate_text(text)
@@ -33,26 +32,24 @@ media:subscribe("media_stream_changed", function(env)
   local title = env.title or ""
   local artist = env.artist or ""
   local playing = env.playing == "true"
-  
+
   if title ~= "" and title ~= "null" then
     local media_text = title
     if artist ~= "" and artist ~= "null" then
-      media_text = artist .. " - " .. title
+      media_text = title .. " - " ..  artist
     end
-    
+
     local display_text = truncate_text(media_text)
     current_media_text = display_text
-    current_playing = playing
-    
+
     local play_icon = playing and icons.text.media.pause or icons.text.media.play
-    
+
     media:set({
       icon = { string = play_icon },
       label = { string = display_text },
     })
   else
     -- No media playing
-    current_playing = false
     current_media_text = ""
     media:set({
       icon = { string = "" },
