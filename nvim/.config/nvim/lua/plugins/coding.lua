@@ -42,14 +42,14 @@ return {
 		{
 			"folke/todo-comments.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
-      config = function ()
-        require('nvim-highlight-colors').setup({})
-      end
 		},
 	},
 
 	{
 		"brenoprata10/nvim-highlight-colors",
+    opts = {
+      render = 'background',
+    }
 	},
 
 	{ -- render whitespace characters in visual mode
