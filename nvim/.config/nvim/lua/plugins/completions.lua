@@ -15,7 +15,14 @@ return {
 		"kristijanhusak/vim-dadbod-completion",
 	},
 	{
-		"github/copilot.vim", -- copilot
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({
+				keymaps = {
+					accept_suggestion = "<Right>",
+				},
+			})
+		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
