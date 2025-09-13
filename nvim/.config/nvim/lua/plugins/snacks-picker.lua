@@ -22,7 +22,7 @@ return {
 			win = {
 				preview = {
 					wo = {
-						number = false,
+						number = true,
 					},
 				},
 				input = {
