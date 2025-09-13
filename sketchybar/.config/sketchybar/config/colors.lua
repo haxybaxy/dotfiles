@@ -15,7 +15,7 @@ local colors = {
   dark_grey = 0xff2b2736,
   transparent = 0x00000000,
   bar = {
-    bg = 0x0d000000, -- as transparent as possible while still being clickable
+    bg = 0x1d000000, -- as transparent as possible while still being clickable
     border = 0xff2c2e34,
   },
   popup = {
