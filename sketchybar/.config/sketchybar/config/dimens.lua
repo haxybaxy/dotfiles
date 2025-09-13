@@ -11,7 +11,7 @@ local padding = {
 
 local graphics = {
   bar = {
-    height = 34,
+    height = 36,
     offset = 0,
   },
   background = {
