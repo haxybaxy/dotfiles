@@ -2,7 +2,7 @@ local padding = {
   background = 8,
   icon = 10,
   label = 8,
-  bar = 10,
+  bar = 0,
   left = 8,
   right = 8,
   item = 18,
@@ -11,12 +11,12 @@ local padding = {
 
 local graphics = {
   bar = {
-    height = 30,
-    offset = 4,
+    height = 34,
+    offset = 0,
   },
   background = {
     height = 24,
-    corner_radius = 8,
+    corner_radius = 0,
   },
   slider = {
     height = 20,
