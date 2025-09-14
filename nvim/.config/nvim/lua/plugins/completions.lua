@@ -18,6 +18,10 @@ return {
 		"supermaven-inc/supermaven-nvim",
 		config = function()
 			require("supermaven-nvim").setup({
+        condition = function()
+          return vim.bo.filetype == "oil"
+        end,
+
 				keymaps = {
 					accept_suggestion = "<Right>",
 				},
