@@ -11,7 +11,7 @@ return {
       },
       sections = {
         lualine_b = {},
-        lualine_x = { "filetype" },
+        lualine_x = {},
         lualine_y = { "branch" },
       },
     })
