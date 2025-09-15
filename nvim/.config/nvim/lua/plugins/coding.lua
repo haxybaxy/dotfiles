@@ -43,7 +43,9 @@ return {
 			"folke/todo-comments.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
       config = function ()
-        require('nvim-highlight-colors').setup({})
+        require('nvim-highlight-colors').setup({
+          render = 'background'
+        })
       end
 		},
 	},
