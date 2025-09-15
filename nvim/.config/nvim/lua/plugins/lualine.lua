@@ -10,7 +10,9 @@ return {
         always_divide_middle = false,
       },
       sections = {
+        lualine_b = {},
         lualine_x = { "filetype" },
+        lualine_y = { "branch" },
       },
     })
   end,

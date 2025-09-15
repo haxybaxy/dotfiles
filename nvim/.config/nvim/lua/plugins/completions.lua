@@ -15,7 +15,18 @@ return {
 		"kristijanhusak/vim-dadbod-completion",
 	},
 	{
-		"github/copilot.vim", -- copilot
+		"supermaven-inc/supermaven-nvim",
+		config = function()
+			require("supermaven-nvim").setup({
+        condition = function()
+          return vim.bo.filetype == "oil"
+        end,
+
+				keymaps = {
+					accept_suggestion = "<Right>",
+				},
+			})
+		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",

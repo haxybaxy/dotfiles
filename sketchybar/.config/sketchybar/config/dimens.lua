@@ -16,7 +16,7 @@ local graphics = {
   },
   background = {
     height = 24,
-    corner_radius = 5,
+    corner_radius = 0,
   },
   slider = {
     height = 20,
