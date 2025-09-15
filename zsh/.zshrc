@@ -66,3 +66,6 @@ export NVM_DIR="$HOME/.nvm"
 fpath=(/Users/zaidalsaheb/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
+
+# bun completions
+[ -s "/Users/zaidalsaheb/.bun/_bun" ] && source "/Users/zaidalsaheb/.bun/_bun"
