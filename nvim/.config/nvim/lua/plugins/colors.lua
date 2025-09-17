@@ -5,7 +5,6 @@ return {
 		priority = 999,
 		config = function()
 			require("kanagawa").setup({
-				transparent = true,
 				colors = {
 					theme = {
 						all = {
