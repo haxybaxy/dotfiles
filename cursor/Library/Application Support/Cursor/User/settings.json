@@ -42,9 +42,6 @@
     "vim.incsearch": true,
     "vim.smartRelativeLine": true,
     "vim.surround": true,
-    "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    },
     "vim.highlightedyank.enable": true,
 
     //Color theme
@@ -137,6 +134,6 @@
         "interval": 0,
         "random": false
     },
-    "workbench.preferredDarkColorTheme": "Catppuccin Mocha"
+    "workbench.preferredDarkColorTheme": "Kanagawa Wave"
 
 }

@@ -1,20 +1,22 @@
 return {
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    priority = 999,
-    config = function()
-      require("catppuccin").setup({
-        transparent_background = true,
-        float = {
-          transparent = true,
-          solid = false,
-        },
-        integrations = {
-          snacks = true,
-        },
-      })
-      vim.cmd("colorscheme catppuccin")
-    end,
-  },
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 999,
+		config = function()
+			require("kanagawa").setup({
+				transparent = true,
+				colors = {
+					theme = {
+						all = {
+							ui = {
+								bg_gutter = "none",
+							},
+						},
+					},
+				},
+			})
+			vim.cmd("colorscheme kanagawa")
+		end,
+	},
 }
