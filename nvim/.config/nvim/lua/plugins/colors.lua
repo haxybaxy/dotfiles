@@ -5,6 +5,7 @@ return {
 		priority = 999,
 		config = function()
 			require("kanagawa").setup({
+        transparent = true,
 				colors = {
 					theme = {
 						all = {
@@ -15,7 +16,7 @@ return {
 					},
 				},
 			})
-			vim.cmd("colorscheme kanagawa")
 		end,
 	},
+  { "catppuccin/nvim", lazy = false, priority = 999 },
 }

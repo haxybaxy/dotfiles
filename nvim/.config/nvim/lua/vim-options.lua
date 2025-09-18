@@ -18,21 +18,21 @@ vim.o.showmode = false -- Don't show mode since we have a statusline
 
 vim.o.cursorline = true -- Highlight the current line
 
-vim.o.showbreak="↪" -- Show a special character for wrapped lines
+vim.o.showbreak = "↪" -- Show a special character for wrapped lines
 
 vim.opt.termguicolors = true -- Enable true color support
 
 -- Yank to system clipboard in normal and visual mode with <leader>y
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
 
 -- Paste from system clipboard in normal mode and visual mode with <leader>p
-vim.keymap.set({ 'n', 'v', 'x' }, "<leader>p", '"+p', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
 -- tab new and tabclose keybinds
@@ -41,14 +41,25 @@ vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
 
 -- neovide gui settings with macOS keybinds
 if vim.g.neovide then
-  vim.defer_fn(function()
-    vim.cmd("NeovideFocus")
-  end, 25)
-  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+	vim.defer_fn(function()
+		vim.cmd("NeovideFocus")
+	end, 25)
+	vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
+	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
+	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
+-- in your init.lua
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		if vim.o.background == "dark" then
+			vim.cmd("colorscheme kanagawa")
+		else
+			vim.cmd("colorscheme catppuccin")
+		end
+	end,
+})

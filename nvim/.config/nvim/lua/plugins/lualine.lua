@@ -13,6 +13,7 @@ return {
         lualine_b = {},
         lualine_x = {},
         lualine_y = { "branch" },
+        lualine_z = { "progress" },
       },
     })
   end,
