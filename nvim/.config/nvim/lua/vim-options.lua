@@ -39,6 +39,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true })
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
 
+-- Allow recursive globbing (**)
+vim.opt.path:append("**")
+
+-- Ignore common junk directories when searching
+vim.opt.wildignore:append { "*/.git/*", "*/node_modules/*", "*/dist/*", "*/build/*" }
+
+
 -- neovide gui settings with macOS keybinds
 if vim.g.neovide then
 	vim.defer_fn(function()
@@ -52,7 +59,6 @@ if vim.g.neovide then
 	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
 
--- in your init.lua
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	callback = function()
