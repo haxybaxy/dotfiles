@@ -191,9 +191,5 @@
     "key": "shift+backspace",
     "command": "extension.vim_backspace",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "cmd+e",
-    "command": "composerMode.background"
-  },
+  }
 ]
