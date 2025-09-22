@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	callback = function()
 		if vim.o.background == "dark" then
-			vim.cmd("colorscheme rose-pine")
+			vim.cmd("colorscheme vscode")
 		else
 			vim.cmd("colorscheme catppuccin")
 		end
