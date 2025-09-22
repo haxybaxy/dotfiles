@@ -21,7 +21,7 @@ git_branch() {
   [[ -n $branch ]] && echo "${branch}${dirty} "
 }
 # prompt: use %F/%f (built-in color escapes) so we don't rely on $fg being set
-PROMPT='%~ %F{blue}$(git_branch)%fλ '
+PROMPT='λ %~ %F{blue}$(git_branch)%f'
 
 
 # For lazygit and other apps to find config
