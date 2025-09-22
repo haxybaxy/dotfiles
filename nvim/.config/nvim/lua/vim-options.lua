@@ -14,8 +14,6 @@ vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
-vim.o.showmode = false -- Don't show mode since we have a statusline
-
 vim.o.cursorline = true -- Highlight the current line
 
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
