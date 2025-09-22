@@ -1,21 +1,11 @@
 return {
 	{
-		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 999,
-		config = function()
-			require("kanagawa").setup({
-				colors = {
-					theme = {
-						all = {
-							ui = {
-								bg_gutter = "none",
-							},
-						},
-					},
-				},
-			})
-		end,
+		"rose-pine/neovim",
+    name = "rose-pine",
+		priority = 1000,
+		opts = {
+			dark_variant = "moon",
+		},
 	},
-  { "catppuccin/nvim", lazy = false, priority = 999 },
+	{ "catppuccin/nvim", lazy = false, priority = 999 },
 }

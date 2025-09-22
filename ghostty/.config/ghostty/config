@@ -3,7 +3,7 @@ macos-titlebar-style = hidden
 window-padding-y = 10
 window-padding-x = 10 
 
-theme =  dark:kanagawa-wave, light:Catppuccin Latte
+theme =  dark:Rose Pine Moon, light:Catppuccin Latte
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 16
