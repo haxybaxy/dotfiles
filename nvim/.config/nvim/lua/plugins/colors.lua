@@ -10,7 +10,7 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				float = {
-					transparent = true,
+					transparent = false,
 					solid = false,
 				},
 			})
