@@ -8,7 +8,6 @@ return {
     event = "VeryLazy",
     config = function()
       require("noice").setup({
-        cmdline_popup = {
           views = {
             cmdline_popup = {
               border = {
@@ -21,7 +20,6 @@ return {
               },
             },
           },
-        },
       })
     end,
     dependencies = {
