@@ -35,7 +35,6 @@
     "workbench.navigationControl.enabled": false,
     "workbench.activityBar.orientation": "vertical", //needs to be vertical to work in with ctrl+hjkl pane navigation
     "workbench.activityBar.location": "hidden",
-    "workbench.editor.showTabs": "single",
 
     
     //Vim Settings
@@ -125,15 +124,6 @@
     },
     "breadcrumbs.enabled": false,
 
-    "background.enabled": false,
-    "background.fullscreen": {
-        "images": ["file:///Users/zaidalsaheb/wallpapers/koipond.jpg"],
-        "opacity": 0.1,
-        "size": "cover",
-        "position": "center",
-        "interval": 0,
-        "random": false
-    },
-    "workbench.preferredDarkColorTheme": "Visual Studio Dark"
+    "workbench.preferredDarkColorTheme": "Default Dark Modern"
 
 }
