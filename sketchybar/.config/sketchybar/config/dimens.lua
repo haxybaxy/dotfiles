@@ -1,6 +1,6 @@
 local padding = {
   background = 8,
-  icon = 10,
+  icon = 8,
   label = 8,
   bar = 0,
   left = 8,
@@ -29,7 +29,7 @@ local graphics = {
 }
 
 local text ={
-  icon = 16.0,
+  icon = 14.0,
   label = 14.0,
 }
 
