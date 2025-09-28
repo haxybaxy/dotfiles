@@ -61,6 +61,8 @@ local function createSpaces()
 			icon = {
 				string = INACTIVE_ICON,
 				color = colors.white,
+        padding_right = 2,
+        padding_left= 2,
 			},
 			click_script = "aerospace workspace " .. i,
 		})
