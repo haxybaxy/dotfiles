@@ -12,6 +12,7 @@ return {
 				"ios",
 				"android",
 				"dist",
+        ".next"
 			},
 			ui_select = true,
 			hidden = true,
