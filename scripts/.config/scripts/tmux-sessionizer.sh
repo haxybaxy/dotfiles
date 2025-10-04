@@ -29,6 +29,8 @@
 # 
 # This allows quick switching between related subprojects (e.g., frontend/backend)
 # while maintaining access to all top-level projects.
+# 
+# Hope you like it!
 
 # Constants
 WORK_DIR="$HOME/work"
