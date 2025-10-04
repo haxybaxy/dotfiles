@@ -1,60 +1,100 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    # Get current session name if we're in tmux
-    current_session=""
-    if [[ -n $TMUX ]]; then
-        current_session=$(tmux display-message -p '#S')
-    fi
+# Constants
+WORK_DIR="$HOME/work"
+
+# Functions
+get_current_session() {
+    [[ -n $TMUX ]] && tmux display-message -p '#S'
+}
+
+find_work_directories() {
+    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+}
+
+sanitize_name() {
+    basename "$1" | tr . _
+}
+
+find_current_directory() {
+    local session_name=$1
+    local all_dirs=$2
     
-    # Find all directories
-    all_dirs=$(find ~/work -mindepth 1 -maxdepth 1 -type d)
-    
-    if [[ -n $current_session ]]; then
-        # Convert current session name back to directory path
-        current_dir=""
-        while IFS= read -r dir; do
-            dir_name=$(basename "$dir" | tr . _)
-            if [[ "$dir_name" == "$current_session" ]]; then
-                current_dir="$dir"
-                break
-            fi
-        done <<< "$all_dirs"
-        
-        # If we found the current directory, put it last, with others first
-        if [[ -n $current_dir ]]; then
-            other_dirs=$(echo "$all_dirs" | grep -v "^$current_dir$")
-            selected=$(printf "%s\n%s" "$other_dirs" "$current_dir" | sed "s|$HOME/||" | fzf --header="Current session: $current_session")
-        else
-            selected=$(echo "$all_dirs" | sed "s|$HOME/||" | fzf)
+    while IFS= read -r dir; do
+        if [[ "$(sanitize_name "$dir")" == "$session_name" ]]; then
+            echo "$dir"
+            return
         fi
-    else
-        selected=$(echo "$all_dirs" | fzf)
+    done <<< "$all_dirs"
+}
+
+select_directory_with_fzf() {
+    local current_session=$1
+    local all_dirs=$2
+    
+    if [[ -z $current_session ]]; then
+        echo "$all_dirs" | fzf
+        return
     fi
-fi
+    
+    local current_dir=$(find_current_directory "$current_session" "$all_dirs")
+    
+    if [[ -n $current_dir ]]; then
+        local other_dirs=$(echo "$all_dirs" | grep -v "^$current_dir$")
+        printf "%s\n%s" "$other_dirs" "$current_dir" | \
+            sed "s|$HOME/||" | \
+            fzf --header="Current session: $current_session"
+    else
+        echo "$all_dirs" | sed "s|$HOME/||" | fzf
+    fi
+}
 
-if [[ -z $selected ]]; then
-    exit 0
-fi
+ensure_session_exists() {
+    local session_name=$1
+    local directory=$2
+    
+    if ! tmux has-session -t="$session_name" 2>/dev/null; then
+        tmux new-session -ds "$session_name" -c "$directory"
+    fi
+}
 
-selected="$HOME/$selected"
+attach_or_switch_session() {
+    local session_name=$1
+    
+    if [[ -z $TMUX ]]; then
+        tmux attach -t "$session_name"
+    else
+        tmux switch-client -t "$session_name"
+    fi
+}
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
+# Main script
+main() {
+    local selected
+    
+    # Get selected directory
+    if [[ $# -eq 1 ]]; then
+        selected=$1
+    else
+        local current_session=$(get_current_session)
+        local all_dirs=$(find_work_directories)
+        selected=$(select_directory_with_fzf "$current_session" "$all_dirs")
+        
+        [[ -z $selected ]] && exit 0
+        selected="$HOME/$selected"
+    fi
+    
+    local selected_name=$(sanitize_name "$selected")
+    
+    # Handle tmux not running
+    if [[ -z $TMUX ]] && [[ -z $(pgrep tmux) ]]; then
+        tmux new-session -s "$selected_name" -c "$selected"
+        exit 0
+    fi
+    
+    # Ensure session exists and attach/switch to it
+    ensure_session_exists "$selected_name" "$selected"
+    attach_or_switch_session "$selected_name"
+}
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
-fi
-
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-fi
-
-if [[ -z $TMUX ]]; then
-    tmux attach -t $selected_name
-else
-    tmux switch-client -t $selected_name
-fi
+main "$@"
