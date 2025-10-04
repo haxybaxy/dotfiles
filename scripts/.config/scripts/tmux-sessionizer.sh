@@ -1,5 +1,35 @@
 #!/usr/bin/env bash
 
+# Haxybaxy's Tmux Sessionizer
+# 
+# This script helps navigate between tmux sessions based on project directories.
+# 
+# Basic behavior:
+# - Lists directories inside ~/work as options in a fuzzy picker (fzf)
+# - Creates or switches to a tmux session when you select a directory
+# - Current session is always placed at the bottom of the list for easy switching
+# 
+# Smart nested directory handling:
+# - If you're in a directory that only contains subdirectories (no files),
+#   those subdirectories are shown at the top of the picker
+# - If you're in a subdirectory whose parent only contains directories,
+#   all sibling directories are shown at the top
+# - Top-level ~/work directories are always available at the bottom of the list
+# 
+# Example structure:
+#   ~/work/
+#   ├── project1/
+#   └── project2/
+#       ├── project2-fe/
+#       └── project2-be/
+# 
+# Picker shows:
+# - When not in project2: project1, project2
+# - When in project2 or its subdirectories: project2-fe, project2-be, project1, project2
+# 
+# This allows quick switching between related subprojects (e.g., frontend/backend)
+# while maintaining access to all top-level projects.
+
 # Constants
 WORK_DIR="$HOME/work"
 
