@@ -8,12 +8,70 @@ get_current_session() {
     [[ -n $TMUX ]] && tmux display-message -p '#S'
 }
 
-find_work_directories() {
-    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
-}
-
 sanitize_name() {
     basename "$1" | tr . _
+}
+
+desanitize_to_path() {
+    local session_name=$1
+    find "$WORK_DIR" -mindepth 1 -maxdepth 2 -type d | while IFS= read -r dir; do
+        if [[ "$(sanitize_name "$dir")" == "$session_name" ]]; then
+            echo "$dir"
+            return
+        fi
+    done
+}
+
+has_only_directories() {
+    local dir=$1
+    # Check if directory has any non-directory items
+    local non_dirs=$(find "$dir" -mindepth 1 -maxdepth 1 ! -type d 2>/dev/null | wc -l)
+    [[ $non_dirs -eq 0 ]] && [[ -n "$(find "$dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]]
+}
+
+get_sibling_directories() {
+    local current_dir=$1
+    local parent_dir=$(dirname "$current_dir")
+    
+    find "$parent_dir" -mindepth 1 -maxdepth 1 -type d
+}
+
+find_work_directories() {
+    local current_session=$1
+    
+    # If not in a session, just show top-level directories
+    if [[ -z $current_session ]]; then
+        find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+        return
+    fi
+    
+    # Find the current directory from session name
+    local current_dir=$(desanitize_to_path "$current_session")
+    
+    if [[ -z $current_dir ]]; then
+        # Session doesn't match any directory, show top-level
+        find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+        return
+    fi
+    
+    local parent_dir=$(dirname "$current_dir")
+    
+    # Check if current directory only has subdirectories
+    if has_only_directories "$current_dir"; then
+        # Show subdirectories of current directory
+        find "$current_dir" -mindepth 1 -maxdepth 1 -type d
+        return
+    fi
+    
+    # Check if parent only has directories and parent is not work root
+    if [[ "$parent_dir" != "$WORK_DIR" ]] && has_only_directories "$parent_dir"; then
+        # Show sibling directories (including current)
+        get_sibling_directories "$current_dir"
+        return
+    fi
+    
+    # Default: show top-level directories
+    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
 }
 
 find_current_directory() {
@@ -77,7 +135,7 @@ main() {
         selected=$1
     else
         local current_session=$(get_current_session)
-        local all_dirs=$(find_work_directories)
+        local all_dirs=$(find_work_directories "$current_session")
         selected=$(select_directory_with_fzf "$current_session" "$all_dirs")
         
         [[ -z $selected ]] && exit 0
