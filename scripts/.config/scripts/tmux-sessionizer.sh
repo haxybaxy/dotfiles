@@ -36,12 +36,16 @@ get_sibling_directories() {
     find "$parent_dir" -mindepth 1 -maxdepth 1 -type d
 }
 
+get_top_level_directories() {
+    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+}
+
 find_work_directories() {
     local current_session=$1
     
     # If not in a session, just show top-level directories
     if [[ -z $current_session ]]; then
-        find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+        get_top_level_directories
         return
     fi
     
@@ -50,28 +54,30 @@ find_work_directories() {
     
     if [[ -z $current_dir ]]; then
         # Session doesn't match any directory, show top-level
-        find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+        get_top_level_directories
         return
     fi
     
     local parent_dir=$(dirname "$current_dir")
+    local top_level_dirs=$(get_top_level_directories)
+    local context_dirs=""
     
     # Check if current directory only has subdirectories
     if has_only_directories "$current_dir"; then
         # Show subdirectories of current directory
-        find "$current_dir" -mindepth 1 -maxdepth 1 -type d
-        return
-    fi
-    
+        context_dirs=$(find "$current_dir" -mindepth 1 -maxdepth 1 -type d)
     # Check if parent only has directories and parent is not work root
-    if [[ "$parent_dir" != "$WORK_DIR" ]] && has_only_directories "$parent_dir"; then
+    elif [[ "$parent_dir" != "$WORK_DIR" ]] && has_only_directories "$parent_dir"; then
         # Show sibling directories (including current)
-        get_sibling_directories "$current_dir"
-        return
+        context_dirs=$(get_sibling_directories "$current_dir")
     fi
     
-    # Default: show top-level directories
-    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+    # If we have context directories, show them first, then top-level
+    if [[ -n $context_dirs ]]; then
+        printf "%s\n%s" "$context_dirs" "$top_level_dirs"
+    else
+        echo "$top_level_dirs"
+    fi
 }
 
 find_current_directory() {
