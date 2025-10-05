@@ -6,6 +6,6 @@ window-padding-x = 10
 
 theme =  dark:vscode-dark, light:Catppuccin Latte
 
-font-family = "IosevkaTerm Nerd Font"
+font-family = "ZedMono Nerd Font"
 font-size = 16
 
