@@ -38,25 +38,6 @@ return {
 		},
 	},
 
-	{ -- highlight todo comments like FIXME, TODO, etc.
-			"folke/todo-comments.nvim",
-			dependencies = { "nvim-lua/plenary.nvim" },
-	},
-
-	{
-		"brenoprata10/nvim-highlight-colors",
-    opts = {
-      render = 'background',
-    }
-	},
-
-	{ -- render whitespace characters in visual mode
-		"mcauley-penney/visual-whitespace.nvim",
-		config = true,
-		event = "ModeChanged *:[vV\22]",
-		opts = {},
-	},
-
 	{ -- wakatime integration
 		"wakatime/vim-wakatime",
 		lazy = false,
