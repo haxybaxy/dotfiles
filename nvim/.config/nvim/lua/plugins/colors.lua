@@ -1,5 +1,5 @@
 return {
-	{
+	{ -- dark mode
 		"Mofiqul/vscode.nvim",
 		priority = 1000,
 	},
