@@ -1,5 +1,5 @@
-local layouts = require("plugins.snacks_picker.layouts").layouts
-local sources = require("plugins.snacks_picker.sources").sources
+local layouts = require("plugins.snacks-picker.layouts").layouts
+local sources = require("plugins.snacks-picker.sources").sources
 
 return {
 	"folke/snacks.nvim",
