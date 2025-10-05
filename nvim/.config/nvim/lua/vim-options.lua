@@ -35,7 +35,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- tab new and tabclose keybinds
 vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true })
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true })
+
+-- Leader + t + number to go to tab 1–8, Leader + t + 0 goes to last tab
+for i = 1, 8 do
+  vim.keymap.set("n", "<leader>t" .. i, "<Cmd>tabnext " .. i .. "<CR>", { desc = "Go to tab " .. i })
+end
+vim.keymap.set("n", "<leader>t0", "<Cmd>tablast<CR>", { desc = "Go to last tab" })
+
 
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
