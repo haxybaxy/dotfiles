@@ -13,18 +13,18 @@ return {
 		require("tabby.tabline").set(function(line)
 			return {
 				{
-					{ "  ", hl = theme.head },
-					line.sep("", theme.head, theme.fill), -- 
+					{ "   ", hl = theme.head },
+					line.sep("", theme.head, theme.fill), -- 
 				},
 				line.tabs().foreach(function(tab)
 					local hl = tab.is_current() and theme.current_tab or theme.tab
 					return {
-						line.sep("", hl, theme.fill), -- 
-						tab.is_current() and "" or "",
+						line.sep("", hl, theme.fill), -- 
+						tab.is_current() and " " or " ",
 						tab.number(),
 						tab.name(),
 						-- tab.close_btn(''), -- show a close button
-						line.sep("", hl, theme.fill), -- 
+						line.sep("", hl, theme.fill), -- 
 						hl = hl,
 						margin = " ",
 					}
@@ -32,7 +32,7 @@ return {
 
 				line.spacer(),
 				{
-					line.sep("", theme.tail, theme.fill), -- 
+					line.sep("", theme.tail, theme.fill), -- 
 					{ "  ", hl = theme.tail },
 				},
 				hl = theme.fill,
