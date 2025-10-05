@@ -1,60 +1,196 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    # Get current session name if we're in tmux
-    current_session=""
-    if [[ -n $TMUX ]]; then
-        current_session=$(tmux display-message -p '#S')
-    fi
-    
-    # Find all directories
-    all_dirs=$(find ~/work -mindepth 1 -maxdepth 1 -type d)
-    
-    if [[ -n $current_session ]]; then
-        # Convert current session name back to directory path
-        current_dir=""
-        while IFS= read -r dir; do
-            dir_name=$(basename "$dir" | tr . _)
-            if [[ "$dir_name" == "$current_session" ]]; then
-                current_dir="$dir"
-                break
-            fi
-        done <<< "$all_dirs"
-        
-        # If we found the current directory, put it last, with others first
-        if [[ -n $current_dir ]]; then
-            other_dirs=$(echo "$all_dirs" | grep -v "^$current_dir$")
-            selected=$(printf "%s\n%s" "$other_dirs" "$current_dir" | sed "s|$HOME/||" | fzf --header="Current session: $current_session")
-        else
-            selected=$(echo "$all_dirs" | sed "s|$HOME/||" | fzf)
+# Haxybaxy's Tmux Sessionizer
+# 
+# This script helps navigate between tmux sessions based on project directories.
+# 
+# Basic behavior:
+# - Lists directories inside ~/work as options in a fuzzy picker (fzf)
+# - Creates or switches to a tmux session when you select a directory
+# - Current session is always placed at the bottom of the list for easy switching
+# 
+# Smart nested directory handling:
+# - If you're in a directory that only contains subdirectories (no files),
+#   those subdirectories are shown at the top of the picker
+# - If you're in a subdirectory whose parent only contains directories,
+#   all sibling directories are shown at the top
+# - Top-level ~/work directories are always available at the bottom of the list
+# 
+# Example structure:
+#   ~/work/
+#   ├── project1/
+#   └── project2/
+#       ├── project2-fe/
+#       └── project2-be/
+# 
+# Picker shows:
+# - When not in project2: project1, project2
+# - When in project2 or its subdirectories: project2-fe, project2-be, project1, project2
+# 
+# This allows quick switching between related subprojects (e.g., frontend/backend)
+# while maintaining access to all top-level projects.
+# 
+# Hope you like it!
+
+# Constants
+WORK_DIR="$HOME/work"
+
+# Functions
+get_current_session() {
+    [[ -n $TMUX ]] && tmux display-message -p '#S'
+}
+
+sanitize_name() {
+    basename "$1" | tr . _
+}
+
+desanitize_to_path() {
+    local session_name=$1
+    find "$WORK_DIR" -mindepth 1 -maxdepth 2 -type d | while IFS= read -r dir; do
+        if [[ "$(sanitize_name "$dir")" == "$session_name" ]]; then
+            echo "$dir"
+            return
         fi
-    else
-        selected=$(echo "$all_dirs" | fzf)
+    done
+}
+
+has_only_directories() {
+    local dir=$1
+    # Check if directory has any non-directory items
+    local non_dirs=$(find "$dir" -mindepth 1 -maxdepth 1 ! -type d 2>/dev/null | wc -l)
+    [[ $non_dirs -eq 0 ]] && [[ -n "$(find "$dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]]
+}
+
+get_sibling_directories() {
+    local current_dir=$1
+    local parent_dir=$(dirname "$current_dir")
+    
+    find "$parent_dir" -mindepth 1 -maxdepth 1 -type d
+}
+
+get_top_level_directories() {
+    find "$WORK_DIR" -mindepth 1 -maxdepth 1 -type d
+}
+
+find_work_directories() {
+    local current_session=$1
+    
+    # If not in a session, just show top-level directories
+    if [[ -z $current_session ]]; then
+        get_top_level_directories
+        return
     fi
-fi
+    
+    # Find the current directory from session name
+    local current_dir=$(desanitize_to_path "$current_session")
+    
+    if [[ -z $current_dir ]]; then
+        # Session doesn't match any directory, show top-level
+        get_top_level_directories
+        return
+    fi
+    
+    local parent_dir=$(dirname "$current_dir")
+    local top_level_dirs=$(get_top_level_directories)
+    local context_dirs=""
+    
+    # Check if current directory only has subdirectories
+    if has_only_directories "$current_dir"; then
+        # Show subdirectories of current directory
+        context_dirs=$(find "$current_dir" -mindepth 1 -maxdepth 1 -type d)
+    # Check if parent only has directories and parent is not work root
+    elif [[ "$parent_dir" != "$WORK_DIR" ]] && has_only_directories "$parent_dir"; then
+        # Show sibling directories (including current)
+        context_dirs=$(get_sibling_directories "$current_dir")
+    fi
+    
+    # If we have context directories, show them first, then top-level
+    if [[ -n $context_dirs ]]; then
+        printf "%s\n%s" "$context_dirs" "$top_level_dirs"
+    else
+        echo "$top_level_dirs"
+    fi
+}
 
-if [[ -z $selected ]]; then
-    exit 0
-fi
+find_current_directory() {
+    local session_name=$1
+    local all_dirs=$2
+    
+    while IFS= read -r dir; do
+        if [[ "$(sanitize_name "$dir")" == "$session_name" ]]; then
+            echo "$dir"
+            return
+        fi
+    done <<< "$all_dirs"
+}
 
-selected="$HOME/$selected"
+select_directory_with_fzf() {
+    local current_session=$1
+    local all_dirs=$2
+    
+    if [[ -z $current_session ]]; then
+        echo "$all_dirs" | fzf
+        return
+    fi
+    
+    local current_dir=$(find_current_directory "$current_session" "$all_dirs")
+    
+    if [[ -n $current_dir ]]; then
+        local other_dirs=$(echo "$all_dirs" | grep -v "^$current_dir$")
+        printf "%s\n%s" "$other_dirs" "$current_dir" | \
+            sed "s|$HOME/||" | \
+            fzf --header="Current session: $current_session"
+    else
+        echo "$all_dirs" | sed "s|$HOME/||" | fzf
+    fi
+}
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
+ensure_session_exists() {
+    local session_name=$1
+    local directory=$2
+    
+    if ! tmux has-session -t="$session_name" 2>/dev/null; then
+        tmux new-session -ds "$session_name" -c "$directory"
+    fi
+}
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    exit 0
-fi
+attach_or_switch_session() {
+    local session_name=$1
+    
+    if [[ -z $TMUX ]]; then
+        tmux attach -t "$session_name"
+    else
+        tmux switch-client -t "$session_name"
+    fi
+}
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-fi
+# Main script
+main() {
+    local selected
+    
+    # Get selected directory
+    if [[ $# -eq 1 ]]; then
+        selected=$1
+    else
+        local current_session=$(get_current_session)
+        local all_dirs=$(find_work_directories "$current_session")
+        selected=$(select_directory_with_fzf "$current_session" "$all_dirs")
+        
+        [[ -z $selected ]] && exit 0
+        selected="$HOME/$selected"
+    fi
+    
+    local selected_name=$(sanitize_name "$selected")
+    
+    # Handle tmux not running
+    if [[ -z $TMUX ]] && [[ -z $(pgrep tmux) ]]; then
+        tmux new-session -s "$selected_name" -c "$selected"
+        exit 0
+    fi
+    
+    # Ensure session exists and attach/switch to it
+    ensure_session_exists "$selected_name" "$selected"
+    attach_or_switch_session "$selected_name"
+}
 
-if [[ -z $TMUX ]]; then
-    tmux attach -t $selected_name
-else
-    tmux switch-client -t $selected_name
-fi
+main "$@"

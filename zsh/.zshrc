@@ -32,12 +32,6 @@ if [[ -n $SSH_CONNECTION ]]; then
   export TERM='xterm-256color'
 fi
 
-# Better cd 
-if [ -z "$DISABLE_ZOXIDE" ]; then
-  eval "$(zoxide init zsh)"
-  alias cd="z"
-fi
-
 # Better ls
 alias ls="lsd"
 
@@ -57,6 +51,10 @@ alias lg="lazygit"
 
 # Env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
+
+bindkey -e
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
 
 # Fzf ignore paths
 export FZF_ALT_C_OPTS="
@@ -87,3 +85,12 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # path config
 export PATH="$HOME/.local/bin:$PATH"
+
+# Better cd 
+if [ -z "$DISABLE_ZOXIDE" ]; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

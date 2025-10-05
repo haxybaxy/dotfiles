@@ -1,9 +1,9 @@
 return {
-	{
+	{ -- dark mode
 		"Mofiqul/vscode.nvim",
 		priority = 1000,
 	},
-	{
+	{ -- light mode
 		"catppuccin/nvim",
 		lazy = false,
 		priority = 999,

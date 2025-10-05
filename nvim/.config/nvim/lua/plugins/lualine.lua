@@ -12,7 +12,7 @@ return {
       sections = {
         lualine_b = { "diagnostics" },
         lualine_x = {
-          {
+          { -- when using noice, add this section to show macro recording status
             require("noice").api.status.mode.get,
             cond = require("noice").api.status.mode.has,
           },
