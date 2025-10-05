@@ -91,3 +91,6 @@ if [ -z "$DISABLE_ZOXIDE" ]; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
