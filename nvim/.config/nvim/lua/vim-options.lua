@@ -18,7 +18,6 @@ vim.o.showbreak = "↪" -- Show a special character for wrapped lines
 
 vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
 
-
 vim.opt.termguicolors = true -- Enable true color support
 
 vim.o.showmode = false -- Don't show mode since we have a statusline
