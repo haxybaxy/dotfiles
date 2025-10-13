@@ -13,7 +13,7 @@ return {
 		require("tabby.tabline").set(function(line)
 			return {
 				{
-					{ "   ", hl = theme.head },
+					-- { "   ", hl = theme.head },
 					line.sep("", theme.head, theme.fill), -- 
 				},
 				line.tabs().foreach(function(tab)
@@ -33,7 +33,7 @@ return {
 				line.spacer(),
 				{
 					line.sep("", theme.tail, theme.fill), -- 
-					{ "  ", hl = theme.tail },
+					-- { "  ", hl = theme.tail },
 				},
 				hl = theme.fill,
 			}
