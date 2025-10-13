@@ -4,7 +4,7 @@ macos-option-as-alt = left
 window-padding-y = 10
 window-padding-x = 10 
 
-theme =  dark:Rose Pine Moon, light:Catppuccin Latte
+theme =  dark:Rose Pine Moon, light: Rose Pine Dawn
 
 font-family = "BlexMono Nerd Font"
 font-size = 16

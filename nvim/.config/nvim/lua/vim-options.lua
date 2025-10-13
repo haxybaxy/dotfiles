@@ -65,14 +65,3 @@ if vim.g.neovide then
 	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
 	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
 end
-
-vim.api.nvim_create_autocmd("OptionSet", {
-	pattern = "background",
-	callback = function()
-		if vim.o.background == "dark" then
-			vim.cmd("colorscheme rose-pine")
-		else
-			vim.cmd("colorscheme catppuccin")
-		end
-	end,
-})
