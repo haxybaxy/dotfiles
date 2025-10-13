@@ -4,11 +4,11 @@
     "git.autofetch": true,
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 14,
-    "editor.fontFamily": "'IosevkaTerm Nerd Font', Monaco, 'Courier New', monospace",
-    "editor.codeLensFontFamily": "'IosevkaTerm Nerd Font', Monaco, 'Courier New', monospace",
-    "editor.inlayHints.fontFamily": "'IosevkaTerm Nerd Font', Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontFamily": "'IosevkaTerm Nerd Font', Monaco, 'Courier New', monospace",
-    "notebook.output.fontFamily": "'IosevkaTerm Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.codeLensFontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.inlayHints.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "notebook.output.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
     "workbench.editor.editorActionsLocation": "hidden",
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily"
@@ -124,6 +124,6 @@
     },
     "breadcrumbs.enabled": false,
 
-    "workbench.preferredDarkColorTheme": "Default Dark Modern"
+    "workbench.preferredDarkColorTheme": "Rosé Pine Moon"
 
 }
