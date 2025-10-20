@@ -22,11 +22,11 @@ vim.opt.termguicolors = true -- Enable true color support
 
 vim.o.showmode = false -- Don't show mode since we have a statusline
 
--- Yank to system clipboard in normal and visual mode with <leader>y
-vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>')
+vim.keymap.set({ "n", "v", "x" }, "<leader>h", ':noh<CR>', {desc = "Disable highlight for last search"})
 
--- Paste from system clipboard in normal mode and visual mode with <leader>p
-vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>', {desc = "Yank to system clipboard"})
+
+vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from system clipboard" })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -35,11 +35,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- tab new and tabclose keybinds
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true })
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true })
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true, desc = "New Tab"})
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true, desc = "Close Tab" })
 
--- Leader + t + number to go to tab 1–8, Leader + t + 0 goes to last tab
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>" .. i, "<Cmd>tabnext " .. i .. "<CR>", { desc = "Go to tab " .. i })
 end

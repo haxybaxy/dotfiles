@@ -10,7 +10,7 @@ return {
 		explorer = { enabled = true },
 		terminal = { enabled = true },
 		input = { enabled = true },
-		image = { enabled = true },
+		image = { enabled = true, doc = { inline = false } },
 		statuscolumn = { enabled = true },
 		notifier = {
 			enabled = true,
@@ -18,9 +18,8 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader><space>", function() Snacks.picker.recent() end, desc = "Recent", },
+		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
 		{ "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
-		{ "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep", },
 		{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
 		{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
 		{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
