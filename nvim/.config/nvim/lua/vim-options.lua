@@ -24,7 +24,7 @@ vim.o.showmode = false -- Don't show mode since we have a statusline
 
 vim.keymap.set({ "n", "v", "x" }, "<leader>h", ':noh<CR>', {desc = "Disable highlight for last search"})
 
-vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y<CR>', {desc = "Yank to system clipboard"})
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y', {desc = "Yank to system clipboard"})
 
 vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from system clipboard" })
 
