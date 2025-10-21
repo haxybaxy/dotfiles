@@ -1,8 +1,8 @@
 return {
 
-  { -- Diffview for viewing git diffs
-	"sindrets/diffview.nvim",
-  },
+	{ -- Diffview for viewing git diffs
+		"sindrets/diffview.nvim",
+	},
 
 	{ -- Octo.nvim for GitHub integration
 		"pwntester/octo.nvim",
@@ -20,6 +20,33 @@ return {
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
+
+				on_attach = function(bufnr) --keybinds go here
+					local gitsigns = require("gitsigns")
+
+					local function map(mode, l, r, opts) -- added map function since other keybinds may depend on this if I add them in the future
+						opts = opts or {}
+						opts.buffer = bufnr
+						vim.keymap.set(mode, l, r, opts)
+					end
+
+					map("n", "]c", function()
+						if vim.wo.diff then
+							vim.cmd.normal({ "]c", bang = true })
+						else
+							gitsigns.nav_hunk("next")
+						end
+					end)
+
+					map("n", "[c", function()
+						if vim.wo.diff then
+							vim.cmd.normal({ "[c", bang = true })
+						else
+							gitsigns.nav_hunk("prev")
+						end
+					end)
+				end,
+
 				signs = {
 					add = { text = "┃" },
 					change = { text = "┃" },
