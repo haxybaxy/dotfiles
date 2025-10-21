@@ -19,8 +19,8 @@ return {
 	},
 	keys = {
 		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
-		{ "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files", },
-		{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers", },
+		{ "<leader>f", function() Snacks.picker.files() end, desc = "Find Files", },
+		{ "<leader>bf", function() Snacks.picker.buffers() end, desc = "Buffers", },
 		{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
 		{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
 		{ "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
