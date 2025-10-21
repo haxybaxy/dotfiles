@@ -19,6 +19,7 @@ return {
 	keys = {
 		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
 		{ "<leader>f", function() Snacks.picker.files() end, desc = "Find Files", },
+		{ "<leader>r", function() Snacks.picker.recent() end, desc = "Recent", },
 		{ "<leader>bf", function() Snacks.picker.buffers() end, desc = "Buffers", },
 		{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
 		{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
