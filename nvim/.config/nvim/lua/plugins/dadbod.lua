@@ -12,7 +12,7 @@ return {
 	},
 	init = function()
 		vim.g.db_ui_use_nerd_fonts = 1
-    vim.g.omni_sql_no_default_maps = 1
+    vim.g.omni_sql_no_default_maps = 1 --interferes with right arrow mapping, check :h sql-completion-columns
 
 	end,
 }
