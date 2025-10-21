@@ -146,13 +146,13 @@ return {
         capabilities = capabilities,
       })
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})                -- show info in a hover
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})  -- go to definition
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})  -- go to references
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}) -- perform code action
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})      -- rename symbol
-      vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}) -- go to type definition
-      vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, {}) -- show diagnostics
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info in a hover" })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Perform code action" })
+      vim.keymap.set("n", "<leader>gn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+      vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+      vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, { desc = "Show diagnostics" })
     end,
   },
 }
