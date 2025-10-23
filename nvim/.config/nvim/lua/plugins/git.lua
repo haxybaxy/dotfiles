@@ -36,7 +36,7 @@ return {
 						else
 							gitsigns.nav_hunk("next")
 						end
-					end)
+					end, { desc = "Next git hunk in buffer" })
 
 					map("n", "[c", function()
 						if vim.wo.diff then
@@ -44,7 +44,7 @@ return {
 						else
 							gitsigns.nav_hunk("prev")
 						end
-					end)
+					end, { desc = "Previous git hunk in buffer" })
 				end,
 
 				signs = {
