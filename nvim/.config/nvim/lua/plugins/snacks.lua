@@ -1,3 +1,6 @@
+local picker_config = require("plugins.snacks.picker-config")
+local dashboard_config = require("plugins.snacks.dashboard-config")
+
 return {
 	---@module "snacks"
 	"folke/snacks.nvim",
@@ -15,6 +18,8 @@ return {
 			enabled = true,
 			timeout = 3000,
 		},
+		picker = picker_config.picker,
+		dashboard = dashboard_config.dashboard,
 	},
 	keys = {
 		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },

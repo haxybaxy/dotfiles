@@ -1,4 +1,4 @@
-local utils = require("plugins.snacks-picker.utils")
+local utils = require("plugins.snacks.snacks-picker.utils")
 
 local M = {}
 
