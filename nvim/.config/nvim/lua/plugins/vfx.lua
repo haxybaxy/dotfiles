@@ -39,6 +39,24 @@ return {
         desc = "Buffer Local Keymaps (which-key)",
       },
     },
+    config = function()
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>t", group = "tabs" },
+        { "<leader>tn", desc = "New Tab" },
+        { "<leader>tx", desc = "Close Tab" },
+        { "<leader>1", desc = "Tab 1", hidden = true },
+        { "<leader>2", desc = "Tab 2", hidden = true },
+        { "<leader>3", desc = "Tab 3", hidden = true },
+        { "<leader>4", desc = "Tab 4", hidden = true },
+        { "<leader>5", desc = "Tab 5", hidden = true },
+        { "<leader>6", desc = "Tab 6", hidden = true },
+        { "<leader>7", desc = "Tab 7", hidden = true },
+        { "<leader>8", desc = "Tab 8", hidden = true },
+        { "<leader>9", desc = "Tab 9", hidden = true },
+        { "<leader>0", desc = "Last Tab", hidden = true },
+      })
+    end,
   },
   { -- better looking window separators
     "nvim-zh/colorful-winsep.nvim",
