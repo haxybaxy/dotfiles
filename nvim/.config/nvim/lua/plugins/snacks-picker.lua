@@ -13,7 +13,8 @@ return {
 				"android",
 				"dist",
         ".next",
-        "venv"
+        "venv",
+        ".expo"
 			},
 			ui_select = true,
 			hidden = true,
