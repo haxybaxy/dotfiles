@@ -13,7 +13,8 @@ M.picker = {
 		"dist",
 		".next",
 		"venv",
-		".expo"
+		".expo",
+    "__pycache__",
 	},
 	ui_select = true,
 	hidden = true,

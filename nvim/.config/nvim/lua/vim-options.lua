@@ -26,7 +26,7 @@ vim.o.showmode = false -- Don't show mode since we have a statusline
 vim.opt.path:append("**")
 
 -- Ignore common junk directories when searching
-vim.opt.wildignore:append { "*/.git/*", "*/node_modules/*", "*/dist/*", "*/build/*" }
+vim.opt.wildignore:append { "*/.git/*", "*/node_modules/*", "*/dist/*", "*/build/*", "*/venv/*", "*/__pycache__/*", "*.egg-info/*", "*/.next/*", "*/ios/*", "*/android/*", "*/.expo/*"}
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
