@@ -14,12 +14,21 @@ return {
 		input = { enabled = true },
 		image = { enabled = true, doc = { inline = false } },
 		statuscolumn = { enabled = true },
+    zen = {
+      enabled = true,
+      toggles = { dim = false},
+    },
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
 		picker = picker_config.picker,
 		dashboard = dashboard_config.dashboard,
+    styles = {
+      zen = {
+        backdrop = { transparent = false, blend = 99 },
+      }
+    }
 	},
 	keys = {
 		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
@@ -33,5 +42,6 @@ return {
 		{ "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
 		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications", },
 		{ "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History", },
+    { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
 	},
 }
