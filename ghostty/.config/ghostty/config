@@ -4,7 +4,7 @@ macos-option-as-alt = left
 window-padding-y = 10
 window-padding-x = 10 
 
-theme =  dark:TokyoNight Night, light:TokyoNight Day 
+theme =  dark:TokyoNight Storm, light:TokyoNight Day 
 
 font-family = "BlexMono Nerd Font"
 font-size = 16
