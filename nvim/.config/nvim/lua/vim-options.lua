@@ -37,8 +37,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 --Keybinds should go under here
 --Tab keybinds
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true, desc = "New Tab"})
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true, desc = "Close Tab" })
+vim.keymap.set("n", "<leader>tn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab"})
+vim.keymap.set("n", "<leader>tx", "<Cmd>tabclose<CR>", { silent = true, desc = "Close Tab" })
 
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>" .. i, "<Cmd>tabnext " .. i .. "<CR>", { desc = "Go to tab " .. i })
@@ -50,11 +50,11 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y', {desc = "Yank to system cl
 vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from system clipboard" })
 
 -- Remove search highlights
-vim.keymap.set({ "n", "v", "x" }, "<leader>h", ':noh<CR>', {desc = "Disable highlight for last search"})
+vim.keymap.set({ "n", "v", "x" }, "<leader>h", '<Cmd>noh<CR>', {desc = "Disable highlight for last search"})
 
 -- QOL quick exit and Save
-vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true, desc = "Save" })
-vim.keymap.set("n", "<leader>q", ":wq<CR>", { silent = true, desc = "Save and quit" })
+vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { silent = true, desc = "Save" })
+vim.keymap.set("n", "<leader>q", "<Cmd>wq<CR>", { silent = true, desc = "Save and quit" })
 
 
 -- neovide gui settings with macOS keybinds
