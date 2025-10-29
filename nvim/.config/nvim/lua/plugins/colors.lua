@@ -3,9 +3,7 @@ return {
   priority = 1000,
   config = function()
     require("tokyonight").setup({
-      style = "night",
+      style = "storm",
       light_style = "day",
     })
-    vim.cmd("colorscheme tokyonight")
-  end,
-}
+    vim.cmd("colorscheme tokyonight") end, }
