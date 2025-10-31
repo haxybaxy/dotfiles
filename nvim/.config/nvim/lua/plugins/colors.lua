@@ -6,6 +6,4 @@ return {
       style = "storm",
       light_style = "day",
     })
-    vim.cmd("colorscheme tokyonight")
-  end,
-}
+    vim.cmd("colorscheme tokyonight") end, }

@@ -131,6 +131,10 @@ if.app-id = 'md.obisidian'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
+if.app-id = 'com.linear'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
 if.app-id = 'come.linear'
 run = 'move-node-to-workspace 3'
 
