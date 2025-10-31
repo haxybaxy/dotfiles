@@ -3,6 +3,25 @@ command = "typescript-language-server"
 args = ["--stdio"]
 config.hostInfo = "helix"
 
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = "./node_modules"
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
 [language-server.typescript-language-server.config.typescript.inlayHints]
 includeInlayEnumMemberValueHints = true
 includeInlayFunctionLikeReturnTypeHints = true
@@ -23,10 +42,10 @@ includeInlayVariableTypeHints = true
 
 [[language]]
 name = "typescript"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server" ]
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
