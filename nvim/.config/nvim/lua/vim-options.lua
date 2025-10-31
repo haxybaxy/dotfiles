@@ -12,7 +12,7 @@ vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
-vim.o.cursorline = true -- Highlight the current line
+-- vim.o.cursorline = true -- Highlight the current line
 
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
 
@@ -22,7 +22,7 @@ vim.opt.termguicolors = true -- Enable true color support
 
 vim.o.showmode = false -- Don't show mode since we have a statusline
 
-vim.o.splitright = true
+vim.o.splitright = true -- vsplit to the right
 
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
