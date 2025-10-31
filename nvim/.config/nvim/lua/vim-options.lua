@@ -22,6 +22,8 @@ vim.opt.termguicolors = true -- Enable true color support
 
 vim.o.showmode = false -- Don't show mode since we have a statusline
 
+vim.o.splitright = true
+
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
 
