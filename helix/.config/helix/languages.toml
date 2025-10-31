@@ -20,3 +20,13 @@ includeInlayParameterNameHints = "all"
 includeInlayParameterNameHintsWhenArgumentMatchesName = true
 includeInlayPropertyDeclarationTypeHints = true
 includeInlayVariableTypeHints = true
+
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+
+[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
