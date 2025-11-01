@@ -89,6 +89,7 @@ local apps = {
 	["Systemeinstellungen"] = ":gear:",
 	["系统设置"] = ":gear:",
 	["Réglages Système"] = ":gear:",
+	["GitHub"] = ":git_hub:",
 	["GitHub Desktop"] = ":git_hub:",
 	["Godot"] = ":godot:",
 	["GoLand"] = ":goland:",
