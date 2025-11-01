@@ -20,7 +20,6 @@ vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
 
 vim.opt.termguicolors = true -- Enable true color support
 
-vim.o.showmode = false -- Don't show mode since we have a statusline
 
 vim.o.splitright = true
 
@@ -36,6 +35,20 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- nicer diagnostic indicators
+local signs = {
+  Error = "●",
+  Warn = "●",
+  Hint = "●",
+  Info = "●"
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
 
 --Keybinds should go under here
 --Tab keybinds
