@@ -20,8 +20,9 @@ vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
 
 vim.opt.termguicolors = true -- Enable true color support
 
+vim.o.showmode = false -- Don't show mode since we have a statusline
 
-vim.o.splitright = true
+vim.o.splitright = true -- always split windows to the right
 
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
