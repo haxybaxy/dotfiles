@@ -16,7 +16,7 @@ local function mode_text()
 		v = "VIS",
 		V = "V-LINE",
 		[""] = "V-BLOCK",
-		c = "COMMAND",
+		c = "COM",
 		R = "REPLACE",
 	}
 	return mode_name[mode] or mode
