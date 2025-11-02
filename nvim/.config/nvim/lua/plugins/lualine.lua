@@ -1,11 +1,11 @@
 local mode_color = {
-  n = '#7aa2f7',  -- Normal (blue)
-  i = '#9ece6a',  -- Insert (green)
-  v = '#bb9af7',  -- Visual (purple)
-  V = '#bb9af7',  -- Visual Line
-  [''] = '#bb9af7', -- Visual Block
-  R = '#f7768e',  -- Replace (red)
-  c = '#e0af68',  -- Command (yellow)
+	n = "#7aa2f7", -- Normal (blue)
+	i = "#9ece6a", -- Insert (green)
+	v = "#bb9af7", -- Visual (purple)
+	V = "#bb9af7", -- Visual Line
+	[""] = "#bb9af7", -- Visual Block
+	R = "#f7768e", -- Replace (red)
+	c = "#e0af68", -- Command (yellow)
 }
 
 local function mode_text()
@@ -73,16 +73,34 @@ return {
 						end,
 					},
 				},
-        lualine_b = {'filename'},
-				lualine_c = { "diagnostics" },
+				lualine_b = { { "filename", path = 1 } },
+        lualine_c = {},
 				lualine_x = {
 					{ -- when using noice, add this section to show macro recording status
 						require("noice").api.status.mode.get,
 						cond = require("noice").api.status.mode.has,
 					},
 				},
-				lualine_y = { "branch" },
-				lualine_z = { "progress" },
+				lualine_y = {
+					{
+						"diagnostics",
+						sources = { "nvim_diagnostic" },
+						symbols = {
+							error = "● ",
+							warn = "● ",
+							info = "● ",
+							hint = "● ",
+						},
+						diagnostics_color = {
+							error = { fg = "#e06c75" },
+							warn = { fg = "#e5c07b" },
+							info = { fg = "#61afef" },
+							hint = { fg = "#56b6c2" },
+						},
+					},
+					"branch",
+				},
+				lualine_z = { "location" },
 			},
 		})
 	end,
