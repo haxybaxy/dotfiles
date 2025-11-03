@@ -7,7 +7,6 @@ return {
         style = "night",
         light_style = "day",
       })
-      vim.cmd("colorscheme tokyonight")
     end,
   },
   {
@@ -21,14 +20,11 @@ return {
     end,
   },
   {
-    "sainnhe/gruvbox-material",
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.gruvbox_material_foreground = "default"
-      vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_enable_bold = true
-      vim.g.gruvbox_material_enable_italic = true
+      vim.cmd("colorscheme nightfox")
     end,
   },
 }

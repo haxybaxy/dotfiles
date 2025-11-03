@@ -49,7 +49,25 @@ M.sources = {
     include = { ".*", "hidden", "ignored" },
     layout = {
       layout = {
+        backdrop = 80,
         position = "right",
+        border = "none",
+        box = "vertical",
+        wo = {
+          winhighlight = "WinSeparator:SnacksPickerList",
+        },
+        {
+          win = "input",
+          height = 1,
+          border = "solid",
+          title = "{title} {live} {flags}",
+          title_pos = "center",
+          wo = {
+            winhighlight = "NormalFloat:SnacksPickerList,FloatBorder:SnacksPickerList,FloatTitle:SnacksPickerList",
+          },
+        },
+        { win = "list",    border = "none" },
+        { win = "preview", title = "{preview}", height = 0.4, border = "top" },
       },
     },
   },

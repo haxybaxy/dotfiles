@@ -34,6 +34,7 @@ return {
 		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
 		{ "<leader>f", function() Snacks.picker.files() end, desc = "Find Files", },
 		{ "<leader>r", function() Snacks.picker.recent() end, desc = "Recent", },
+		-- { "<leader>j", function() Snacks.picker.highlights({pattern = "hl_group:^Snacks"}) end, desc = "Recent", },
     { "<leader>gd", function() Snacks.picker.lsp_definitions() end, desc = "LSP Definitions", },
     { "<leader>gr", function() Snacks.picker.lsp_references() end, desc = "LSP References", },
 		{ "<leader>bf", function() Snacks.picker.buffers() end, desc = "Buffers", },
