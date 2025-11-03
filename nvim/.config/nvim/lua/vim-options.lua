@@ -56,7 +56,6 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.WARN] = "WarningMsg",
     },
   },
-  virtual_text = true,
   underline = true,
   update_in_insert = false,
 })
