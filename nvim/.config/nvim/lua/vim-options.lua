@@ -50,7 +50,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-
 --Keybinds should go under here
 --Tab keybinds
 vim.keymap.set("n", "<leader>tn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab"})

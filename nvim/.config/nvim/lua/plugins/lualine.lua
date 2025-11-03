@@ -73,7 +73,7 @@ return {
 						end,
 					},
 				},
-				lualine_b = { { "filename", path = 1 } },
+				lualine_b = { {"filename"} },
         lualine_c = {},
 				lualine_x = {
 					{ -- when using noice, add this section to show macro recording status

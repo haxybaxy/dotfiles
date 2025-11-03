@@ -1,4 +1,4 @@
-return {
+return
   {
     "folke/tokyonight.nvim",
     priority = 1000,
@@ -6,25 +6,8 @@ return {
       require("tokyonight").setup({
         style = "night",
         light_style = "day",
+        vim.cmd("colorscheme tokyonight-night"),
+        vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#16161E", bg = "#16161E" }),
       })
     end,
-  },
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    config = function()
-      require("rose-pine").setup({
-        variant = "auto",
-        dark_variant = "moon",
-      })
-    end,
-  },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd("colorscheme nightfox")
-    end,
-  },
-}
+  }
