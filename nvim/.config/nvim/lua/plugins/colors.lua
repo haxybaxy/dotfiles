@@ -1,21 +1,14 @@
 return {
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				style = "night",
-				light_style = "day",
-				transparent = true,
-			})
-			vim.cmd("colorscheme tokyonight")
-		end,
-	},
-	{
-		-- lua/plugins/rose-pine.lua
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-		end,
-	},
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        style = "night",
+        light_style = "day",
+        transparent = true,
+      })
+      vim.cmd("colorscheme tokyonight")
+    end,
+  },
 }
