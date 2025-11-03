@@ -4,18 +4,6 @@ return {
 		"sindrets/diffview.nvim",
 	},
 
-	{ -- Octo.nvim for GitHub integration
-		"pwntester/octo.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"folke/snacks.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {
-			picker = "snacks",
-		},
-	},
-
 	{ -- Git signs for showing git changes in the gutter
 		"lewis6991/gitsigns.nvim",
 		config = function()

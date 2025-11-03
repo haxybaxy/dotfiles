@@ -12,9 +12,9 @@ vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
-vim.o.cursorline = true -- Highlight the current line
-
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
+
+vim.o.scrolloff = 4 -- start scrolling 4 lines from bottom
 
 vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
 
@@ -36,6 +36,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- nicer diagnostic indicators
+local signs = {
+  Error = "●",
+  Warn = "●",
+  Hint = "●",
+  Info = "●"
+}
+
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 --Keybinds should go under here
 --Tab keybinds

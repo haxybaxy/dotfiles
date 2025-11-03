@@ -47,11 +47,7 @@ M.sources = {
 
   explorer = {
     include = { ".*", "hidden", "ignored" },
-    layout = {
-      layout = {
-        position = "right",
-      },
-    },
+    layout = { preset = "explorer" },
   },
 }
 

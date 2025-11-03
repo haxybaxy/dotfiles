@@ -58,11 +58,6 @@ return {
       })
     end,
   },
-  { -- better looking window separators
-    "nvim-zh/colorful-winsep.nvim",
-    config = true,
-    event = { "WinLeave" },
-  },
 
   { -- highlight todo comments like FIXME, TODO, etc.
     "folke/todo-comments.nvim",
