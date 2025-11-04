@@ -14,6 +14,8 @@ vim.o.wrap = false -- Disable line wrapping
 
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
 
+vim.o.cursorline = true -- highlight current line
+
 vim.o.scrolloff = 4 -- start scrolling 4 lines from bottom
 
 vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
@@ -38,18 +40,36 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- nicer diagnostic indicators
-local signs = {
-  Error = "●",
-  Warn = "●",
-  Hint = "●",
-  Info = "●"
+vim.diagnostic.config({
+  signs = {
+    -- define text icons per severity
+    text = {
+      [vim.diagnostic.severity.ERROR] = "●",
+      [vim.diagnostic.severity.WARN] = "●",
+      [vim.diagnostic.severity.HINT] = "●",
+      [vim.diagnostic.severity.INFO] = "●",
+    },
+    linehl = {
+      [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+    },
+    numhl = {
+      [vim.diagnostic.severity.WARN] = "WarningMsg",
+    },
+  },
+  underline = true,
+  update_in_insert = false,
+})
+
+-- hide all separators
+vim.opt.fillchars = {
+  vert = " ",      -- vertical separator
+  vertleft = " ",  -- for left separators
+  vertright = " ", -- for right separators
+  horiz = " ",     -- horizontal separator
+  horizup = " ",   -- for top separators
+  horizdown = " ", -- for bottom separators
+  eob = " ",       -- hide end-of-buffer tildes
 }
-
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
 --Keybinds should go under here
 --Tab keybinds
 vim.keymap.set("n", "<leader>tn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab"})

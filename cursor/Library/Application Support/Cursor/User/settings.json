@@ -123,7 +123,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "breadcrumbs.enabled": false,
-
-    "workbench.preferredDarkColorTheme": "Tokyo Night Storm"
+    "workbench.preferredDarkColorTheme": "Tokyo Night"
 
 }

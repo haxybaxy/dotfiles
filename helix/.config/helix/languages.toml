@@ -1,7 +1,17 @@
-[language-server.typescript-language-server]
-command = "typescript-language-server"
-args = ["--stdio"]
-config.hostInfo = "helix"
+# Python
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+language-servers = [ "ruff", "basedpyright" ]
+auto-format = true
+
+#typescript
+[language-server]
+deno = { command = "deno", args = [ "lsp" ]}
+emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
 
 [language-server.eslint]
 command = "vscode-eslint-language-server"
@@ -10,7 +20,7 @@ args = ["--stdio"]
 [language-server.eslint.config]
 codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
 format = { enable = true }
-nodePath = "./node_modules"
+nodePath = ""
 quiet = false
 rulesCustomizations = []
 run = "onType"
@@ -22,39 +32,54 @@ problems = { shortenToSingleLine = false }
 disableRuleComment = { enable = true, location = "separateLine" }
 showDocumentation = { enable = false }
 
-[language-server.typescript-language-server.config.typescript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = true
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = true
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
 
-[language-server.typescript-language-server.config.javascript.inlayHints]
-includeInlayEnumMemberValueHints = true
-includeInlayFunctionLikeReturnTypeHints = true
-includeInlayFunctionParameterTypeHints = true
-includeInlayParameterNameHints = "all"
-includeInlayParameterNameHintsWhenArgumentMatchesName = true
-includeInlayPropertyDeclarationTypeHints = true
-includeInlayVariableTypeHints = true
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
 
 [[language]]
 name = "typescript"
-language-servers = [ "typescript-language-server", "eslint" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "eslint" ]
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-
-[language-server.ruff]
-command = "ruff"
-args = ["server"]
+auto-format = true
 
 [[language]]
-name = "python"
-language-servers = [ "ruff", "basedpyright" ]
+name = "javascript"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
+formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = [ "--parser", "json" ] }
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "emmet-ls" ]
+formatter = { command = 'prettier', args = ["--parser", "css"] }
 auto-format = true

@@ -1,11 +1,11 @@
 local mode_color = {
-	n = "#7aa2f7", -- Normal (blue)
-	i = "#9ece6a", -- Insert (green)
-	v = "#bb9af7", -- Visual (purple)
-	V = "#bb9af7", -- Visual Line
-	[""] = "#bb9af7", -- Visual Block
-	R = "#f7768e", -- Replace (red)
-	c = "#e0af68", -- Command (yellow)
+	n = "#FFFFFF", -- Normal (blue)
+	i = "#FFFFFF", -- Insert (green)
+	v = "#FFFFFF", -- Visual (purple)
+	V = "#FFFFFF", -- Visual Line
+	[""] = "#FFFFFF", -- Visual Block
+	R = "#FFFFFF", -- Replace (red)
+	c = "#FFFFFF", -- Command (yellow)
 }
 
 local function mode_text()
