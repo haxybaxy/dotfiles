@@ -1,13 +1,3 @@
-local mode_color = {
-	n = "#FFFFFF", -- Normal (blue)
-	i = "#FFFFFF", -- Insert (green)
-	v = "#FFFFFF", -- Visual (purple)
-	V = "#FFFFFF", -- Visual Line
-	[""] = "#FFFFFF", -- Visual Block
-	R = "#FFFFFF", -- Replace (red)
-	c = "#FFFFFF", -- Command (yellow)
-}
-
 local function mode_text()
 	local mode = vim.fn.mode()
 	local mode_name = {
@@ -30,29 +20,29 @@ return {
 			options = {
 				theme = {
 					normal = {
-						a = { fg = "#ffffff", bg = "none" },
-						b = { fg = "#ffffff", bg = "none" },
-						c = { fg = "#ffffff", bg = "none" },
+						a = { bg = "none" },
+						b = { bg = "none" },
+						c = { bg = "none" },
 					},
 					insert = {
-						a = { fg = "#ffffff", bg = "none" },
-						b = { fg = "#ffffff", bg = "none" },
-						c = { fg = "#ffffff", bg = "none" },
+						a = { bg = "none" },
+						b = { bg = "none" },
+						c = { bg = "none" },
 					},
 					visual = {
-						a = { fg = "#ffffff", bg = "none" },
-						b = { fg = "#ffffff", bg = "none" },
-						c = { fg = "#ffffff", bg = "none" },
+						a = { bg = "none" },
+						b = { bg = "none" },
+						c = { bg = "none" },
 					},
 					replace = {
-						a = { fg = "#ffffff", bg = "none" },
-						b = { fg = "#ffffff", bg = "none" },
-						c = { fg = "#ffffff", bg = "none" },
+						a = { bg = "none" },
+						b = { bg = "none" },
+						c = { bg = "none" },
 					},
 					command = {
-						a = { fg = "#ffffff", bg = "none" },
-						b = { fg = "#ffffff", bg = "none" },
-						c = { fg = "#ffffff", bg = "none" },
+						a = { bg = "none" },
+						b = { bg = "none" },
+						c = { bg = "none" },
 					},
 					inactive = {
 						a = { fg = "#888888", bg = "none" },
@@ -69,7 +59,7 @@ return {
 					{
 						mode_text,
 						color = function()
-							return { fg = mode_color[vim.fn.mode()] or "#ffffff", bg = "none" }
+							return { bg = "none" }
 						end,
 					},
 				},
