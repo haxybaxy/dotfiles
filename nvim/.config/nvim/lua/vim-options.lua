@@ -49,12 +49,6 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.HINT] = "●",
       [vim.diagnostic.severity.INFO] = "●",
     },
-    linehl = {
-      [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-    },
-    numhl = {
-      [vim.diagnostic.severity.WARN] = "WarningMsg",
-    },
   },
   underline = true,
   update_in_insert = false,
@@ -90,17 +84,3 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>h", '<Cmd>noh<CR>', {desc = "Disable 
 -- QOL quick exit and Save
 vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { silent = true, desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<Cmd>wq<CR>", { silent = true, desc = "Save and quit" })
-
-
--- neovide gui settings with macOS keybinds
-if vim.g.neovide then
-	vim.defer_fn(function()
-		vim.cmd("NeovideFocus")
-	end, 25)
-	vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-	vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-	vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-	vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-	vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-	vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
-end
