@@ -2,6 +2,7 @@ local picker_config = require("plugins.snacks.picker-config")
 local dashboard_config = require("plugins.snacks.dashboard-config")
 local lazygit_config = require("plugins.snacks.lazygit-config")
 local input_config = require("plugins.snacks.input-config")
+local zen_config = require("plugins.snacks.zen-config")
 local highlights = require("plugins.snacks.highlights")
 
 return {
@@ -15,10 +16,6 @@ return {
     explorer = { enabled = true },
     image = { enabled = true, doc = { inline = false } },
     statuscolumn = { enabled = true },
-    zen = {
-      enabled = true,
-      toggles = { dim = false },
-    },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -27,12 +24,8 @@ return {
     lazygit = lazygit_config.lazygit,
     picker = picker_config.picker,
     dashboard = dashboard_config.dashboard,
+    zen = zen_config.zen,
 
-    styles = {
-      zen = {
-        backdrop = { transparent = false, blend = 99 },
-      },
-    },
   },
    config = function(_, opts)
      require("snacks").setup(opts)
