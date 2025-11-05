@@ -24,7 +24,6 @@ return {
         dark_style = "night",
         light_style = "dawn",
       })
-      vim.cmd.colorscheme("oasis")
     end,
   },
   {
@@ -45,6 +44,7 @@ return {
     config = function()
       vim.g.gruvbox_material_enable_bold = true
       vim.g.gruvbox_material_enable_italic = true
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
