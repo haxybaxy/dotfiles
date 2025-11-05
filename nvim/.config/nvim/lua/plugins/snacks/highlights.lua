@@ -10,6 +10,7 @@ M.highlight_map = {
   SnacksInputNormal = "StatusLine",
   SnacksPickerCol = "StatusLine",
   SnacksPickerPrompt = "StatusLine",
+  SnacksInputTitle = "SnacksPickerList",
 }
 
 -- Apply custom highlight groups for Snacks components

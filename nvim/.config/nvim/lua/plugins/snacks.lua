@@ -1,7 +1,8 @@
 local picker_config = require("plugins.snacks.picker-config")
 local dashboard_config = require("plugins.snacks.dashboard-config")
-local highlights = require("plugins.snacks.highlights")
 local lazygit_config = require("plugins.snacks.lazygit-config")
+local input_config = require("plugins.snacks.input-config")
+local highlights = require("plugins.snacks.highlights")
 
 return {
   ---@module "snacks"
@@ -12,10 +13,8 @@ return {
     bigfile = { enabled = true },
     quickfle = { enabled = true },
     explorer = { enabled = true },
-    input = { enabled = true },
     image = { enabled = true, doc = { inline = false } },
     statuscolumn = { enabled = true },
-    lazygit = lazygit_config.lazygit,
     zen = {
       enabled = true,
       toggles = { dim = false },
@@ -24,8 +23,11 @@ return {
       enabled = true,
       timeout = 3000,
     },
+    input =  input_config.input,
+    lazygit = lazygit_config.lazygit,
     picker = picker_config.picker,
     dashboard = dashboard_config.dashboard,
+
     styles = {
       zen = {
         backdrop = { transparent = false, blend = 99 },
