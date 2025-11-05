@@ -47,4 +47,20 @@ return {
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History", },
     { "<leader>z", function() Snacks.zen() end, desc = "Toggle Zen Mode", },
   },
+  init = function()
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "VeryLazy",
+      callback = function()
+        Snacks.toggle.inlay_hints():map("<leader>uh")
+        Snacks.toggle .new({ id = "git_signs", name = " Git Sign Column", get = function()
+          return require("gitsigns.config").config.signcolumn
+          end,
+          set = function(state)
+            require("gitsigns").toggle_signs(state)
+          end,
+        })
+        :map("<leader>ug")
+          end,
+        })
+  end,
 }
