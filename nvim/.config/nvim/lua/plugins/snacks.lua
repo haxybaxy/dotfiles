@@ -42,6 +42,7 @@ return {
     { "<leader>f", function() Snacks.picker.files() end, desc = "Find Files", },
     { "<leader>r", function() Snacks.picker.recent() end, desc = "Recent", },
     { "<leader>gd", function() Snacks.picker.lsp_definitions() end, desc = "LSP Definitions", },
+    { "<leader>j", function() Snacks.picker.highlights({pattern = "hl_group:^Snacks"}) end, desc = "Highlight Groups", },
     { "<leader>gr", function() Snacks.picker.lsp_references() end, desc = "LSP References", },
     { "<leader>bf", function() Snacks.picker.buffers() end, desc = "Buffers", },
     { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },

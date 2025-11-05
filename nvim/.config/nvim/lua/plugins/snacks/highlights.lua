@@ -7,6 +7,9 @@ function M.apply_snacks_highlights()
 		"SnacksPickerPickWin",
 		"SnacksPickerPickWinCurrent",
 		"SnacksPickerBorder",
+		"SnacksPickerTree",
+    "SnacksInputNormal",
+    "SnacksPickerCol"
 	}
 	for _, hl_group in ipairs(highlights) do
 		vim.api.nvim_set_hl(0, hl_group, { link = "StatusLine" })
