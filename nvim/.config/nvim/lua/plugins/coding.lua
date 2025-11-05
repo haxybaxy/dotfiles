@@ -1,49 +1,83 @@
 return {
-  { -- manipulate surrounding characters
-    "tpope/vim-surround",
-  },
+	{ -- manipulate surrounding characters
+		"tpope/vim-surround",
+	},
 
-  { -- better commenting with treesitter
-    "folke/ts-comments.nvim",
-    opts = {},
-    event = "VeryLazy",
-    enabled = vim.fn.has("nvim-0.10.0") == 1,
-  },
+	{ -- better commenting with treesitter
+		"folke/ts-comments.nvim",
+		opts = {},
+		event = "VeryLazy",
+		enabled = vim.fn.has("nvim-0.10.0") == 1,
+	},
 
-  { -- auto closing brackets
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-  },
+	{ -- auto closing brackets
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"abecodes/tabout.nvim",
+		lazy = false,
+		config = function()
+			require("tabout").setup({
+				tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
+				backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
+				act_as_tab = true, -- shift content if tab out is not possible
+				act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+				default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+				default_shift_tab = "<C-d>", -- reverse shift default action,
+				enable_backwards = true, -- well ...
+				completion = false, -- if the tabkey is used in a completion pum
+				tabouts = {
+					{ open = "'", close = "'" },
+					{ open = '"', close = '"' },
+					{ open = "`", close = "`" },
+					{ open = "(", close = ")" },
+					{ open = "[", close = "]" },
+					{ open = "{", close = "}" },
+				},
+				ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+				exclude = {}, -- tabout will ignore these filetypes
+			})
+		end,
+		dependencies = { -- These are optional
+			"nvim-treesitter/nvim-treesitter",
+			"L3MON4D3/LuaSnip",
+			"hrsh7th/nvim-cmp",
+		},
+		opt = true, -- Set this to true if the plugin is optional
+		event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
+		priority = 1000,
+	},
 
-  { -- auto close html tags
-    "windwp/nvim-ts-autotag",
-    config = function()
-      require("nvim-ts-autotag").setup({
-        opts = {
-          enable_close = true,
-          enable_rename = true,
-          enable_close_on_slash = false,
-        },
-      })
-    end,
-  },
+	{ -- auto close html tags
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup({
+				opts = {
+					enable_close = true,
+					enable_rename = true,
+					enable_close_on_slash = false,
+				},
+			})
+		end,
+	},
 
-  { -- better % command and highlight matching tag
-    "andymass/vim-matchup",
-    opts = {
-      treesitter = {
-        stopline = 500,
-      },
-    },
-  },
+	{ -- better % command and highlight matching tag
+		"andymass/vim-matchup",
+		opts = {
+			treesitter = {
+				stopline = 500,
+			},
+		},
+	},
 
-  { -- prettify TS errors
-    "chrisgrieser/nvim-rulebook",
-  },
+	{ -- prettify TS errors
+		"chrisgrieser/nvim-rulebook",
+	},
 
-  { -- wakatime integration
-    "wakatime/vim-wakatime",
-    lazy = false,
-  },
+	{ -- wakatime integration
+		"wakatime/vim-wakatime",
+		lazy = false,
+	},
 }
