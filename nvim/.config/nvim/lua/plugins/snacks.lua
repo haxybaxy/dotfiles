@@ -13,35 +13,120 @@ return {
 		input = { enabled = true },
 		image = { enabled = true, doc = { inline = false } },
 		statuscolumn = { enabled = true },
-    zen = {
-      enabled = true,
-      toggles = { dim = false},
-    },
+		lazygit = {
+			theme = {
+         [241]                      = { fg = "SnacksPickerList" },
+				earchingActiveBorderColor = { fg = "PmenuSel", bold = true },
+				selectedLineBgColor = { bg = "PmenuSel" },
+			},
+       win = {
+         backdrop = false,
+  wo = {
+ winhighlight = "Normal:SnacksDashboardNormal,NormalFloat:SnacksDashboardNormal",
+        }
+      },
+		},
+		zen = {
+			enabled = true,
+			toggles = { dim = false },
+		},
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
 		picker = picker_config.picker,
 		dashboard = dashboard_config.dashboard,
-    styles = {
-      zen = {
-        backdrop = { transparent = false, blend = 99 },
-      }
-    }
+		styles = {
+			zen = {
+				backdrop = { transparent = false, blend = 99 },
+			},
+		},
 	},
 	keys = {
-		{ "<leader><space>", function() Snacks.picker.grep() end, desc = "Ripgrep", },
-		{ "<leader>f", function() Snacks.picker.files() end, desc = "Find Files", },
-		{ "<leader>r", function() Snacks.picker.recent() end, desc = "Recent", },
+		{
+			"<leader><space>",
+			function()
+				Snacks.picker.grep()
+			end,
+			desc = "Ripgrep",
+		},
+		{
+			"<leader>f",
+			function()
+				Snacks.picker.files()
+			end,
+			desc = "Find Files",
+		},
+		{
+			"<leader>r",
+			function()
+				Snacks.picker.recent()
+			end,
+			desc = "Recent",
+		},
 		-- { "<leader>j", function() Snacks.picker.highlights({pattern = "hl_group:^Snacks"}) end, desc = "Recent", },
-    { "<leader>gd", function() Snacks.picker.lsp_definitions() end, desc = "LSP Definitions", },
-    { "<leader>gr", function() Snacks.picker.lsp_references() end, desc = "LSP References", },
-		{ "<leader>bf", function() Snacks.picker.buffers() end, desc = "Buffers", },
-		{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer", },
-		{ "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer", },
-		{ "<leader>lg", function() Snacks.lazygit() end, desc = "Lazygit", },
-		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications", },
-		{ "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notification History", },
-    { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
+		{
+			"<leader>gd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "LSP Definitions",
+		},
+		{
+			"<leader>gr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			desc = "LSP References",
+		},
+		{
+			"<leader>bf",
+			function()
+				Snacks.picker.buffers()
+			end,
+			desc = "Buffers",
+		},
+		{
+			"<leader>e",
+			function()
+				Snacks.explorer()
+			end,
+			desc = "File Explorer",
+		},
+		{
+			"<leader>bd",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Buffer",
+		},
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
+		{
+			"<leader>un",
+			function()
+				Snacks.notifier.hide()
+			end,
+			desc = "Dismiss All Notifications",
+		},
+		{
+			"<leader>n",
+			function()
+				Snacks.notifier.show_history()
+			end,
+			desc = "Notification History",
+		},
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
+		},
 	},
 }

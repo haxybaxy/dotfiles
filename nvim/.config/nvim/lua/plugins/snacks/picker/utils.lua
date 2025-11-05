@@ -59,7 +59,7 @@ function M.get_window_relative_flow_config()
 			title = "{title} {live} {flags}",
 			title_pos = "center",
 			wo = {
-				winhighlight = "Normal:SnacksPickerList,NormalNC:SnacksPickerList,WinBar:SnacksPickerList,WinBarNC:SnacksPickerList,FloatTitle:SnacksPickerList,FloatFooter:SnacksPickerList,WinSeparator:SnacksPickerList",
+				winhighlight = "Normal:StatusLine,NormalNC:Statusline,WinBar:StatusLine,WinBarNC:StatusLine,FloatTitle:StatusLine,FloatFooter:StatusLine,WinSeparator:StatusLine",
 			},
 			{ win = "preview", title = "{preview}", width = 0.6, border = "left" },
 			{
@@ -67,7 +67,7 @@ function M.get_window_relative_flow_config()
 				height = 1,
 				border = "solid",
 				wo = {
-					winhighlight = "NormalFloat:SnacksPickerList,FloatBorder:SnacksPickerList,FloatTitle:SnacksPickerList",
+					winhighlight = "NormalFloat:StatusLine,FloatBorder:StatusLine,FloatTitle:StatusLine",
 				},
 			},
 			{ win = "list", border = "none" },
