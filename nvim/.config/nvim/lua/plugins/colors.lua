@@ -1,14 +1,11 @@
 return {
   {
-    "uhs-robert/oasis.nvim",
+    "EdenEast/nightfox.nvim",
     lazy = false,
     priority = 1000,
-  --   config = function()
-  --     require("oasis").setup({
-  --       dark_style = "night", -- Optional: Choose any style like `lagoon` or 'dune'.
-  --       light_style = "dawn"
-  --     })
-  --   end,
+    config = function()
+      vim.cmd("colorscheme nightfox")
+    end,
   },
   {
     "folke/tokyonight.nvim",
@@ -17,9 +14,8 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "night",
-        light_style = "day"
+        light_style = "day",
       })
-      vim.cmd("colorscheme tokyonight")
     end,
-  }
+  },
 }
