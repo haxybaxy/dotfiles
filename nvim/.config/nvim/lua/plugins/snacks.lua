@@ -4,7 +4,6 @@ local dashboard_config = require("plugins.snacks.dashboard-config")
 return {
 	---@module "snacks"
 	"folke/snacks.nvim",
-	priority = 1000,
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
