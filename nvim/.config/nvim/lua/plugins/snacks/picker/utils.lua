@@ -71,7 +71,7 @@ function M.get_window_relative_flow_config()
           winhighlight = "NormalFloat:StatusLine,FloatBorder:StatusLine,FloatTitle:StatusLine",
         },
       },
-      { win = "list",    border = "none" },
+      { win = "list", border = "none" },
     },
   }
 end
