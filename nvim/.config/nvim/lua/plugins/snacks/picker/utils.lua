@@ -58,6 +58,9 @@ function M.get_window_relative_flow_config()
 			border = "solid",
 			title = "{title} {live} {flags}",
 			title_pos = "center",
+			wo = {
+				winhighlight = "Normal:SnacksPickerList,NormalNC:SnacksPickerList,WinBar:SnacksPickerList,WinBarNC:SnacksPickerList,FloatTitle:SnacksPickerList,FloatFooter:SnacksPickerList,WinSeparator:SnacksPickerList",
+			},
 			{ win = "preview", title = "{preview}", width = 0.6, border = "left" },
 			{
 				win = "input",
