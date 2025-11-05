@@ -28,13 +28,6 @@ return {
     },
   },
 
-  -- { -- nice line decorations
-  --   "mvllow/modes.nvim",
-  --   tag = "v0.2.1",
-  --   config = function()
-  --     require("modes").setup()
-  --   end,
-  -- },
 
   { -- keybind reminders + show marks and registers
     "folke/which-key.nvim",
