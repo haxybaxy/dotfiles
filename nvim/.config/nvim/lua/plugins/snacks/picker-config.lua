@@ -15,6 +15,9 @@ M.picker = {
     "venv",
     ".expo",
     "__pycache__",
+    "yarn.lock",
+    ".yarn",
+    ".ruff_cache"
   },
   ui_select = true,
   hidden = true,
