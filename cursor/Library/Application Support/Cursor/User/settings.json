@@ -123,6 +123,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "breadcrumbs.enabled": false,
-    "workbench.preferredDarkColorTheme": "Tokyo Night"
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark"
 
 }
