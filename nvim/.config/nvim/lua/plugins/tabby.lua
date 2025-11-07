@@ -5,7 +5,7 @@ return {
 			fill = "TabLineFill",
 			current_tab = "TabLine",
 			tab = "NonText",
-			bookmark = "BookMarkLine",
+			line_sep = "Cursor",
 		}
 
 		require("tabby.tabline").set(function(line)
@@ -14,7 +14,7 @@ return {
 					local hl = tab.is_current() and theme.current_tab or theme.tab
 					local left_sep
 					if tab.is_current() then
-						left_sep = line.sep("▎", theme.tab, theme.current_tab)
+						left_sep = line.sep("▎", theme.line_sep, theme.current_tab)
 					else
 						left_sep = line.sep("▎", theme.fill, theme.fill)
 					end
@@ -23,7 +23,7 @@ return {
 						left_sep,
 						tab.number(),
 						tab.name(),
-						line.sep(" ", hl, theme.fill), -- trailing spacer for the tab
+						line.sep(" ", hl, theme.fill),
 						hl = hl,
 						margin = " ",
 					}
