@@ -21,22 +21,23 @@ return {
 				require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
 				require("none-ls.formatting.ruff_format"),
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
+				null_ls.builtins.formatting.prettier,
 			},
-			-- on_attach = function(client, bufnr) -- Add formatting on save
-			--   -- Enable format on save if the LSP supports it
-			--   if client.supports_method("textDocument/formatting") then
-			--     local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-			--     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			--     vim.api.nvim_create_autocmd("BufWritePre", {
-			--       group = augroup,
-			--       buffer = bufnr,
-			--       callback = function()
-			--         vim.lsp.buf.format({ bufnr = bufnr })
-			--       end,
-			--     })
-			--   end
-			-- end,
+
+			on_attach = function(client, bufnr) -- Add formatting on save
+				-- Enable format on save if the LSP supports it
+				if client.supports_method("textDocument/formatting") then
+					local augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format({ bufnr = bufnr })
+						end,
+					})
+				end
+			end,
 		})
 
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format code with LSP" })
