@@ -56,6 +56,20 @@ bindkey -e
 bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
 
+# take out and bring back programs
+function fancy-ctrl-z() {
+  if [[ -z $BUFFER ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # Fzf ignore paths
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
