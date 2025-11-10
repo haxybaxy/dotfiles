@@ -1,9 +1,21 @@
 add_newline = false
 
+format = "$character$directory$git_status"
+
+# move the rest of the prompt to the right
+right_format = "$all$git_branch"
+
+[directory]
+style = 'cyan'
+truncate_to_repo = false
+
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[λ](bold green)'
+success_symbol = '[λ](bold)'
+error_symbol = '[󰱬](bold red)'
 
 [git_branch]
+style = 'blue'
+format = ' [$symbol$branch(:$remote_branch)]($style)'
 symbol = " "
 
 [git_status]
@@ -12,3 +24,6 @@ behind = ""
 conflicted = ""
 renamed = ""
 deleted = ""
+
+[cmd_duration]
+format = 'took [$duration]($style)'
