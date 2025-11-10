@@ -8,20 +8,20 @@ setopt PROMPT_SUBST
 
 autoload -U colors && colors
 # helper: print branch if we're inside a git repo
-git_branch() {
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
-  local branch dirty
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || branch=$(git rev-parse --short --verify HEAD 2>/dev/null)
-
-  # Check if repo is dirty (uncommitted changes)
-  if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
-    dirty="*"
-  fi
-
-  [[ -n $branch ]] && echo "${branch}${dirty} "
-}
-# prompt: use %F/%f (built-in color escapes) so we don't rely on $fg being set
-PROMPT='λ %~ %F{blue}$(git_branch)%f'
+# git_branch() {
+#   git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
+#   local branch dirty
+#   branch=$(git symbolic-ref --short HEAD 2>/dev/null) || branch=$(git rev-parse --short --verify HEAD 2>/dev/null)
+#
+#   # Check if repo is dirty (uncommitted changes)
+#   if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+#     dirty="*"
+#   fi
+#
+#   [[ -n $branch ]] && echo "${branch}${dirty} "
+# }
+# # prompt: use %F/%f (built-in color escapes) so we don't rely on $fg being set
+# PROMPT='λ %~ %F{blue}$(git_branch)%f'
 
 
 # For lazygit and other apps to find config
@@ -108,3 +108,5 @@ fi
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(starship init zsh)"
