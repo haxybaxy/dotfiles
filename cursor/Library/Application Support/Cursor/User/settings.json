@@ -31,10 +31,8 @@
         "searchAndCompare": false,
         "launchpad": false
     },
-    "workbench.layoutControl.enabled": false,
     "workbench.navigationControl.enabled": false,
     "workbench.activityBar.orientation": "vertical", //needs to be vertical to work in with ctrl+hjkl pane navigation
-    "workbench.activityBar.location": "hidden",
 
     
     //Vim Settings
@@ -123,6 +121,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "breadcrumbs.enabled": false,
-    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark"
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.layoutControl.enabled": false
 
 }
