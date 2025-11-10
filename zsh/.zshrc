@@ -1,4 +1,5 @@
 export EDITOR='nvim'
+ZLE_RPROMPT_INDENT=0
 
 autoload -Uz compinit
 compinit
