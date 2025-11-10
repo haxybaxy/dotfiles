@@ -136,3 +136,15 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
 		vim.lsp.buf.clear_references()
 	end,
 })
+
+-- colorcheme set
+vim.api.nvim_create_autocmd("OptionSet", {
+	pattern = "background",
+	callback = function()
+		if vim.o.background == "dark" then
+			vim.cmd.colorscheme("gruvbox-material")
+		else
+			vim.cmd.colorscheme("dawnfox")
+		end
+	end,
+})

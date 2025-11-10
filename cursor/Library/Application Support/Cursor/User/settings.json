@@ -45,7 +45,7 @@
 
     //Color theme
     "workbench.colorTheme": "GitHub Dark Default",
-    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredLightColorTheme": "Dawnfox",
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
