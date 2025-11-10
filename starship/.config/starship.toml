@@ -1,9 +1,8 @@
 add_newline = false
 
-format = "$character$directory$git_status"
+format = "$character$directory$git_branch$git_status$python$c$cpp$cmd_duration"
 
 # move the rest of the prompt to the right
-right_format = "$all$git_branch"
 
 [directory]
 style = ''
@@ -15,7 +14,7 @@ error_symbol = '[󰱬](bold red)'
 
 [git_branch]
 style = 'blue'
-format = ' [$symbol$branch(:$remote_branch)]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
 
 [git_status]
@@ -27,3 +26,9 @@ deleted = ""
 
 [package]
 disabled = true
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[cpp]
+disabled = false
