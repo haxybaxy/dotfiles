@@ -25,3 +25,5 @@ conflicted = ""
 renamed = ""
 deleted = ""
 
+[package]
+disabled = true
