@@ -137,14 +137,18 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
 	end,
 })
 
--- colorcheme set
-vim.api.nvim_create_autocmd("OptionSet", {
-	pattern = "background",
+-- colorscheme set
+-- Set initial colorscheme after all plugins are fully loaded
+vim.api.nvim_create_autocmd("User", {
+	pattern = "VeryLazy",
 	callback = function()
-		if vim.o.background == "dark" then
-			vim.cmd.colorscheme("gruvbox-material")
-		else
-			vim.cmd.colorscheme("dawnfox")
-		end
+		vim.defer_fn(function()
+			if vim.o.background == "light" then
+				vim.cmd.colorscheme("dawnfox")
+			else
+				vim.cmd.colorscheme("gruvbox-material")
+			end
+		end, 1)
 	end,
+	once = true,
 })
