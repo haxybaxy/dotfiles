@@ -15,7 +15,7 @@ error_symbol = '[󰱬](bold red)'
 [git_branch]
 style = 'blue'
 format = '[$symbol$branch(:$remote_branch)]($style) '
-symbol = " "
+symbol = ""
 
 [git_status]
 ahead = ""
