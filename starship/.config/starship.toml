@@ -3,3 +3,7 @@ success_symbol = '[λ](bold green)'
 
 [git_branch]
 symbol = " "
+
+[git_status]
+deleted = "✕"
+stashed = "≡"

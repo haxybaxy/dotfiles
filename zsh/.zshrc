@@ -7,6 +7,8 @@ compinit
 setopt PROMPT_SUBST
 
 autoload -U colors && colors
+
+# # custom prompt
 # helper: print branch if we're inside a git repo
 # git_branch() {
 #   git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
