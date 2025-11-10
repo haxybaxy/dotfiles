@@ -13,7 +13,6 @@ return {
 					},
 				},
 			})
-			-- vim.cmd.colorscheme("nightfox")
 		end,
 	},
 	{
@@ -25,23 +24,6 @@ return {
 				dark_style = "night",
 				light_style = "dawn",
 			})
-		end,
-	},
-	{
-		"maxmx03/solarized.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function(_, opts)
-			vim.o.termguicolors = true
-			require("solarized").setup(opts)
-		end,
-	},
-	{
-		"miikanissi/modus-themes.nvim",
-		priority = 1000,
-		config = function()
-			-- vim.cmd.colorscheme("modus")
 		end,
 	},
 	{
@@ -61,12 +43,6 @@ return {
 			vim.g.everforest_background = "medium"
 			vim.g.everforest_enable_italic = true
 		end,
-	},
-	{
-		"AlexvZyl/nordic.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function() end,
 	},
 	{
 		"folke/tokyonight.nvim",
