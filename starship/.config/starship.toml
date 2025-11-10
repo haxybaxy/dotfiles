@@ -9,6 +9,6 @@ symbol = " "
 [git_status]
 ahead = ""
 behind = ""
-conflicted = ""
+conflicted = ""
 renamed = ""
 deleted = ""
