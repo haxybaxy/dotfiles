@@ -25,5 +25,3 @@ conflicted = ""
 renamed = ""
 deleted = ""
 
-[cmd_duration]
-format = 'took [$duration]($style)'
