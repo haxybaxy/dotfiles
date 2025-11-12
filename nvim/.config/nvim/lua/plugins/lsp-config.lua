@@ -53,51 +53,51 @@ return {
 				},
 			})
 
-		lspconfig.ts_ls.setup({
-			capabilities = capabilities,
-			filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-			root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-			settings = {
-				typescript = {
-					inlayHints = {
-						includeInlayParameterNameHints = "all",
-						includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayEnumMemberValueHints = true,
+			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+				root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
 					},
 				},
-				javascript = {
-					inlayHints = {
-						includeInlayParameterNameHints = "all",
-						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-						includeInlayFunctionParameterTypeHints = true,
-						includeInlayVariableTypeHints = true,
-						includeInlayPropertyDeclarationTypeHints = true,
-						includeInlayFunctionLikeReturnTypeHints = true,
-						includeInlayEnumMemberValueHints = true,
-					},
-				},
-			},
-			on_attach = function(client, bufnr)
-				-- Enable inlay hints for this buffer
-				if client.server_capabilities.inlayHintProvider then
-					vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-				end
-			end,
-		})
+				on_attach = function(client, bufnr)
+					-- Enable inlay hints for this buffer
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					end
+				end,
+			})
 
-		lspconfig.tailwindcss.setup({
-			capabilities = capabilities,
-			filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-		})
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+				filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			})
 
-		lspconfig.cssls.setup({
-			capabilities = capabilities,
-		})
+			lspconfig.cssls.setup({
+				capabilities = capabilities,
+			})
 
 			lspconfig.eslint.setup({
 				capabilities = capabilities,
@@ -132,6 +132,36 @@ return {
 
 			lspconfig.ruff.setup({
 				capabilities = capabilities,
+			})
+
+			lspconfig.basedpyright.setup({
+				capabilities = capabilities,
+				settings = {
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "basic", -- or "standard" or "strict"
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+							diagnosticMode = "workspace",
+						},
+					},
+					python = {
+						analysis = {
+							inlayHints = {
+								variableTypes = true,
+								functionReturnTypes = true,
+								callArgumentNames = true,
+								pytestParameters = true,
+							},
+						},
+					},
+				},
+				on_attach = function(client, bufnr)
+					-- Enable inlay hints for this buffer
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					end
+				end,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info in a hover" })
