@@ -167,6 +167,9 @@ return {
 			-- Using snacks picker instead of the native qflist for these
 			-- vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 			-- vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+			vim.keymap.set("n", "<leader>ih", function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			end, { desc = "Toggle Inlay Hints" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Perform code action" })
 			vim.keymap.set("n", "<leader>gn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Go to definition" })
