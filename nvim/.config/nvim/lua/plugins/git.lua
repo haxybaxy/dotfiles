@@ -1,35 +1,40 @@
 return {
-	{ -- Inline Blame
-		"f-person/git-blame.nvim",
-		event = "VeryLazy",
-		opts = {
-			enabled = false,
-			message_template = " <summary> • <date> • <author> • <<sha>>",
-			date_format = "%m-%d-%Y %H:%M:%S",
-			virtual_text_column = 1,
-		},
-	},
 
-  { -- Diffview for viewing git diffs
-	"sindrets/diffview.nvim",
-  },
-
-	{ -- Octo.nvim for GitHub integration
-		"pwntester/octo.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"folke/snacks.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-		opts = {
-			picker = "snacks",
-		},
+	{ -- Diffview for viewing git diffs
+		"sindrets/diffview.nvim",
 	},
 
 	{ -- Git signs for showing git changes in the gutter
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
+
+				on_attach = function(bufnr) --keybinds go here
+					local gitsigns = require("gitsigns")
+
+					local function map(mode, l, r, opts) -- added map function since other keybinds may depend on this if I add them in the future
+						opts = opts or {}
+						opts.buffer = bufnr
+						vim.keymap.set(mode, l, r, opts)
+					end
+
+					map("n", "]c", function()
+						if vim.wo.diff then
+							vim.cmd.normal({ "]c", bang = true })
+						else
+							gitsigns.nav_hunk("next")
+						end
+					end, { desc = "Next git hunk in buffer" })
+
+					map("n", "[c", function()
+						if vim.wo.diff then
+							vim.cmd.normal({ "[c", bang = true })
+						else
+							gitsigns.nav_hunk("prev")
+						end
+					end, { desc = "Previous git hunk in buffer" })
+				end,
+
 				signs = {
 					add = { text = "┃" },
 					change = { text = "┃" },

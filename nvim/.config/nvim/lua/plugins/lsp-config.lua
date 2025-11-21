@@ -15,7 +15,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"ts_ls",
 					"tailwindcss",
 					"cssls",
 					"eslint",
@@ -23,7 +22,7 @@ return {
 					"html",
 					"jsonls",
 					"emmet_ls",
-					"pyright",
+					"basedpyright",
 					"ruff",
 				},
 			})
@@ -38,31 +37,33 @@ return {
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" }, -- Recognize 'vim' as a global variable
-            },
-            workspace = {
-              library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
-            },
-            telemetry = {
-              enable = false, -- Disable telemetry
-            },
-          },
-        },
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" }, -- Recognize 'vim' as a global variable
+						},
+						workspace = {
+							library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
+						},
+						telemetry = {
+							enable = false, -- Disable telemetry
+						},
+					},
+				},
 			})
 
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+				root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 				settings = {
 					typescript = {
 						inlayHints = {
 							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 							includeInlayFunctionParameterTypeHints = true,
 							includeInlayVariableTypeHints = true,
+							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
 							includeInlayPropertyDeclarationTypeHints = true,
 							includeInlayFunctionLikeReturnTypeHints = true,
 							includeInlayEnumMemberValueHints = true,
@@ -80,6 +81,12 @@ return {
 						},
 					},
 				},
+				on_attach = function(client, bufnr)
+					-- Enable inlay hints for this buffer
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					end
+				end,
 			})
 
 			lspconfig.tailwindcss.setup({
@@ -91,26 +98,11 @@ return {
 				capabilities = capabilities,
 			})
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-        rootpatterns = {
-          "package.json",
-          "tsconfig.json",
-          "jsconfig.json",
-          ".git",
-        },
-      })
-
-			 lspconfig.eslint.setup({
-			 	capabilities = capabilities,
-			 	settings = {
-			 		workingDirectories = { mode = "auto" },
-			 	},
-			 })
-
-			lspconfig.graphql.setup({
+			lspconfig.eslint.setup({
 				capabilities = capabilities,
+				settings = {
+					workingDirectories = { mode = "auto" },
+				},
 			})
 
 			lspconfig.html.setup({
@@ -131,27 +123,57 @@ return {
 					"scss",
 					-- Removed JS/TS files to prevent aggressive HTML tag suggestions
 					-- "javascript",
-					-- "javascriptreact", 
+					-- "javascriptreact",
 					-- "typescript",
 					-- "typescriptreact",
 				},
-			})
-
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
 			})
 
 			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {}) -- show info in a hover
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {}) -- go to definition
-			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {}) -- go to references
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {}) -- perform code action
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {}) -- rename symbol
-			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, {}) -- go to type definition
-			vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, {}) -- show diagnostics
+			lspconfig.basedpyright.setup({
+				capabilities = capabilities,
+				settings = {
+					basedpyright = {
+						analysis = {
+							typeCheckingMode = "basic", -- or "standard" or "strict"
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+							diagnosticMode = "workspace",
+						},
+					},
+					python = {
+						analysis = {
+							inlayHints = {
+								variableTypes = true,
+								functionReturnTypes = true,
+								callArgumentNames = true,
+								pytestParameters = true,
+							},
+						},
+					},
+				},
+				on_attach = function(client, bufnr)
+					-- Enable inlay hints for this buffer
+					if client.server_capabilities.inlayHintProvider then
+						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+					end
+				end,
+			})
+
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info in a hover" })
+			-- Using snacks picker instead of the native qflist for these
+			-- vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+			-- vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Go to references" })
+			vim.keymap.set("n", "<leader>ih", function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			end, { desc = "Toggle Inlay Hints" })
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Perform code action" })
+			vim.keymap.set("n", "<leader>gn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+			vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, { desc = "Go to definition" })
+			vim.keymap.set("n", "<leader>ds", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 		end,
 	},
 }

@@ -8,48 +8,129 @@ vim.cmd("set tabstop=2") -- 2 spaces for a tab
 vim.cmd("set softtabstop=2") -- 2 spaces for soft tab
 vim.cmd("set shiftwidth=2") -- 2 spaces for autoindent
 
-vim.opt.winborder = "rounded" -- Set window border style to rounded
-
 vim.o.undofile = true -- Enable persistent undo
 
 vim.o.wrap = false -- Disable line wrapping
 
+vim.o.showbreak = "↪" -- Show a special character for wrapped lines
+
+vim.o.cursorline = true -- highlight current line
+
+vim.o.scrolloff = 4 -- start scrolling 4 lines from bottom
+
+vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
+
+vim.opt.termguicolors = true -- Enable true color support
+
 vim.o.showmode = false -- Don't show mode since we have a statusline
 
-vim.o.cursorline = true -- Highlight the current line
+vim.o.splitright = true -- vsplit to the right
 
-vim.o.showbreak="↪" -- Show a special character for wrapped lines
+-- Allow recursive globbing (**)
+vim.opt.path:append("**")
 
--- Yank to system clipboard in normal and visual mode with <leader>y
-vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>')
-
--- Paste from system clipboard in normal mode and visual mode with <leader>p
-vim.keymap.set({ 'n', 'v', 'x' }, "<leader>p", '"+p', { noremap = true, silent = true })
-
--- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+-- Ignore common junk directories when searching
+vim.opt.wildignore:append({
+	"*/.git/*",
+	"*/node_modules/*",
+	"*/dist/*",
+	"*/build/*",
+	"*/venv/*",
+	"*/__pycache__/*",
+	"*.egg-info/*",
+	"*/.next/*",
+	"*/ios/*",
+	"*/android/*",
+	"*/.expo/*",
 })
 
--- tab new and tabclose keybinds
-vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", { silent = true })
-vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
+-- nicer diagnostic indicators
+vim.diagnostic.config({
+	signs = {
+		-- define text icons per severity
+		text = {
+			[vim.diagnostic.severity.ERROR] = "●",
+			[vim.diagnostic.severity.WARN] = "●",
+			[vim.diagnostic.severity.HINT] = "●",
+			[vim.diagnostic.severity.INFO] = "●",
+		},
+	},
+	underline = true,
+	update_in_insert = false,
+})
 
--- Right arrow key to accept Copilot suggestion in insert mode
-vim.api.nvim_set_keymap('i', '<Right>', 'copilot#Accept(<Tab>)', {expr=true, silent=true})
+-- hide all separators
+vim.opt.fillchars = {
+	vert = " ", -- vertical separator
+	vertleft = " ", -- for left separators
+	vertright = " ", -- for right separators
+	horiz = " ", -- horizontal separator
+	horizup = " ", -- for top separators
+	horizdown = " ", -- for bottom separators
+	eob = " ", -- hide end-of-buffer tildes
+}
+--Keybinds should go under here
+--Tab keybinds
+vim.keymap.set("n", "<leader>tn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab" })
+vim.keymap.set("n", "<leader>tx", "<Cmd>tabclose<CR>", { silent = true, desc = "Close Tab" })
 
--- neovide gui settings with macOS keybinds
-if vim.g.neovide then
-  vim.defer_fn(function()
-    vim.cmd("NeovideFocus")
-  end, 25)
-  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
-  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
-  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
-  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
-  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
-  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+for i = 1, 9 do
+	vim.keymap.set("n", "<leader>" .. i, "<Cmd>tabnext " .. i .. "<CR>", { desc = "Go to tab " .. i })
 end
+vim.keymap.set("n", "<leader>0", "<Cmd>tablast<CR>", { desc = "Go to last tab" })
 
+--Copy and pasting
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set(
+	{ "n", "v", "x" },
+	"<leader>p",
+	'"+p',
+	{ noremap = true, silent = true, desc = "Paste from system clipboard" }
+)
+
+-- Remove search highlights
+vim.keymap.set({ "n", "v", "x" }, "<leader>h", "<Cmd>noh<CR>", { desc = "Disable highlight for last search" })
+
+-- QOL quick save
+vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { silent = true, desc = "Save" })
+
+-- autocmds go under here
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+-- ide like highlight when stopping cursor
+vim.api.nvim_create_autocmd("CursorMoved", {
+	group = vim.api.nvim_create_augroup("LspReferenceHighlight", { clear = true }),
+	desc = "Highlight references under cursor",
+	callback = function()
+		-- Only run if the cursor is not in insert mode
+		if vim.fn.mode() ~= "i" then
+			local clients = vim.lsp.get_clients({ bufnr = 0 })
+			local supports_highlight = false
+			for _, client in ipairs(clients) do
+				if client.server_capabilities.documentHighlightProvider then
+					supports_highlight = true
+					break -- Found a supporting client, no need to check others
+				end
+			end
+
+			--Proceed only if an LSP is active AND supports the feature
+			if supports_highlight then
+				vim.lsp.buf.clear_references()
+				vim.lsp.buf.document_highlight()
+			end
+		end
+	end,
+})
+
+-- ide like highlight when stopping cursor
+vim.api.nvim_create_autocmd("CursorMovedI", {
+	group = "LspReferenceHighlight",
+	desc = "Clear highlights when entering insert mode",
+	callback = function()
+		vim.lsp.buf.clear_references()
+	end,
+})

@@ -68,7 +68,7 @@
   {
     "key": "space l g",
     "when": "vim.mode == 'Normal' && editorTextFocus",
-    "command": "lazygit-vscode.toggle"
+    "command": "workbench.scm.focus"
   },
 
   //go to definition
@@ -191,9 +191,5 @@
     "key": "shift+backspace",
     "command": "extension.vim_backspace",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "cmd+e",
-    "command": "composerMode.background"
-  },
+  }
 ]

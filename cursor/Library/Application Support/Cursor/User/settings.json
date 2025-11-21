@@ -4,11 +4,11 @@
     "git.autofetch": true,
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 14,
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-    "editor.inlayHints.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
-    "notebook.output.fontFamily": "'JetBrainsMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.codeLensFontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "editor.inlayHints.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
+    "notebook.output.fontFamily": "'BlexMono Nerd Font', Monaco, 'Courier New', monospace",
     "workbench.editor.editorActionsLocation": "hidden",
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily"
@@ -31,25 +31,19 @@
         "searchAndCompare": false,
         "launchpad": false
     },
-    "workbench.layoutControl.enabled": false,
     "workbench.navigationControl.enabled": false,
     "workbench.activityBar.orientation": "vertical", //needs to be vertical to work in with ctrl+hjkl pane navigation
-    "workbench.activityBar.location": "hidden",
-    "workbench.editor.showTabs": "single",
 
     
     //Vim Settings
     "vim.incsearch": true,
     "vim.smartRelativeLine": true,
     "vim.surround": true,
-    "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    },
     "vim.highlightedyank.enable": true,
 
     //Color theme
     "workbench.colorTheme": "GitHub Dark Default",
-    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredLightColorTheme": "Dawnfox",
     "window.autoDetectColorScheme": true,
     "editor.accessibilitySupport": "off",
 
@@ -127,16 +121,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "breadcrumbs.enabled": false,
-
-    "background.enabled": false,
-    "background.fullscreen": {
-        "images": ["file:///Users/zaidalsaheb/wallpapers/koipond.jpg"],
-        "opacity": 0.1,
-        "size": "cover",
-        "position": "center",
-        "interval": 0,
-        "random": false
-    },
-    "workbench.preferredDarkColorTheme": "Catppuccin Mocha"
+    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.layoutControl.enabled": false
 
 }

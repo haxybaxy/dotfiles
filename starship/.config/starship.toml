@@ -1,0 +1,34 @@
+add_newline = false
+
+format = "$character$directory$git_branch$git_status$python$c$cpp$cmd_duration"
+
+# move the rest of the prompt to the right
+
+[directory]
+style = ''
+truncate_to_repo = false
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[λ](bold)'
+error_symbol = '[󰱬](bold red)'
+
+[git_branch]
+style = 'blue'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = ""
+
+[git_status]
+ahead = ""
+behind = ""
+conflicted = ""
+renamed = ""
+deleted = ""
+
+[package]
+disabled = true
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[cpp]
+disabled = false

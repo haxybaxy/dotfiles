@@ -1,0 +1,2 @@
+source ~/.config/vim/options.vim
+source ~/.config/vim/keybinds.vim
