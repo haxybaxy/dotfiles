@@ -73,9 +73,8 @@ alt-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace
 
 # these open the apps if they are not already open
 alt-t = '''exec-and-forget sh -c "open -a 'Ghostty'"'''
-alt-z = '''exec-and-forget sh -c "open -a 'Zed'"'''
 alt-c = '''exec-and-forget sh -c "open -a 'Cursor'"'''
-alt-b = '''exec-and-forget sh -c "open -a 'Zen'"'''
+alt-z = '''exec-and-forget sh -c "open -a 'Zen'"'''
 alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''
 alt-o = '''exec-and-forget sh -c "open -a 'Obsidian'"'''
 alt-s = '''exec-and-forget sh -c "open -a 'Simulator'"'''
