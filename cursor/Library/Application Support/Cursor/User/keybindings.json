@@ -106,6 +106,19 @@
     "command": "editor.action.autoFix"
   },
 
+  //diagnostics
+  {
+    "key": "[ d",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.marker.prev"
+  },
+
+  {
+    "key": "] d",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "editor.action.marker.next"
+  },
+
   //file grep
   {
     "key": "space f g",
