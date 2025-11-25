@@ -121,7 +121,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "breadcrumbs.enabled": false,
-    "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+    "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
     "workbench.layoutControl.enabled": false
 
 }
