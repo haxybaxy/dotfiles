@@ -119,6 +119,19 @@
     "command": "editor.action.marker.next"
   },
 
+  //hunk jump
+  {
+    "key": "[ c",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "workbench.action.editor.previousChange"
+  },
+
+  {
+    "key": "] c",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "command": "workbench.action.editor.nextChange"
+  },
+
   //file grep
   {
     "key": "space f g",
