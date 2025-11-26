@@ -28,7 +28,6 @@ return {
     },
   },
 
-
   { -- keybind reminders + show marks and registers
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -45,7 +44,7 @@ return {
       local wk = require("which-key")
       wk.setup({
         triggers = {
-          { "<leader>", mode = { "n", "v" } }
+          { "<leader>", mode = { "n", "v" } },
         },
       })
       wk.add({
@@ -84,5 +83,4 @@ return {
     event = "ModeChanged *:[vV\22]",
     opts = {},
   },
-
 }
