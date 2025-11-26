@@ -82,6 +82,7 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
+  "python.terminal.activateEnvironment": false, // disable python sourcing venv automatically, for lazygit
 
   //Prettier formatter
   "[typescriptreact]": {

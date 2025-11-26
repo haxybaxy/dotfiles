@@ -68,7 +68,7 @@
   {
     "key": "space l g",
     "when": "vim.mode == 'Normal' && editorTextFocus",
-    "command": "workbench.scm.focus"
+    "command": "lazygit-vscode.toggle"
   },
 
   //go to definition
