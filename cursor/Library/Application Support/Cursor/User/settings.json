@@ -44,6 +44,9 @@
   "window.autoDetectColorScheme": true,
   "editor.accessibilitySupport": "off",
 
+  //Lazygit Settings
+  "lazygit-vscode.configPath": "~/.config/lazygit/vscode-config.yml",
+
   //Best Extension Ever
   "searchPreview.search.excludePatterns": [
     "**/*.min.js",
@@ -82,7 +85,6 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
-  "python.terminal.activateEnvironment": false, // disable python sourcing venv automatically, for lazygit
 
   //Prettier formatter
   "[typescriptreact]": {
