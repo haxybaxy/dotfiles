@@ -26,7 +26,7 @@ return {
 				end,
 
 				keymaps = {
-					accept_suggestion = "<Right>",
+					accept_suggestion = "<C-l>",
 				},
 			})
 		end,
