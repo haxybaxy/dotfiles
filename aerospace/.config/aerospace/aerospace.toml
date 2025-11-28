@@ -160,7 +160,19 @@ if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 4'
 
 
-# Space 5: Miscellaneous
+# Space 5: Tools
+
+[[on-window-detected]]
+if.app-id = 'io.beekeeperstudio.desktop'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = ' com.usebruno.app'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'dev.kdrag0n.MacVirt'
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
