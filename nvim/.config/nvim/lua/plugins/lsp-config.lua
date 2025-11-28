@@ -84,7 +84,7 @@ return {
 				on_attach = function(client, bufnr)
 					-- Enable inlay hints for this buffer
 					if client.server_capabilities.inlayHintProvider then
-						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+						vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
 					end
 				end,
 			})
