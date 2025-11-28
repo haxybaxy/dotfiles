@@ -116,6 +116,10 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 2'
 
@@ -167,7 +171,7 @@ if.app-id = 'io.beekeeperstudio.desktop'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-if.app-id = ' com.usebruno.app'
+if.app-id = 'com.usebruno.app'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
