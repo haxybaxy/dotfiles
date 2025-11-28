@@ -1,6 +1,6 @@
 start-at-login = true 
 
-after-login-command = [
+after-startup-command = [
 	"exec-and-forget sketchybar",
   'exec-and-forget sh ~/.config/sketchybar/scripts/media-stream.sh'
 ]
