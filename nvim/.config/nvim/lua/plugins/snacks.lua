@@ -133,6 +133,6 @@ return {
 			end,
 		})
 		highlights.setup_highlight_autocmd()
-		highlights.apply_snacks_highlights()
+		highlights.apply_highlights()
 	end,
 }
