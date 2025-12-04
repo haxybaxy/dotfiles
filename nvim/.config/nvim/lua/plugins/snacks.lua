@@ -15,7 +15,7 @@ return {
 		bigfile = { enabled = true },
 		quickfle = { enabled = true },
 		explorer = { enabled = true },
-		image = { enabled = true, doc = { inline = false } },
+		image = { enabled = false, doc = { inline = false } },
 		statuscolumn = { enabled = true },
 		notifier = {
 			enabled = true,
