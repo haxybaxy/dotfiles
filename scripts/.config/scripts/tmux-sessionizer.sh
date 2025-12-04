@@ -56,8 +56,10 @@ desanitize_to_path() {
 
 has_only_directories() {
     local dir=$1
-    # Check if directory has any non-directory items
-    local non_dirs=$(find "$dir" -mindepth 1 -maxdepth 1 ! -type d 2>/dev/null | wc -l)
+    # Count non-directory items *excluding* .DS_Store
+    local non_dirs=$(find "$dir" -mindepth 1 -maxdepth 1 ! -type d ! -name ".DS_Store" 2>/dev/null | wc -l)
+    
+    # True if: no non-dir items AND at least one subdirectory exists
     [[ $non_dirs -eq 0 ]] && [[ -n "$(find "$dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]]
 }
 
