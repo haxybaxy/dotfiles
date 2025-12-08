@@ -33,6 +33,11 @@ return {
 							gitsigns.nav_hunk("prev")
 						end
 					end, { desc = "Previous git hunk in buffer" })
+
+					map("n", "<leader>hs", gitsigns.stage_hunk)
+					map("n", "<leader>hr", gitsigns.reset_hunk)
+					map("n", "<leader>hp", gitsigns.preview_hunk)
+					map("n", "<leader>hi", gitsigns.preview_hunk_inline)
 				end,
 
 				signs = {
