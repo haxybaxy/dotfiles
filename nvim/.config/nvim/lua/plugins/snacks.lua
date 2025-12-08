@@ -106,6 +106,13 @@ return {
       desc = "Notification History",
     },
     {
+      "<leader>sH",
+      function()
+        Snacks.picker.highlights()
+      end,
+      desc = "Highlights",
+    },
+    {
       "<leader>z",
       function()
         Snacks.zen()
