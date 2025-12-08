@@ -134,7 +134,7 @@ M.layouts = {
         win = "list",
         border = "none",
         wo = {
-          winhighlight = "Normal:StatusLine,NonText:SnacksPickerFile",
+          winhighlight = "Normal:Pmenu,NonText:SnacksPickerFile",
         }
       },
       { win = "preview", title = "{preview}", height = 0.4, border = "top" },

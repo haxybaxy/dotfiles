@@ -60,7 +60,7 @@ function M.get_window_relative_flow_config()
       title_pos = "center",
       wo = {
         winhighlight =
-        "Normal:StatusLine,NormalNC:Statusline,WinBar:StatusLine,WinBarNC:StatusLine,FloatTitle:StatusLine,FloatFooter:StatusLine,WinSeparator:StatusLine",
+        "Normal:Pmenu,NormalNC:Statusline,WinBar:Pmenu,WinBarNC:Pmenu,FloatTitle:Pmenu,FloatFooter:Pmenu,WinSeparator:Pmenu",
       },
       { win = "preview", title = "{preview}", width = 0.6, border = "left" },
       {
@@ -68,7 +68,7 @@ function M.get_window_relative_flow_config()
         height = 1,
         border = "solid",
         wo = {
-          winhighlight = "NormalFloat:StatusLine,FloatBorder:StatusLine,FloatTitle:StatusLine",
+          winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu,FloatTitle:Pmenu",
         },
       },
       { win = "list", border = "none" },

@@ -5,7 +5,7 @@ M.input = {
 	win = {
 	border = "solid",
 		wo = {
-			winhighlight = "NormalFloat:StatusLine,FloatBorder:StatusLine,FloatTitle:StatusLine",
+			winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu,FloatTitle:Pmenu",
 		},
 	},
 }

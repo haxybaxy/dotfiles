@@ -16,7 +16,7 @@ return {
             },
             filter_options = {},
             win_options = {
-              winhighlight = "NormalFloat:StatusLine,FloatBorder:StatusLine",
+              winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu",
             },
           },
         },

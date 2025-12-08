@@ -7,12 +7,12 @@ M.highlight_map = {
   SnacksPickerInputCursorLine = "PmenuSel",
   SnacksPickerBoxCursorLine = "PmenuSel",
   SnacksPickerPreviewCursorLine = "PmenuSel",
-  SnacksPickerPickWin = "StatusLine",
-  SnacksPickerPickWinCurrent = "StatusLine",
-  SnacksPickerBorder = "StatusLine",
+  SnacksPickerPickWin = "Pmenu",
+  SnacksPickerPickWinCurrent = "Pmenu",
+  SnacksPickerBorder = "Pmenu",
   SnacksPickerTree = "SnacksPickerUnselected",
-  SnacksPickerCol = "StatusLine",
-  SnacksPickerPrompt = "StatusLine",
+  SnacksPickerCol = "Pmenu",
+  SnacksPickerPrompt = "Pmenu",
   SnacksInputTitle = "SnacksPickerList",
 }
 

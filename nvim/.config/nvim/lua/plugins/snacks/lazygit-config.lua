@@ -1,16 +1,16 @@
 local M = {}
 
-M.lazygit =  {
-      theme = {
-        earchingActiveBorderColor = { fg = "Visual", bold = true },
-        selectedLineBgColor = { bg = "Visual" },
-      },
-      win = {
-        wo = {
-          winhighlight = "Normal:SnacksDashboardNormal,NormalFloat:SnacksDashboardNormal",
-        },
-      },
-    }
-
+M.lazygit = {
+  theme = {
+    searchingActiveBorderColor = { fg = "Visual", bold = true },
+    selectedLineBgColor = { bg = "Visual" },
+    inactiveBorderColor = { fg = "SnacksPickerUnselected" },
+  },
+  win = {
+    wo = {
+      winhighlight = "Normal:SnacksDashboardNormal,NormalFloat:SnacksDashboardNormal",
+    },
+  },
+}
 
 return M
