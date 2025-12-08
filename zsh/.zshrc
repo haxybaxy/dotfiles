@@ -113,3 +113,6 @@ fi
 eval "$(atuin init zsh --disable-up-arrow)"
 
 eval "$(starship init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
