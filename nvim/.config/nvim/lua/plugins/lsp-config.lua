@@ -24,6 +24,8 @@ return {
 					"emmet_ls",
 					"basedpyright",
 					"ruff",
+					"terraformls",
+					"clangd",
 				},
 			})
 		end,
@@ -32,137 +34,29 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 			local lspconfig = require("lspconfig")
 
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-				settings = {
-					Lua = {
-						diagnostics = {
-							globals = { "vim" }, -- Recognize 'vim' as a global variable
-						},
-						workspace = {
-							library = vim.api.nvim_get_runtime_file("", true), -- Include Neovim runtime files
-						},
-						telemetry = {
-							enable = false, -- Disable telemetry
-						},
-					},
-				},
-			})
+			-- Load language-specific LSP configurations
+			local lua_lsp = require("plugins.lsp.lua")
+			local typescript_lsp = require("plugins.lsp.typescript")
+			local python_lsp = require("plugins.lsp.python")
+			local web_lsp = require("plugins.lsp.web")
+			local json_lsp = require("plugins.lsp.json")
+			local eslint_lsp = require("plugins.lsp.eslint")
+			local terraform_lsp = require("plugins.lsp.terraform")
+			local cpp_lsp = require("plugins.lsp.cpp")
 
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
-				filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-				root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-				settings = {
-					typescript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-					javascript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-				},
-				on_attach = function(client, bufnr)
-					-- Enable inlay hints for this buffer
-					if client.server_capabilities.inlayHintProvider then
-						vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
-					end
-				end,
-			})
+			-- Setup all language servers
+			lua_lsp.setup(lspconfig, capabilities)
+			typescript_lsp.setup(lspconfig, capabilities)
+			python_lsp.setup(lspconfig, capabilities)
+			web_lsp.setup(lspconfig, capabilities)
+			json_lsp.setup(lspconfig, capabilities)
+			eslint_lsp.setup(lspconfig, capabilities)
+			terraform_lsp.setup(lspconfig, capabilities)
+			cpp_lsp.setup(lspconfig, capabilities)
 
-			lspconfig.tailwindcss.setup({
-				capabilities = capabilities,
-				filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-			})
-
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.eslint.setup({
-				capabilities = capabilities,
-				settings = {
-					workingDirectories = { mode = "auto" },
-				},
-			})
-
-			lspconfig.html.setup({
-				capabilities = capabilities,
-				filetypes = { "html", "htmldjango" },
-			})
-
-			lspconfig.jsonls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.emmet_ls.setup({
-				capabilities = capabilities,
-				filetypes = {
-					"html",
-					"htmldjango",
-					"css",
-					"scss",
-					-- Removed JS/TS files to prevent aggressive HTML tag suggestions
-					-- "javascript",
-					-- "javascriptreact",
-					-- "typescript",
-					-- "typescriptreact",
-				},
-			})
-
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.basedpyright.setup({
-				capabilities = capabilities,
-				settings = {
-					basedpyright = {
-						analysis = {
-							typeCheckingMode = "basic", -- or "standard" or "strict"
-							autoSearchPaths = true,
-							useLibraryCodeForTypes = true,
-							diagnosticMode = "workspace",
-						},
-					},
-					python = {
-						analysis = {
-							inlayHints = {
-								variableTypes = true,
-								functionReturnTypes = true,
-								callArgumentNames = true,
-								pytestParameters = true,
-							},
-						},
-					},
-				},
-				on_attach = function(client, bufnr)
-					-- Enable inlay hints for this buffer
-					if client.server_capabilities.inlayHintProvider then
-						vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-					end
-				end,
-			})
-
+			-- LSP Keymaps (centralized)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show info in a hover" })
 			-- Using snacks picker instead of the native qflist for these
 			-- vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
