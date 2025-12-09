@@ -1,6 +1,6 @@
 add_newline = false
 
-format = "$character$directory$git_branch$git_status$python$c$cpp$cmd_duration"
+format = "$directory$git_branch$git_status$python$c$cpp$cmd_duration\n$character"
 
 # move the rest of the prompt to the right
 
