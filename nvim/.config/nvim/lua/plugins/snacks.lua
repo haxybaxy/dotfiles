@@ -64,18 +64,18 @@ return {
       desc = "LSP References",
     },
     {
-      "<leader>bf",
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = "Buffers",
-    },
-    {
       "<leader>e",
       function()
         Snacks.explorer()
       end,
       desc = "File Explorer",
+    },
+    {
+      "<leader>bf",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Buffers",
     },
     {
       "<leader>bd",

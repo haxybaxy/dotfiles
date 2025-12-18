@@ -4,7 +4,7 @@ macos-option-as-alt = left
 window-padding-y = 10
 window-padding-x = 10 
 
-theme =  dark:TokyoNight Storm, light:Dawnfox
+theme =  dark:Rose Pine Moon, light:Dawnfox
 custom-shader = shaders/cursor_warp.glsl
 
 font-family = "BlexMono Nerd Font"
