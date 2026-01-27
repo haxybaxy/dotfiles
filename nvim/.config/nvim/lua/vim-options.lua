@@ -68,7 +68,6 @@ vim.opt.fillchars = {
 	horiz = " ", -- horizontal separator
 	horizup = " ", -- for top separators
 	horizdown = " ", -- for bottom separators
-	eob = " ", -- hide end-of-buffer tildes
 }
 --Keybinds should go under here
 --Tab keybinds

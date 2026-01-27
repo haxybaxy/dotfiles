@@ -110,9 +110,22 @@ fi
 
 . "$HOME/.atuin/bin/env"
 
+# better history
 eval "$(atuin init zsh --disable-up-arrow)"
 
+#starship prompt
 eval "$(starship init zsh)"
+
+#mc sounds
+export MCSOUND_SESSION_START=random/door_open
+export MCSOUND_SESSION_END=random/door_close
+export MCSOUND_STOP=random/levelup
+export MCSOUND_SUBAGENT_STOP=random/orb
+export MCSOUND_NOTIFICATION=note/bell
+export MCSOUND_WRITE=block/amethyst/place1
+export MCSOUND_BASH=random/click
+export MCSOUND_TASK=block/end_portal/endportal
+export MCSOUND_WEB=block/end_portal/eyeplace1
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
