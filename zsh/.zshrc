@@ -49,6 +49,10 @@ alias v="nvim"
 alias vim="nvim"
 alias nv="neovide &"
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+
 # Lazygit alias
 alias lg="lazygit"
 
@@ -58,6 +62,11 @@ alias lg="lazygit"
 bindkey -e
 bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
+
+# edit command in nvim
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^E' edit-command-line
 
 # take out and bring back programs
 function fancy-ctrl-z() {
