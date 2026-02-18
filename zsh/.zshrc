@@ -138,3 +138,5 @@ export MCSOUND_WEB=block/end_portal/eyeplace1
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
