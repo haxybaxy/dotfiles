@@ -78,7 +78,6 @@ alt-c = '''exec-and-forget sh -c "open -a 'Cursor'"'''
 alt-z = '''exec-and-forget sh -c "open -a 'Zen'"'''
 alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''
 alt-o = '''exec-and-forget sh -c "open -a 'Obsidian'"'''
-alt-s = '''exec-and-forget sh -c "open -a 'Simulator'"'''
 alt-m = '''exec-and-forget sh -c "open -a 'Spotify'"'''
 
 
