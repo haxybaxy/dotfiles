@@ -4,7 +4,7 @@ macos-option-as-alt = left
 window-padding-y = 10
 window-padding-x = 10 
 
-theme =  dark:Catppuccin Frappe, light:Rose Pine Dawn
+theme =  dark:Catppuccin Macchiato, light:Rose Pine Dawn
 custom-shader = shaders/cursor_warp.glsl
 
 font-family = "BlexMono Nerd Font"
