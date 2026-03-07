@@ -125,6 +125,12 @@ eval "$(atuin init zsh --disable-up-arrow)"
 #starship prompt
 eval "$(starship init zsh)"
 
+#notify command
+notify() {
+  "$@"
+  afplay /System/Library/Sounds/Glass.aiff
+}
+
 #mc sounds
 export MCSOUND_SESSION_START=random/door_open
 export MCSOUND_SESSION_END=random/door_close
