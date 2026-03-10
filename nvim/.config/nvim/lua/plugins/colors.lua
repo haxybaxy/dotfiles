@@ -36,6 +36,28 @@ return {
     end,
   },
   {
+    "everviolet/nvim",
+    name = "evergarden",
+    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+    opts = {
+      theme = {
+        variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+        accent = "blue",
+      },
+      editor = {
+        transparent_background = false,
+        sign = { color = "none" },
+        float = {
+          color = "mantle",
+          solid_border = false,
+        },
+        completion = {
+          color = "surface0",
+        },
+      },
+    },
+  },
+  {
     "sainnhe/everforest",
     lazy = false,
     priority = 1000,
@@ -86,7 +108,7 @@ return {
     opts = {
       set_dark_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
-        vim.cmd.colorscheme("catppuccin-macchiato")
+        vim.cmd.colorscheme("evergarden")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value("background", "light", {})
