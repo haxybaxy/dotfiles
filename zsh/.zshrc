@@ -113,8 +113,8 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="$HOME/.local/bin:$PATH"
 
 # Better cd 
-if [ -z "$DISABLE_ZOXIDE" ]; then
-  eval "$(zoxide init zsh --cmd cd)"
+if [[ "$CLAUDECODE" != "1" ]]; then
+    eval "$(zoxide init --cmd cd zsh)"
 fi
 
 . "$HOME/.atuin/bin/env"
