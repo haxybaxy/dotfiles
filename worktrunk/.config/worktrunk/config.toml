@@ -1,2 +1,3 @@
 #initial worktrunk
-
+[post-switch]
+tmux = "[ -n \"$TMUX\" ] && tmux rename-window {{ branch | sanitize }}"
