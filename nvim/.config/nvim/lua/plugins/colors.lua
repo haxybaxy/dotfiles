@@ -101,7 +101,20 @@ return {
 		end,
 	},
 	{
-		"Mofiqul/vscode.nvim",
+		"rebelot/kanagawa.nvim",
+		config = function()
+			require("kanagawa").setup({
+				colors = {
+					theme = {
+						all = {
+							ui = {
+								bg_gutter = "none",
+							},
+						},
+					},
+				},
+			})
+		end,
 	},
 	{
 		"f-person/auto-dark-mode.nvim",
