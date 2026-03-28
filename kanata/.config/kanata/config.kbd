@@ -9,18 +9,54 @@
 (defvar
   tap-time 200
   hold-time 150
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+
+(deffakekeys
+  to-base (layer-switch base)
+)
+
+(defalias
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lctl $left-hand-keys)
+  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lalt $left-hand-keys)
+  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lmet $left-hand-keys)
+  f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lsft $left-hand-keys)
+  j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rsft $right-hand-keys)
+  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) rmet $right-hand-keys)
+  l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) ralt $right-hand-keys)
+  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rctl $right-hand-keys)
 )
 
 (deflayermap (base)
   caps lctl
-  a (tap-hold $tap-time $hold-time a lctl)
-  s (tap-hold $tap-time $hold-time s lalt)
-  d (tap-hold $tap-time $hold-time d lmet)
-  f (tap-hold $tap-time $hold-time f lsft)
-  j (tap-hold $tap-time $hold-time j rsft)
-  k (tap-hold $tap-time $hold-time k rmet)
-  l (tap-hold $tap-time $hold-time l ralt)
-  ; (tap-hold $tap-time $hold-time ; rctl)
+  a @a
+  s @s
+  d @d
+  f @f
+  j @j
+  k @k
+  l @l
+  ; @;
+  rmet (layer-while-held arrows)
+)
+
+(deflayermap (nomods)
+  caps lctl
   rmet (layer-while-held arrows)
 )
 
