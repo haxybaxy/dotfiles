@@ -35,7 +35,7 @@ if [[ -n $SSH_CONNECTION ]]; then
   export TERM='xterm-256color'
 fi
 
-alias clod="claude --dangerously-skip-permissions --effort max"
+alias clod="claude --permission-mode plan --dangerously-skip-permissions --effort max"
 
 # Better ls
 alias ls="lsd"
