@@ -121,7 +121,7 @@ return {
 		opts = {
 			set_dark_mode = function()
 				vim.api.nvim_set_option_value("background", "dark", {})
-				vim.cmd.colorscheme("tokyonight-storm")
+				vim.cmd.colorscheme("kanso-mist")
 			end,
 			set_light_mode = function()
 				vim.api.nvim_set_option_value("background", "light", {})
