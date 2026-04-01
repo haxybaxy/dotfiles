@@ -1,11 +1,4 @@
 return {
-
-	{
-		"esmuellert/vscode-diff.nvim",
-		dependencies = { "MunifTanjim/nui.nvim" },
-		cmd = "CodeDiff",
-	},
-	{ -- Git signs for showing git changes in the gutter
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
@@ -90,5 +83,4 @@ return {
 				},
 			})
 		end,
-	},
 }

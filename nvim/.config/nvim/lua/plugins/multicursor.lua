@@ -1,28 +1,4 @@
 return {
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"<leader>m",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-			{
-				"<c-s>",
-				mode = { "c" },
-				function()
-					require("flash").toggle()
-				end,
-				desc = "Toggle Flash Search",
-			},
-		},
-	},
-	{
 		"jake-stewart/multicursor.nvim",
 		branch = "1.0",
 		config = function()
@@ -97,5 +73,4 @@ return {
 			hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
 			hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
 		end,
-	},
 }
