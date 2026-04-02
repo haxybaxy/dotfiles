@@ -119,18 +119,27 @@ if [[ "$CLAUDECODE" != "1" ]]; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
 
-. "$HOME/.atuin/bin/env"
 
 # better history
+. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 #starship prompt
 eval "$(starship init zsh)"
 
-#notify command
+# notify command
 notify() {
   "$@"
   afplay /System/Library/Sounds/Glass.aiff
+}
+
+# yazi changes cwd
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 
 autoload -U +X bashcompinit && bashcompinit
