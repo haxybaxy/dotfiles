@@ -1,9 +1,3 @@
-local dashboard_config = require("plugins.snacks.dashboard-config")
-local lazygit_config = require("plugins.snacks.lazygit-config")
-local input_config = require("plugins.snacks.input-config")
-local zen_config = require("plugins.snacks.zen-config")
-local highlights = require("plugins.snacks.highlights")
-
 return {
   ---@module "snacks"
   "folke/snacks.nvim",
@@ -13,18 +7,33 @@ return {
     animate = { enabled = true },
     bigfile = { enabled = true },
     quickfle = { enabled = true },
-    explorer = { enabled = false },
+    input = {
+      enabled = true,
+      win = {
+        border = "solid",
+        wo = {
+          winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu,FloatTitle:Pmenu",
+        },
+      },
+    },
     image = { enabled = false, doc = { inline = false } },
     statuscolumn = { enabled = true },
     notifier = {
       enabled = true,
       timeout = 3000,
     },
-    input = input_config.input,
-    lazygit = lazygit_config.lazygit,
-    picker = { enabled = false },
-    dashboard = dashboard_config.dashboard,
-    zen = zen_config.zen,
+    lazygit = {
+      theme = {
+        searchingActiveBorderColor = { fg = "Visual", bold = true },
+        selectedLineBgColor = { bg = "Visual" },
+        inactiveBorderColor = { fg = "SnacksPickerUnselected" },
+      },
+      win = {
+        wo = {
+          winhighlight = "Normal:SnacksDashboardNormal,NormalFloat:SnacksDashboardNormal",
+        },
+      },
+    },
   },
   keys = {
     {
@@ -55,13 +64,6 @@ return {
       end,
       desc = "Notification History",
     },
-    {
-      "<leader>z",
-      function()
-        Snacks.zen()
-      end,
-      desc = "Toggle Zen Mode",
-    },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
@@ -71,7 +73,7 @@ return {
         Snacks.toggle
             .new({
               id = "git_signs",
-              name = " Git Sign Column",
+              name = " Git Sign Column",
               get = function()
                 return require("gitsigns.config").config.signcolumn
               end,
@@ -82,7 +84,5 @@ return {
             :map("<leader>ug")
       end,
     })
-    highlights.setup_highlight_autocmd()
-    highlights.apply_highlights()
   end,
 }

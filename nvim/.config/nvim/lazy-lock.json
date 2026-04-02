@@ -14,7 +14,6 @@
   "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "7f0bf635082bb9b7d2b37766054526a6ccafdb85" },
   "mason.nvim": { "branch": "main", "commit": "7dc4facca9702f95353d5a1f87daf23d78e31c2a" },
-  "mini.files": { "branch": "main", "commit": "b4796e09eb103f9f2d1e00aa2dab3753b879b17b" },
   "mini.icons": { "branch": "main", "commit": "b8f6fa6f5a3fd0c56936252edcd691184e5aac0c" },
   "multicursor.nvim": { "branch": "1.0", "commit": "a6cf4e7daaf10a6b14bb7838caf779f0de5070cd" },
   "neoscroll.nvim": { "branch": "master", "commit": "f957373912e88579e26fdaea4735450ff2ef5c9c" },
@@ -42,5 +41,6 @@
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" },
   "vim-wakatime": { "branch": "master", "commit": "3403495670f0ee08887401a28f8430dc4ac67429" },
   "visual-whitespace.nvim": { "branch": "main", "commit": "77bd21fb442cf2b97d7224f8269c053e9def9cb9" },
-  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "yazi.nvim": { "branch": "main", "commit": "172bd64a4c2d3adbe2e0ef56289f47ffe139ca55" }
 }
