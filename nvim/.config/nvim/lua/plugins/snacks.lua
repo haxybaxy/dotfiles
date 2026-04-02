@@ -7,16 +7,7 @@ return {
     animate = { enabled = true },
     bigfile = { enabled = true },
     quickfle = { enabled = true },
-    input = {
-      enabled = true,
-      win = {
-        border = "solid",
-        wo = {
-          winhighlight = "NormalFloat:Pmenu,FloatBorder:Pmenu,FloatTitle:Pmenu",
-        },
-      },
-    },
-    image = { enabled = false, doc = { inline = false } },
+    image = { enabled = true, doc = { inline = false } },
     statuscolumn = { enabled = true },
     notifier = {
       enabled = true,
