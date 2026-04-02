@@ -37,13 +37,6 @@ return {
     },
   },
   keys = {
-    -- {
-    --   "<leader>e",
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = "File Explorer",
-    -- },
     {
       "<leader>bd",
       function()
