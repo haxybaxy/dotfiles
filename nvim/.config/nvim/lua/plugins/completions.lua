@@ -1,19 +1,5 @@
 return {
 	{
-		"supermaven-inc/supermaven-nvim",
-		config = function()
-			require("supermaven-nvim").setup({
-				condition = function()
-					return vim.bo.filetype == "oil"
-				end,
-
-				keymaps = {
-					accept_suggestion = "<C-l>",
-				},
-			})
-		end,
-	},
-	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		dependencies = {
