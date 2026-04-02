@@ -15,8 +15,8 @@ return {
 	---@diagnostic enable: missing-fields
 	keys = {
 		{ "<leader><space>", function() require("fzf-lua").live_grep() end, desc = "Ripgrep" },
-		{ "<leader>ff", function() require("fzf-lua").files() end, desc = "Find Files" },
-		{ "<leader>fx", function() require("fzf-lua").diagnostics_workspace() end, desc = "Find Files" },
+		{ "<leader>f", function() require("fzf-lua").files() end, desc = "Find Files" },
+		{ "<leader>x", function() require("fzf-lua").diagnostics_workspace() end, desc = "Workspace Diagnostics" },
 		{ "<leader>r", function() require("fzf-lua").oldfiles() end, desc = "Recent" },
 		{ "<leader>gd", function() require("fzf-lua").lsp_definitions() end, desc = "LSP Definitions" },
 		{ "<leader>gr", function() require("fzf-lua").lsp_references() end, desc = "LSP References" },
