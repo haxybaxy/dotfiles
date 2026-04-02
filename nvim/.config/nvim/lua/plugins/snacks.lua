@@ -13,7 +13,7 @@ return {
     animate = { enabled = true },
     bigfile = { enabled = true },
     quickfle = { enabled = true },
-    explorer = { enabled = true },
+    explorer = { enabled = false },
     image = { enabled = false, doc = { inline = false } },
     statuscolumn = { enabled = true },
     notifier = {
@@ -27,13 +27,6 @@ return {
     zen = zen_config.zen,
   },
   keys = {
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "File Explorer",
-    },
     {
       "<leader>bd",
       function()
