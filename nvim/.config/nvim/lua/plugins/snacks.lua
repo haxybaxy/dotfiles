@@ -13,16 +13,16 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    explorer = { enabled = true, replace_netrw = true },
-    picker = {
-      sources = {
-        explorer = {
-          hidden = true,
-          ignored = true,
-          layout = { layout = { position = "right" } },
-        },
-      },
-    },
+    -- explorer = { enabled = true, replace_netrw = true },
+    -- picker = {
+    --   sources = {
+    --     explorer = {
+    --       hidden = true,
+    --       ignored = true,
+    --       layout = { layout = { position = "right" } },
+    --     },
+    --   },
+    -- },
     lazygit = {
       theme = {
         searchingActiveBorderColor = { fg = "Visual", bold = true },
@@ -37,13 +37,13 @@ return {
     },
   },
   keys = {
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "File Explorer",
-    },
+    -- {
+    --   "<leader>e",
+    --   function()
+    --     Snacks.explorer()
+    --   end,
+    --   desc = "File Explorer",
+    -- },
     {
       "<leader>bd",
       function()

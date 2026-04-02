@@ -10,7 +10,8 @@ return {
 					solid = true,
 				},
 			})
-		end,
+			vim.cmd.colorscheme("catppuccin-mocha")
+		end
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -19,7 +20,6 @@ return {
 		opts = {},
 		config = function()
 			require("tokyonight").setup({})
-			vim.cmd.colorscheme("tokyonight-moon")
 		end,
 	},
 }
