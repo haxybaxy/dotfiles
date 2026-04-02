@@ -1,4 +1,3 @@
-local picker_config = require("plugins.snacks.picker-config")
 local dashboard_config = require("plugins.snacks.dashboard-config")
 local lazygit_config = require("plugins.snacks.lazygit-config")
 local input_config = require("plugins.snacks.input-config")
@@ -23,59 +22,17 @@ return {
     },
     input = input_config.input,
     lazygit = lazygit_config.lazygit,
-    picker = picker_config.picker,
+    picker = { enabled = false },
     dashboard = dashboard_config.dashboard,
     zen = zen_config.zen,
   },
   keys = {
-    {
-      "<leader><space>",
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = "Ripgrep",
-    },
-    {
-      "<leader>f",
-      function()
-        Snacks.picker.files()
-      end,
-      desc = "Find Files",
-    },
-    {
-      "<leader>r",
-      function()
-        Snacks.picker.recent()
-      end,
-      desc = "Recent",
-    },
-    {
-      "<leader>gd",
-      function()
-        Snacks.picker.lsp_definitions()
-      end,
-      desc = "LSP Definitions",
-    },
-    {
-      "<leader>gr",
-      function()
-        Snacks.picker.lsp_references()
-      end,
-      desc = "LSP References",
-    },
     {
       "<leader>e",
       function()
         Snacks.explorer()
       end,
       desc = "File Explorer",
-    },
-    {
-      "<leader>bf",
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = "Buffers",
     },
     {
       "<leader>bd",
@@ -104,13 +61,6 @@ return {
         Snacks.notifier.show_history()
       end,
       desc = "Notification History",
-    },
-    {
-      "<leader>sH",
-      function()
-        Snacks.picker.highlights()
-      end,
-      desc = "Highlights",
     },
     {
       "<leader>z",
