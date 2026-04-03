@@ -1,4 +1,7 @@
-vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" } })
+vim.pack.add({
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = "main", build = ":TSUpdate" },
+	"https://github.com/nvim-treesitter/nvim-treesitter-context",
+})
 
 local treesitter = require("nvim-treesitter")
 treesitter.setup({})
@@ -49,6 +52,10 @@ vim.api.nvim_create_autocmd("FileType", {
 			vim.treesitter.start(args.buf)
 		end
 	end,
+})
+
+require("treesitter-context").setup({
+	max_lines = 3,
 })
 
 vim.opt.foldmethod = "expr"
