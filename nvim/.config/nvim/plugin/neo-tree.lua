@@ -8,7 +8,7 @@ vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 
 require("neo-tree").setup({
 	window = {
