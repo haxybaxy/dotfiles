@@ -3,6 +3,7 @@ vim.pack.add({
   "https://github.com/folke/noice.nvim",
   "https://github.com/MunifTanjim/nui.nvim",
   "https://github.com/rcarriga/nvim-notify",
+  "https://github.com/j-hui/fidget.nvim",
   "https://github.com/folke/which-key.nvim",
   "https://github.com/folke/todo-comments.nvim",
   "https://github.com/nvim-lua/plenary.nvim",
@@ -13,6 +14,9 @@ vim.pack.add({
 require("neoscroll").setup()
 
 require("noice").setup({
+  lsp = {
+    progress = { enabled = false },
+  },
   cmdline = {
     format = {
       search_down = {
@@ -37,6 +41,8 @@ require("noice").setup({
     },
   },
 })
+
+require("fidget").setup()
 
 local wk = require("which-key")
 wk.setup({

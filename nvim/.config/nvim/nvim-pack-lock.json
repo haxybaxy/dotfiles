@@ -42,6 +42,10 @@
       "rev": "f74fc61a5345818caf7c56bd4c6dcd16f17a1fdd",
       "src": "https://codeberg.org/evergarden/nvim.git"
     },
+    "fidget.nvim": {
+      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"
