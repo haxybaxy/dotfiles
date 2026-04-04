@@ -10,6 +10,7 @@ vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/L3MON4D3/LuaSnip",
   "https://github.com/saghen/blink.cmp",
+  "https://github.com/echasnovski/mini.ai",
 })
 
 require("ts-comments").setup()
@@ -23,6 +24,8 @@ require("nvim-ts-autotag").setup({
     enable_close_on_slash = false,
   },
 })
+
+require("mini.ai").setup()
 
 require("tabout").setup({
   tabkey = "<Tab>",

@@ -1,4 +1,3 @@
-vim.pack.add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } })
 vim.pack.add({ { src = "https://codeberg.org/evergarden/nvim.git", name = "evergarden" } })
 
 require("evergarden").setup({

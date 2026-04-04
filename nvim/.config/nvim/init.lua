@@ -20,13 +20,15 @@ vim.o.scrolloff = 4 -- start scrolling 4 lines from bottom
 
 vim.o.sidescrolloff = 4 -- start scrolling 4 lines from side
 
-vim.opt.fillchars:append({ eob = " " }) -- Show a blank space for end of buffer
-
 vim.opt.termguicolors = true -- Enable true color support
 
 vim.o.showmode = false -- Don't show mode since we have a statusline
 
 vim.o.splitright = true -- vsplit to the right
+
+vim.opt.foldmethod = "expr" -- code folds with treesitter
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
 
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
