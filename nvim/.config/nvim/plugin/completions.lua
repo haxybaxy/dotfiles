@@ -2,7 +2,10 @@ vim.pack.add({
 	"https://github.com/rafamadriz/friendly-snippets",
 	{ src = "https://github.com/L3MON4D3/LuaSnip", version = vim.version.range("2.x") },
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x") },
+	"https://github.com/folke/lazydev.nvim",
 })
+
+require("lazydev").setup()
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -34,7 +37,14 @@ require("blink.cmp").setup({
 	},
 
 	sources = {
-		default = { "lsp", "snippets", "path", "buffer" },
+		default = { "lazydev", "lsp", "snippets", "path", "buffer" },
+		providers = {
+			lazydev = {
+				name = "LazyDev",
+				module = "lazydev.integrations.blink",
+				score_offset = 100,
+			},
+		},
 	},
 
 	fuzzy = { implementation = "prefer_rust", prebuilt_binaries = { force_version = "v*", download = true } },
