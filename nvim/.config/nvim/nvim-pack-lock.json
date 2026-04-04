@@ -34,6 +34,10 @@
       "rev": "7022e18a0fbae9aecf99a3ba02b2a541edc2b8a1",
       "src": "https://github.com/hat0uma/csvview.nvim"
     },
+    "evergarden": {
+      "rev": "f74fc61a5345818caf7c56bd4c6dcd16f17a1fdd",
+      "src": "https://codeberg.org/evergarden/nvim.git"
+    },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"

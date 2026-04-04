@@ -1,0 +1,27 @@
+## name: evergarden spring aqua
+## author: comfysage
+## license: GPL-3.0
+## blurb: a comfy colorscheme for cozy morning coding
+
+palette = 0=#3d494d
+palette = 1=#f57f82
+palette = 2=#cae0a7
+palette = 3=#f5d098
+palette = 4=#b2cfed
+palette = 5=#f3c0e5
+palette = 6=#addeb9
+palette = 7=#96b4aa
+palette = 8=#6f8788
+palette = 9=#f57f82
+palette = 10=#cae0a7
+palette = 11=#f5d098
+palette = 12=#b2cfed
+palette = 13=#f3c0e5
+palette = 14=#addeb9
+palette = 15=#adc9bc
+background = 2b3538
+foreground = f8f9e8
+cursor-color = addeb9
+cursor-text = 1c2225
+selection-background = 3d494d
+selection-foreground = f8f9e8

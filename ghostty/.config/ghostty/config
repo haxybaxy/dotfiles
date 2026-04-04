@@ -2,9 +2,9 @@ macos-titlebar-style = hidden
 macos-option-as-alt = left
 
 window-padding-y = 10
-window-padding-x = 10 
+window-padding-x = 10
 
-theme =  dark:Catppuccin Mocha, light:Rose Pine Dawn
+theme =  dark:evergarden-spring-aqua, light:Rose Pine Dawn
 custom-shader = shaders/cursor_warp.glsl
 
 # background-opacity = 0.8

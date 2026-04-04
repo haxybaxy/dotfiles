@@ -1,0 +1,37 @@
+[
+  {
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "shift-k": "editor::Hover",
+      "space g f": "editor::Format",
+      "space g r": "editor::FindAllReferences",
+      "space g d": "editor::GoToDefinition",
+      "g c c": "editor::ToggleComments",
+      "space f": "file_finder::Toggle",
+      "space e": "workspace::ToggleRightDock",
+      "space space": "pane::DeploySearch",
+      "space t": "workspace::NewCenterTerminal",
+      "space i h": "editor::ToggleInlayHints",
+      "space l g": [
+        "task::Spawn",
+        { "task_name": "start lazygit", "reveal_target": "center" }
+      ]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "workspace::ToggleRightDock",
+      "a": "project_panel::NewFile",
+      "l": "project_panel::OpenPermanent"
+    }
+  }
+]
