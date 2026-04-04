@@ -5,7 +5,12 @@ vim.pack.add({
 	"https://github.com/folke/lazydev.nvim",
 })
 
-require("lazydev").setup()
+require("lazydev").setup({
+	library = {
+		{ path = "snacks.nvim", words = { "Snacks" } },
+		{ path = "fzf-lua", words = { "FzfLua" } },
+	},
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
