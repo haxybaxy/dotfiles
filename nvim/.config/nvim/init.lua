@@ -29,6 +29,7 @@ vim.o.splitright = true -- vsplit to the right
 vim.opt.foldmethod = "expr" -- code folds with treesitter
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99 -- open all folds by default
 
 -- Allow recursive globbing (**)
 vim.opt.path:append("**")
