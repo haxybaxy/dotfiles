@@ -6,9 +6,6 @@ vim.pack.add({
 	"https://github.com/andymass/vim-matchup",
 	"https://github.com/chrisgrieser/nvim-rulebook",
 	"https://github.com/wakatime/vim-wakatime",
-	"https://github.com/nvim-treesitter/nvim-treesitter",
-	"https://github.com/L3MON4D3/LuaSnip",
-	"https://github.com/saghen/blink.cmp",
 	"https://github.com/echasnovski/mini.ai",
 })
 
