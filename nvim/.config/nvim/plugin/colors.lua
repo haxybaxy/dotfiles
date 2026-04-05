@@ -8,6 +8,7 @@ require("evergarden").setup({
 	editor = {
 		transparent_background = false,
 		sign = { color = "none" },
+		cursor = { color = "accent" },
 		float = {
 			color = "mantle",
 			solid_border = false,
