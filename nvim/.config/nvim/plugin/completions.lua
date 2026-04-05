@@ -5,6 +5,7 @@ vim.pack.add({
 	"https://github.com/folke/lazydev.nvim",
 })
 
+-- lua resolve globals properly
 require("lazydev").setup({
 	library = {
 		{ path = "snacks.nvim", words = { "Snacks" } },
