@@ -10,18 +10,6 @@ require("snacks").setup({
 		enabled = true,
 		timeout = 3000,
 	},
-	lazygit = {
-		theme = { ---@diagnostic disable-line: missing-fields
-			searchingActiveBorderColor = { fg = "Visual", bold = true },
-			selectedLineBgColor = { bg = "Visual" },
-			inactiveBorderColor = { fg = "SnacksPickerUnselected" },
-		},
-		win = {
-			wo = {
-				winhighlight = "Normal:SnacksDashboardNormal,NormalFloat:SnacksDashboardNormal",
-			},
-		},
-	},
 })
 
 vim.keymap.set("n", "<leader>bd", function()
