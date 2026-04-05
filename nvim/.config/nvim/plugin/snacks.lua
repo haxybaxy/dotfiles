@@ -29,15 +29,3 @@ vim.keymap.set("n", "<leader>bn", function()
 end, { desc = "Notification History" })
 
 Snacks.toggle.inlay_hints():map("<leader>uh")
-Snacks.toggle
-	.new({
-		id = "git_signs",
-		name = " Git Sign Column",
-		get = function()
-			return require("gitsigns.config").config.signcolumn
-		end,
-		set = function(state)
-			require("gitsigns").toggle_signs(state)
-		end,
-	})
-	:map("<leader>ug")
