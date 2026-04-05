@@ -3,8 +3,6 @@ vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
 })
 
-local actions = require("fzf-lua").actions
-
 require("fzf-lua").setup({
 	actions = {
 		files = {
