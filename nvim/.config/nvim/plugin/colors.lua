@@ -19,3 +19,4 @@ require("evergarden").setup({
 })
 
 vim.cmd.colorscheme("evergarden")
+vim.opt.fillchars:append({ eob = " " })
