@@ -12,7 +12,7 @@ require("fzf-lua").setup({
 			["ctrl-t"] = FzfLua.actions.file_tabedit,
 			["ctrl-q"] = FzfLua.actions.file_sel_to_qf,
 			["ctrl-Q"] = FzfLua.actions.file_sel_to_ll,
-			["ctrl-i"] = FzfLua.actions.toggle_ignore,
+			["alt-i"] = FzfLua.actions.toggle_ignore,
 			["ctrl-h"] = FzfLua.actions.toggle_hidden,
 			["ctrl-f"] = FzfLua.actions.toggle_follow,
 		},
