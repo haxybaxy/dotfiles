@@ -15,6 +15,7 @@ vim.o.wrap = false -- Disable line wrapping
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
 
 vim.o.cursorline = true -- highlight current line
+-- vim.opt.colorcolumn = "100" -- show bar at 100 chars
 
 vim.o.scrolloff = 4 -- start scrolling 4 lines from bottom
 
