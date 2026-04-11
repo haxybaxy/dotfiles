@@ -16,6 +16,8 @@ neotest.setup({
 		}),
 	},
 	output = { open_on_run = true },
+	output_panel = { open = "botright vsplit | vertical resize 80" },
+	summary = { open = "botright vsplit | vertical resize 50" },
 	quickfix = { enabled = false },
 })
 
