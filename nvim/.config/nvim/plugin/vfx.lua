@@ -45,9 +45,11 @@ wk.setup({
 	},
 })
 wk.add({
-	{ "<leader>t", group = "tabs" },
-	{ "<leader>tn", desc = "New Tab" },
-	{ "<leader>tx", desc = "Close Tab" },
+	{ "<leader>gt", group = "tabs" },
+	{ "<leader>gtn", desc = "New Tab" },
+	{ "<leader>gtx", desc = "Close Tab" },
+	{ "<leader>t", group = "test" },
+	{ "<leader>d", group = "debug" },
 	{ "<leader>1", desc = "Tab 1", hidden = true },
 	{ "<leader>2", desc = "Tab 2", hidden = true },
 	{ "<leader>3", desc = "Tab 3", hidden = true },
