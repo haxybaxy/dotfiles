@@ -10,3 +10,6 @@ custom-shader = shaders/cursor_warp.glsl
 # background-opacity = 0.8
 font-family = "JetBrains Mono"
 font-size = 16
+
+keybind = cmd+d=unbind
+keybind = cmd+shift+d=unbind

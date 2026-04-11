@@ -23,7 +23,7 @@ set({ "n", "x" }, "<leader><down>", function()
 end)
 
 -- Add or skip adding a new cursor by matching word/selection
-set({ "n", "x" }, "<leader>n", function()
+set({ "n", "x" }, "<M-d>", function()
 	mc.matchAddCursor(1)
 end)
 set({ "n", "x" }, "<leader>s", function()
