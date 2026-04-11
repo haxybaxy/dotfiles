@@ -77,8 +77,8 @@ vim.opt.fillchars = {
 }
 --Keybinds should go under here
 --Tab keybinds
-vim.keymap.set("n", "<leader>gtn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab" })
-vim.keymap.set("n", "<leader>gtx", "<Cmd>tabclose<CR>", { silent = true, desc = "Close Tab" })
+vim.keymap.set("n", "<leader>tn", "<Cmd>tabnew<CR>", { silent = true, desc = "New Tab" })
+vim.keymap.set("n", "<leader>tx", "<Cmd>tabclose<CR>", { silent = true, desc = "Close Tab" })
 
 for i = 1, 9 do
 	vim.keymap.set("n", "<leader>" .. i, "<Cmd>tabnext " .. i .. "<CR>", { desc = "Go to tab " .. i })

@@ -13,3 +13,4 @@ font-size = 16
 
 keybind = cmd+d=unbind
 keybind = cmd+shift+d=unbind
+keybind = cmd+f=text:\x00[/
