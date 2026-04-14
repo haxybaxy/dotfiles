@@ -15,6 +15,10 @@ require("evergarden").setup({
 		},
 		completion = {
 			color = "surface0",
+			selected = {
+				color = "surface2",
+				style = { "bold" },
+			},
 		},
 	},
 })
