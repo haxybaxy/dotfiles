@@ -4,6 +4,13 @@ vim.pack.add({
 })
 
 require("fzf-lua").setup({
+	winopts = {
+		height = 0.90, -- 90% of screen height
+		width = 0.90, -- 90% of screen width
+		row = 0.5, -- center vertically
+		col = 0.5, -- center horizontally
+		-- border = "rounded", -- Optional: "single", "double", "rounded", "solid", "none"
+	},
 	actions = {
 		files = {
 			["enter"] = FzfLua.actions.file_edit_or_qf,
