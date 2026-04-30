@@ -40,13 +40,17 @@ alias clod="claude --permission-mode plan --dangerously-skip-permissions --effor
 # Better ls
 alias ls="lsd"
 
+# Activate and deactivate venv
+alias av="source .venv/bin/activate"
+alias dav="deactivate"
+
 # Better cat
 alias cat="bat"
 
-# fzf
+# Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# vim alias
+# Vim alias
 alias v="nvim"
 alias vim="nvim"
 alias nv="neovide &"
@@ -65,12 +69,12 @@ bindkey -e
 bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
 
-# edit command in nvim
+# Edit command in nvim
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^E' edit-command-line
 
-# take out and bring back programs
+# Take out and bring back programs
 function fancy-ctrl-z() {
   if [[ -z $BUFFER ]]; then
     BUFFER="fg"
@@ -99,41 +103,41 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completio
 
-# Docker CLI completions
+# docker CLI completions
 fpath=(/Users/zaidalsaheb/.docker/completions $fpath)
 
-# bun completions
+# Bun completions
 [ -s "/Users/zaidalsaheb/.bun/_bun" ] && source "/Users/zaidalsaheb/.bun/_bun"
 
-# syntax highlight
+# Syntax highlight
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# auto suggestions
+# Auto suggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# path config
+# Path config
 export PATH="$HOME/.local/bin:$PATH"
 
-# Better cd 
+# Better cd
 if [[ "$CLAUDECODE" != "1" ]]; then
     eval "$(zoxide init --cmd cd zsh)"
 fi
 
 
-# better history
+# Better history
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
-#starship prompt
+# Starship prompt
 eval "$(starship init zsh)"
 
-# notify command
+# Notify command
 notify() {
   "$@"
   afplay /System/Library/Sounds/Glass.aiff
 }
 
-# yazi changes cwd
+# Yazi changes cwd
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"

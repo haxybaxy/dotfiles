@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
   "title_bar": {
     "show_user_picture": false,
     "show_user_menu": true,
@@ -18,7 +32,7 @@
     "dark": "Zed (Default)",
   },
   "edit_predictions": {
-    "provider": "copilot",
+    "provider": "none",
   },
   "languages": {
     "Python": {
@@ -64,6 +78,6 @@
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Frappé",
-    "dark": "Evergarden Spring (aqua)",
+    "dark": "Tokyo Night Storm",
   },
 }

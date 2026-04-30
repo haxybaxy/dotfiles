@@ -1,4 +1,5 @@
 vim.pack.add({ { src = "https://codeberg.org/evergarden/nvim.git", name = "evergarden" } })
+vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim.git" } })
 
 require("evergarden").setup({
 	theme = {
@@ -23,5 +24,5 @@ require("evergarden").setup({
 	},
 })
 
-vim.cmd.colorscheme("evergarden")
+vim.cmd.colorscheme("tokyonight-storm")
 vim.opt.fillchars:append({ eob = " " })
