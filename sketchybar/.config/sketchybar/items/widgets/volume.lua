@@ -31,6 +31,8 @@ volumeValue:subscribe("volume_change", function(env)
 		local currentOutputDevice = result:sub(1, -2)
 		if currentOutputDevice == "WH-CH520" then -- Hardcoded for my own headphones
 			icon = settings.icons.text.volume.headphones
+		elseif currentOutputDevice == "CMF Buds Pro 2" then
+			icon = settings.icons.text.volume.earbuds
 		else
 			if volume > 60 then
 				icon = icons.text.volume._100

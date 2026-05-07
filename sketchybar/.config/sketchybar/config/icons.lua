@@ -317,6 +317,7 @@ local text = {
 		},
 		volume = {
 			headphones = "",
+			earbuds = "󱡏",
 			_100 = "",
 			_66 = "",
 			_33 = "",
