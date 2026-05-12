@@ -252,6 +252,10 @@
       "rev": "d7973b157a632d1edeff01818f18d67e584eeaff",
       "src": "https://github.com/wakatime/vim-wakatime"
     },
+    "vision.nvim": {
+      "rev": "98bc0d277e534aca778eb708b3c633c0766e9b8e",
+      "src": "https://github.com/azorng/vision.nvim"
+    },
     "visual-whitespace.nvim": {
       "rev": "49ff2b1c572ed7033a584381fa23aad2bf3bb258",
       "src": "https://github.com/mcauley-penney/visual-whitespace.nvim"
