@@ -40,6 +40,8 @@ alias clod="claude --permission-mode plan --dangerously-skip-permissions --effor
 # Better ls
 alias ls="lsd"
 
+alias cm="cmatrix"
+
 # Activate and deactivate venv
 alias av="source .venv/bin/activate"
 alias dav="deactivate"
