@@ -29,6 +29,7 @@ local ensure_installed = {
 	"graphql",
 	"dockerfile",
 	"gitignore",
+	"just",
 }
 
 local config = require("nvim-treesitter.config")
