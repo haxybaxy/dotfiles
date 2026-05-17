@@ -8,18 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "title_bar": {
     "show_user_picture": false,
