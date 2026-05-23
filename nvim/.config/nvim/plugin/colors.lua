@@ -3,6 +3,7 @@ vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim.git" } })
 vim.pack.add({ { src = "https://github.com/maxmx03/solarized.nvim.git" } })
 vim.pack.add({ { src = "https://github.com/navarasu/onedark.nvim.git" } })
 vim.pack.add({ { src = "https://github.com/catppuccin/nvim.git", name = "catppuccin" } })
+vim.pack.add({ { src = "https://github.com/uhs-robert/oasis.nvim.git", name = "oasis" } })
 vim.pack.add({ { src = "https://github.com/f-person/auto-dark-mode.nvim.git" } })
 
 require("evergarden").setup({
@@ -38,17 +39,19 @@ require("catppuccin").setup({
 	flavour = "auto",
 	background = { light = "latte", dark = "mocha" },
 })
-vim.cmd.colorscheme("catppuccin")
+
+require("oasis").setup({})
+vim.cmd.colorscheme("oasis-desert")
 
 require("auto-dark-mode").setup({
 	update_interval = 3000,
 	set_dark_mode = function()
 		vim.o.background = "dark"
-		vim.cmd.colorscheme("catppuccin-mocha")
+		vim.cmd.colorscheme("tokyonight-storm")
 	end,
 	set_light_mode = function()
 		vim.o.background = "light"
-		vim.cmd.colorscheme("catppuccin-latte")
+		vim.cmd.colorscheme("tokyonight-day")
 	end,
 })
 
