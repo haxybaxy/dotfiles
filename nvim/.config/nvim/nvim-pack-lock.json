@@ -140,6 +140,10 @@
       "rev": "86ed124c2f7e118670649701288e024444bf91e5",
       "src": "https://github.com/oxfist/night-owl.nvim.git"
     },
+    "nightfly": {
+      "rev": "e197d138ecdac92c28de82fbebdc9ba2de77162a",
+      "src": "https://github.com/bluz71/vim-nightfly-colors.git"
+    },
     "nightfox.nvim": {
       "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",
       "src": "https://github.com/EdenEast/nightfox.nvim"
@@ -243,6 +247,10 @@
     "render-markdown.nvim": {
       "rev": "c7188a8f9d2953696b6303caccbf39c51fa2c1b1",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
+    "satellite.nvim": {
+      "rev": "87843c9c8f28b54332497302de380a6d94c9e82b",
+      "src": "https://github.com/lewis6991/satellite.nvim"
     },
     "snacks.nvim": {
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
