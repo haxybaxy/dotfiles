@@ -51,7 +51,7 @@ require("auto-dark-mode").setup({
 	update_interval = 3000,
 	set_dark_mode = function()
 		vim.o.background = "dark"
-		vim.cmd.colorscheme("nightfly")
+		vim.cmd.colorscheme("night-owl")
 	end,
 	set_light_mode = function()
 		vim.o.background = "light"
