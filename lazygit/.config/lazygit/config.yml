@@ -4,7 +4,7 @@ git:
     pager: delta --paging=never --line-numbers
 customCommands:
   - key: "C"
-    command: 'git commit -m "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}: {{ .Form.Description }}"'
+    command: 'git commit -m "{{ .Form.Type }}: {{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}"'
     description: "commit with commitizen"
     context: "files"
     prompts:
@@ -48,9 +48,6 @@ customCommands:
       - type: "input"
         title: "Enter the scope(s) of this change."
         key: "Scopes"
-      - type: "input"
-        title: "Enter the short description of the change."
-        key: "Description"
       - type: "confirm"
         title: "Is the commit message correct?"
-        body: "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}: {{ .Form.Description }}"
+        body: "{{ .Form.Type }}:{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}"
