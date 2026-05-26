@@ -4,7 +4,7 @@ git:
     pager: delta --paging=never --line-numbers
 customCommands:
   - key: "C"
-    command: 'git commit -m "{{ .Form.Type }}: {{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}"'
+    command: 'git commit -m "{{ .Form.Type }}: {{if .Form.Scopes}}{{ .Form.Scopes }}{{end}}"'
     description: "commit with commitizen"
     context: "files"
     prompts:
@@ -50,4 +50,4 @@ customCommands:
         key: "Scopes"
       - type: "confirm"
         title: "Is the commit message correct?"
-        body: "{{ .Form.Type }}:{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}"
+        body: "{{ .Form.Type }}: {{if .Form.Scopes}}{{ .Form.Scopes }}{{end}}"
