@@ -4,4 +4,4 @@ tmux = "[ -n \"$TMUX\" ] && tmux rename-window {{ branch | sanitize }}"
 
 [aliases]
 # `wt newtree <branch>` => wt switch --create --base develop <branch>
-newtree = "wt switch --create --base develop {{ args }}"
+nt = "wt switch --create --base develop {{ args }}"
