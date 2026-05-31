@@ -64,6 +64,9 @@ export VISUAL="nvim"
 # Lazygit alias
 alias lg="lazygit"
 
+# Jump to Obsidian vault
+alias vault='cd "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"'
+
 # Env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
 
@@ -138,6 +141,23 @@ notify() {
   "$@"
   afplay /System/Library/Sounds/Glass.aiff
 }
+
+autoload -U add-zsh-hook
+
+auto_activate_venv() {
+    local venv_path="$PWD/.venv"
+
+    if [[ -f "$venv_path/bin/activate" ]]; then
+        if [[ "$VIRTUAL_ENV" != "$venv_path" ]]; then
+            source "$venv_path/bin/activate"
+        fi
+    elif [[ -n "$VIRTUAL_ENV" ]]; then
+        deactivate 2>/dev/null
+    fi
+}
+
+add-zsh-hook chpwd auto_activate_venv
+auto_activate_venv
 
 # Yazi changes cwd
 function y() {
