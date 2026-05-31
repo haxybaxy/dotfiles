@@ -10,10 +10,7 @@ vim.pack.add({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 })
-
-require("render-markdown").setup({})
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("MarkdownPreviewKeys", { clear = true }),
