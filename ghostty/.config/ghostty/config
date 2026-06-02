@@ -8,7 +8,7 @@ theme =  dark:Night Owl, light:Tokyonight Day
 custom-shader = shaders/cursor_warp.glsl
 
 # background-opacity = 0.8
-font-family = "MesloLGM Nerd Font"
+font-family = "JetBrainsMono Nerd Font"
 font-size = 16
 
 keybind = cmd+d=text:\x1bd
