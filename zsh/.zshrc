@@ -49,8 +49,8 @@ alias dav="deactivate"
 # Better cat
 alias cat="bat"
 
-# Fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Fzf (completion + key bindings: Ctrl+R history, Ctrl+T files, Alt+C cd)
+source <(fzf --zsh)
 
 # Vim alias
 alias v="nvim"
@@ -98,6 +98,11 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target,Library,Applications,Music
   --preview 'tree -C {}'"
 
+# Fzf Ctrl+R history search: preview full command, toggle with Ctrl+/
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window down:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'"
+
 # Carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
@@ -120,6 +125,17 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Auto suggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# zsh-auto-notify (vendored — desktop notification when a long command finishes)
+# Source/customize: $XDG_CONFIG_HOME/zsh/plugins/auto-notify.plugin.zsh
+AUTO_NOTIFY_PLUGIN="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/auto-notify.plugin.zsh"
+if [[ -f "$AUTO_NOTIFY_PLUGIN" ]]; then
+  # Customize before sourcing, e.g.:
+  #   AUTO_NOTIFY_THRESHOLD=30          # seconds before a command qualifies (default 10)
+  source "$AUTO_NOTIFY_PLUGIN"
+  # AUTO_NOTIFY_IGNORE+=(yazi lazygit)  # extra commands to skip (after sourcing)
+fi
+unset AUTO_NOTIFY_PLUGIN
+
 # Path config
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -129,9 +145,16 @@ if [[ "$CLAUDECODE" != "1" ]]; then
 fi
 
 
-# Better history
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh --disable-up-arrow)"
+# Better history (native zsh history powers fzf Ctrl+R)
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY         # share and sync history across sessions
+setopt EXTENDED_HISTORY      # save timestamp and duration for each command
+setopt HIST_IGNORE_ALL_DUPS  # drop older duplicates so fzf shows each command once
+setopt HIST_IGNORE_SPACE     # don't record commands prefixed with a space
+setopt HIST_REDUCE_BLANKS    # trim redundant whitespace before saving
+setopt HIST_VERIFY           # show a recalled command before running it
 
 # Starship prompt
 eval "$(starship init zsh)"
