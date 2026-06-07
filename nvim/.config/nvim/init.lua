@@ -100,6 +100,10 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>j", "<Cmd>noh<CR>", { desc = "Disable
 -- QOL quick save
 vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { silent = true, desc = "Save" })
 
+-- Line navigation: H -> first non-blank, L -> end of line
+vim.keymap.set({ "n", "x", "o" }, "H", "^", { desc = "Go to first non-blank character" })
+vim.keymap.set({ "n", "x", "o" }, "L", "$", { desc = "Go to end of line" })
+
 -- autocmds go under here
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
