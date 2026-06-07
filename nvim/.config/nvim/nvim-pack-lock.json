@@ -21,6 +21,10 @@
       "rev": "62437532b38495551410b3f377bcf4aaac574ebe",
       "src": "https://github.com/rmagatti/auto-session"
     },
+    "ayu": {
+      "rev": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8",
+      "src": "https://github.com/Shatur/neovim-ayu.git"
+    },
     "blink.cmp": {
       "rev": "97e3bb571b41c9fe0b17656c0c670da416c82706",
       "src": "https://github.com/saghen/blink.cmp",
