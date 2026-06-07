@@ -26,10 +26,10 @@ require("gitsigns").setup({
       end
     end, { desc = "Previous git hunk in buffer" })
 
-    map("n", "<leader>hs", gitsigns.stage_hunk)
-    map("n", "<leader>hr", gitsigns.reset_hunk)
-    map("n", "<leader>hp", gitsigns.preview_hunk)
-    map("n", "<leader>hi", gitsigns.preview_hunk_inline)
+    map("n", "<leader>hs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+    map("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Reset hunk" })
+    map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Preview hunk" })
+    map("n", "<leader>hi", gitsigns.preview_hunk_inline, { desc = "Preview hunk inline" })
   end,
 
   signs = {
