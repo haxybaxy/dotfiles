@@ -1,8 +1,9 @@
-start-at-login = true 
+start-at-login = true
 
 after-startup-command = [
 	"exec-and-forget sketchybar",
-  'exec-and-forget sh ~/.config/sketchybar/scripts/media-stream.sh'
+  'exec-and-forget sh ~/.config/sketchybar/scripts/media-stream.sh',
+  'exec-and-forget sh brew services restart sketchybar'
 ]
 
 on-focus-changed = [
@@ -14,7 +15,7 @@ exec-on-workspace-change = [
   '/bin/zsh',
   '-c',
   '~/.config/aerospace/sticky.sh & sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-  
+
 ]
 
 enable-normalization-flatten-containers = true
@@ -84,8 +85,8 @@ alt-m = '''exec-and-forget sh -c "open -a 'Spotify'"'''
 [mode.service.binding]
 
 esc = ['reload-config', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-r = ['reload-config', 'flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
-f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main'] 
+r = ['reload-config', 'flatten-workspace-tree', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+f = ['layout floating tiling', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 backspace = ['close-all-windows-but-current', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
 1 = ['move-node-to-workspace 1', 'workspace 1', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
@@ -102,10 +103,10 @@ alt-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger a
 
 # Space 1: Code
 
-[[on-window-detected]] 
+[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
-[[on-window-detected]] 
+[[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace 1'
 
@@ -116,7 +117,7 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'net.imput.helium'
+if.app-id = 'net.input.helium'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
@@ -205,8 +206,8 @@ if.app-id = 'com.apple.FaceTime'
 run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
-1 = 'main' 
-2 = 'main'   
+1 = 'main'
+2 = 'main'
 3 = 'main'
 4 = 'secondary'
 5 = 'secondary'
