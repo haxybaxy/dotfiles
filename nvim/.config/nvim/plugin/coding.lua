@@ -1,5 +1,4 @@
 vim.pack.add({
-	"https://github.com/tpope/vim-surround",
 	"https://github.com/folke/ts-comments.nvim",
 	"https://github.com/windwp/nvim-autopairs",
 	"https://github.com/windwp/nvim-ts-autotag",

@@ -224,6 +224,10 @@
       "rev": "5e8b618b8b74f6bb3ae36b3070f5e01b3964102f",
       "src": "https://github.com/chrisgrieser/nvim-rulebook"
     },
+    "nvim-surround": {
+      "rev": "8b47db616ef658b8fc27e61db2896aa2f40134de",
+      "src": "https://github.com/kylechui/nvim-surround"
+    },
     "nvim-treesitter": {
       "rev": "c82bf96f0a773d85304feeb695e1e23b2207ac35",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
