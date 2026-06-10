@@ -51,6 +51,7 @@ wk.add({
 	{ "<leader>t", group = "test" },
 	{ "<leader>d", group = "debug" },
 	{ "<leader>h", group = "hunks" },
+	{ "<leader>R", group = "replace" },
 	{ "<leader>1", desc = "Tab 1", hidden = true },
 	{ "<leader>2", desc = "Tab 2", hidden = true },
 	{ "<leader>3", desc = "Tab 3", hidden = true },
