@@ -1,3 +1,2 @@
 [aliases]
-# `wt newtree <branch>` => wt switch --create --base develop <branch>
 nt = "wt switch --create --base develop {{ args }}"

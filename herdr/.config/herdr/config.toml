@@ -1,3 +1,4 @@
+onboarding = false
 # herdr configuration
 # Place this file at ~/.config/herdr/config.toml
 
@@ -36,7 +37,7 @@ name = "tokyo-night"
 [update]
 # Update channel used by background checks and `herdr update`.
 # Use "stable" for normal releases or "preview" for opt-in preview builds.
-# channel = "stable"
+channel = "stable"
 
 [keys]
 # Prefix key to enter prefix mode (default: "ctrl+b")
@@ -71,7 +72,7 @@ rename_workspace = "prefix+r"
 # new_tab = "prefix+c"
 # rename_tab = "prefix+shift+t"
 # previous_tab = "prefix+p"
-# next_tab = "prefix+n"
+next_tab = ""
 # switch_tab = "prefix+1..9"
 # switch_workspace = ""   # optional indexed binding, e.g. "prefix+shift+1..9"
 # close_tab = "prefix+shift+x"
