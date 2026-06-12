@@ -117,7 +117,7 @@ if.app-id = 'app.zen-browser.zen'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'net.input.helium'
+if.app-id = 'net.imput.helium'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
