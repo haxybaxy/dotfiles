@@ -1,0 +1,11 @@
+# tmuxinator project: admin
+# Start with: tmuxinator start admin   (also auto-used by tmux-sessionizer)
+# Managed in dotfiles via stow (package: tmuxinator) -> ~/.config/tmuxinator/admin.yml
+
+name: admin
+root: ~/work/skoll/admin
+
+windows:
+  - shell:
+  - editor: nvim
+  - herdr: herdr session attach admin

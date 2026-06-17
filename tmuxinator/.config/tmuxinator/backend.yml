@@ -1,0 +1,11 @@
+# tmuxinator project: backend
+# Start with: tmuxinator start backend   (also auto-used by tmux-sessionizer)
+# Managed in dotfiles via stow (package: tmuxinator) -> ~/.config/tmuxinator/backend.yml
+
+name: backend
+root: ~/work/skoll/backend
+
+windows:
+  - shell:
+  - editor: nvim
+  - herdr: herdr session attach backend

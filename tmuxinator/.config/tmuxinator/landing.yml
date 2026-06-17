@@ -1,0 +1,11 @@
+# tmuxinator project: landing
+# Start with: tmuxinator start landing   (also auto-used by tmux-sessionizer)
+# Managed in dotfiles via stow (package: tmuxinator) -> ~/.config/tmuxinator/landing.yml
+
+name: landing
+root: ~/work/skoll/landing
+
+windows:
+  - shell:
+  - editor: nvim
+  - herdr: herdr session attach landing

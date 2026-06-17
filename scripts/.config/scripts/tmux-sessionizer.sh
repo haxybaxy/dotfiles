@@ -152,7 +152,12 @@ ensure_session_exists() {
     local directory=$2
     
     if ! tmux has-session -t="$session_name" 2>/dev/null; then
-        tmux new-session -ds "$session_name" -c "$directory"
+        # Use the tmuxinator layout if a matching project exists, else a bare session
+        if [[ -f "$HOME/.config/tmuxinator/$session_name.yml" ]]; then
+            tmuxinator start "$session_name" --no-attach
+        else
+            tmux new-session -ds "$session_name" -c "$directory"
+        fi
     fi
 }
 
@@ -186,7 +191,11 @@ main() {
     
     # Handle tmux not running
     if [[ -z $TMUX ]] && [[ -z $(pgrep tmux) ]]; then
-        tmux new-session -s "$selected_name" -c "$selected"
+        if [[ -f "$HOME/.config/tmuxinator/$selected_name.yml" ]]; then
+            tmuxinator start "$selected_name"
+        else
+            tmux new-session -s "$selected_name" -c "$selected"
+        fi
         exit 0
     fi
     
