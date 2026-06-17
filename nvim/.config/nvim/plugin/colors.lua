@@ -47,5 +47,3 @@ require("auto-dark-mode").setup({
 		vim.cmd.colorscheme("tokyonight-day")
 	end,
 })
-
-vim.opt.fillchars:append({ eob = " " })
