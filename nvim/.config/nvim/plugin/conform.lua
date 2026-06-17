@@ -22,7 +22,6 @@ require("conform").setup({
 			end
 		end,
 
-		["*"] = { "codespell" },
 		["_"] = { "trim_whitespace" },
 	},
 
