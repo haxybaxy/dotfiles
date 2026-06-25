@@ -47,8 +47,9 @@ require("obsidian").setup({
 		name = "fzf-lua",
 	},
 	-- Built-in markdown UI (callouts, concealed links, checkboxes, etc.)
+	-- Disabled: keep markdown raw (asterisks/markup always visible).
 	ui = {
-		enable = true,
+		enable = false,
 	},
 })
 
@@ -69,8 +70,8 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("ObsidianNoteKeys", { clear = true }),
 	pattern = "markdown",
 	callback = function(args)
-		-- obsidian.nvim's UI needs conceal enabled to hide link/markup syntax
-		vim.opt_local.conceallevel = 2
+		-- Keep markup visible (no concealing); obsidian UI is disabled above.
+		vim.opt_local.conceallevel = 0
 
 		local function opts(desc)
 			return { buffer = args.buf, desc = desc }
