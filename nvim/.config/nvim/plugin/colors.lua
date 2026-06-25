@@ -2,6 +2,7 @@ vim.pack.add({ { src = "https://codeberg.org/evergarden/nvim.git", name = "everg
 vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim.git" } })
 vim.pack.add({ { src = "https://github.com/catppuccin/nvim.git", name = "catppuccin" } })
 vim.pack.add({ { src = "https://github.com/oxfist/night-owl.nvim.git", name = "night-owl" } })
+vim.pack.add({ { src = "https://github.com/webhooked/kanso.nvim" } })
 vim.pack.add({ { src = "https://github.com/f-person/auto-dark-mode.nvim.git" } })
 
 require("evergarden").setup({
@@ -35,6 +36,8 @@ require("catppuccin").setup({
 })
 
 require("night-owl").setup()
+
+require("kanso").setup({})
 
 require("auto-dark-mode").setup({
 	update_interval = 3000,
