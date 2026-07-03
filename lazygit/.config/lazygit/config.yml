@@ -1,7 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --paging=never --line-numbers
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --line-numbers
 customCommands:
   - key: "C"
     command: 'git commit -m "{{ .Form.Type }}: {{if .Form.Scopes}}{{ .Form.Scopes }}{{end}}"'
