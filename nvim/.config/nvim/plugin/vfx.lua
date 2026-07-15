@@ -7,7 +7,6 @@ vim.pack.add({
 	"https://github.com/folke/todo-comments.nvim",
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/brenoprata10/nvim-highlight-colors",
-	"https://github.com/mcauley-penney/visual-whitespace.nvim",
 })
 
 require("neoscroll").setup()
@@ -73,5 +72,3 @@ require("todo-comments").setup()
 require("nvim-highlight-colors").setup({
 	render = "background",
 })
-
-require("visual-whitespace").setup({})
