@@ -4,29 +4,6 @@ vim.pack.add({ { src = "https://github.com/catppuccin/nvim.git", name = "catppuc
 vim.pack.add({ { src = "https://github.com/webhooked/kanso.nvim" } })
 vim.pack.add({ { src = "https://github.com/f-person/auto-dark-mode.nvim.git" } })
 
-require("evergarden").setup({
-	theme = {
-		variant = "spring", -- 'winter'|'fall'|'spring'|'summer'
-		accent = "aqua",
-	},
-	editor = {
-		transparent_background = false,
-		sign = { color = "none" },
-		cursor = { color = "accent" },
-		float = {
-			color = "mantle",
-			solid_border = false,
-		},
-		completion = {
-			color = "surface0",
-			selected = {
-				color = "surface2",
-				style = { "bold" },
-			},
-		},
-	},
-})
-
 require("tokyonight").setup({})
 
 require("catppuccin").setup({
