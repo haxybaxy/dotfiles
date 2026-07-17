@@ -1,7 +1,6 @@
 vim.pack.add({ { src = "https://codeberg.org/evergarden/nvim.git", name = "evergarden" } })
 vim.pack.add({ { src = "https://github.com/folke/tokyonight.nvim.git" } })
 vim.pack.add({ { src = "https://github.com/catppuccin/nvim.git", name = "catppuccin" } })
-vim.pack.add({ { src = "https://github.com/oxfist/night-owl.nvim.git", name = "night-owl" } })
 vim.pack.add({ { src = "https://github.com/webhooked/kanso.nvim" } })
 vim.pack.add({ { src = "https://github.com/f-person/auto-dark-mode.nvim.git" } })
 
@@ -34,8 +33,6 @@ require("catppuccin").setup({
 	flavour = "auto",
 	background = { light = "latte", dark = "mocha" },
 })
-
-require("night-owl").setup()
 
 require("kanso").setup({})
 
