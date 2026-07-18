@@ -132,14 +132,14 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-auto-notify (vendored — desktop notification when a long command finishes)
 # Source/customize: $XDG_CONFIG_HOME/zsh/plugins/auto-notify.plugin.zsh
-AUTO_NOTIFY_PLUGIN="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/auto-notify.plugin.zsh"
-if [[ -f "$AUTO_NOTIFY_PLUGIN" ]]; then
-  # Customize before sourcing, e.g.:
-  #   AUTO_NOTIFY_THRESHOLD=30          # seconds before a command qualifies (default 10)
-  source "$AUTO_NOTIFY_PLUGIN"
-  # AUTO_NOTIFY_IGNORE+=(yazi lazygit)  # extra commands to skip (after sourcing)
-fi
-unset AUTO_NOTIFY_PLUGIN
+# AUTO_NOTIFY_PLUGIN="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/auto-notify.plugin.zsh"
+# if [[ -f "$AUTO_NOTIFY_PLUGIN" ]]; then
+#   # Customize before sourcing, e.g.:
+#   #   AUTO_NOTIFY_THRESHOLD=30          # seconds before a command qualifies (default 10)
+#   source "$AUTO_NOTIFY_PLUGIN"
+#   # AUTO_NOTIFY_IGNORE+=(yazi lazygit)  # extra commands to skip (after sourcing)
+# fi
+# unset AUTO_NOTIFY_PLUGIN
 
 # Path config
 export PATH="$HOME/.local/bin:$PATH"
