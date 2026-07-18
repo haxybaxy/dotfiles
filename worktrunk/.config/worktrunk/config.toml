@@ -1,2 +1,5 @@
+[switch.picker]
+pager = "delta --paging=never --width=$COLUMNS"
+
 [aliases]
 nt = "wt switch --create --base develop {{ args }}"

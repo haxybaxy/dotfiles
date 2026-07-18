@@ -1,0 +1,5 @@
+[projects."github.com/launchyfi/frontend"]
+approved-commands = [
+    "wt step copy-ignored --require-include",
+    "npm install",
+]
