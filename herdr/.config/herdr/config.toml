@@ -59,13 +59,13 @@ reload_config = "prefix+shift+r"
 # workspace_picker = "prefix+w"
 goto = "prefix+s"
 new_workspace = "prefix+n"
-# new_worktree = "prefix+shift+g"
+new_worktree = ""
 # open_worktree = ""    # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
 rename_workspace = "prefix+r"
 # close_workspace = "prefix+shift+d"
-# previous_workspace = "" # optional, unset by default
-# next_workspace = ""     # optional, unset by default
+previous_workspace = "prefix+["
+next_workspace = "prefix+]"
 # previous_agent = ""     # optional, unset by default
 # next_agent = ""         # optional, unset by default
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
@@ -100,14 +100,6 @@ resize_mode = ""
 # navigate_pane_down = "j"
 # navigate_pane_up = "k"
 # navigate_pane_right = "l"     # right arrow always focuses the pane to the right
-
-# Custom commands use the same binding syntax.
-# type = "shell" runs detached in the background.
-# type = "pane" opens a temporary pane and closes it when the command exits.
-# [[keys.command]]
-# key = "prefix+alt+g"
-# type = "pane"
-# command = "lazygit"
 
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
@@ -173,7 +165,7 @@ prompt_new_tab_name = false
 # herdr = show top-right in-app toasts
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
-# delivery = "off"
+delivery = "system"
 
 # Play sounds when agents change state in background workspaces
 [ui.sound]
@@ -241,3 +233,24 @@ key = "prefix+g"
 type = "pane"
 command = "lazygit"
 description = "run lazygit"
+# Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
+# default-branch switch/create picker:
+
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+# Optional: bind current-branch creation separately.
+[[keys.command]]
+key = "prefix+shift+c"
+type = "plugin_action"
+command = "worktrunk.open-current"
+description = "Worktree: switch / create from current branch"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
