@@ -4,7 +4,6 @@ vim.pack.add({
 	"https://github.com/windwp/nvim-ts-autotag",
 	"https://github.com/andymass/vim-matchup",
 	"https://github.com/chrisgrieser/nvim-rulebook",
-	"https://github.com/wakatime/vim-wakatime",
 	"https://github.com/echasnovski/mini.ai",
 })
 
