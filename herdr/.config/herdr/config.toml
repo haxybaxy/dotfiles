@@ -239,13 +239,6 @@ description = "run lazygit"
 [[keys.command]]
 key = "prefix+shift+g"
 type = "plugin_action"
-command = "worktrunk.open"
-description = "Worktree: switch / create from default branch"
-
-# Optional: bind current-branch creation separately.
-[[keys.command]]
-key = "prefix+shift+c"
-type = "plugin_action"
 command = "worktrunk.open-current"
 description = "Worktree: switch / create from current branch"
 

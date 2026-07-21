@@ -1,5 +1,12 @@
+[projects."github.com/launchyfi/backend"]
+approved-commands = [
+    "wt step copy-ignored --require-include",
+    "uv sync",
+]
+
 [projects."github.com/launchyfi/frontend"]
 approved-commands = [
     "wt step copy-ignored --require-include",
     "npm install",
+    "npm ci",
 ]
