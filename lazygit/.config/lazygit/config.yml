@@ -2,7 +2,19 @@ git:
   pagers:
     - colorArg: always
       pager: delta --paging=never --line-numbers
+keybinding:
+  universal:
+    newWorktree: <disabled> # freed up for the worktrunk custom command below
 customCommands:
+  - key: "w"
+    context: "localBranches"
+    description: "New worktree from this branch (worktrunk)"
+    command: "wt switch --create --no-cd --base {{ .SelectedLocalBranch.Name | quote }} {{ .Form.Branch | quote }}"
+    prompts:
+      - type: "input"
+        title: "New worktree branch name (base: {{ .SelectedLocalBranch.Name }})"
+        key: "Branch"
+    output: terminal
   - key: "C"
     command: 'git commit -m "{{ .Form.Type }}: {{if .Form.Scopes}}{{ .Form.Scopes }}{{end}}"'
     description: "commit with commitizen"

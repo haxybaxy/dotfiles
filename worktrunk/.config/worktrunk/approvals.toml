@@ -10,3 +10,15 @@ approved-commands = [
     "npm install",
     "npm ci",
 ]
+
+[projects."github.com/skoll-labs/backend"]
+approved-commands = [
+    "wt step copy-ignored --require-include",
+    "uv sync",
+]
+
+[projects."github.com/skoll-labs/frontend"]
+approved-commands = [
+    "wt step copy-ignored --require-include",
+    "npm ci",
+]
