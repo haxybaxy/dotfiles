@@ -22,3 +22,11 @@ approved-commands = [
     "wt step copy-ignored --require-include",
     "npm ci",
 ]
+
+[projects."github.com/skoll-labs/skoll"]
+approved-commands = [
+    "wt step copy-ignored --require-include",
+    "cd frontend && npm ci",
+    "cd admin && npm ci",
+    "cd backend && uv sync",
+]

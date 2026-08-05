@@ -20,9 +20,11 @@ require("neo-tree").setup({
 	},
 	filesystem = {
 		filtered_items = {
-			visible = true,
+			visible = false, -- actually apply the filters below; `H` toggles them back on
 			hide_dotfiles = false,
 			hide_gitignored = false,
+			hide_by_name = { "thumbs.db", ".DS_Store", "__pycache__" }, -- only hide when gitignored
+			never_show = { ".git" },
 		},
 		follow_current_file = {
 			enabled = true, -- This will find and focus the file in the active buffer every time
