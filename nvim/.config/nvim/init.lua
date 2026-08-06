@@ -3,6 +3,9 @@ vim.g.mapleader = " " -- Set leader key to space
 vim.cmd("set number") -- Show line numbers
 vim.cmd("set relativenumber") -- relative numbers for the rest
 
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase") -- search with / includes all cases unless explicitly capital
+
 vim.cmd("set expandtab") -- spaces instead of tabs
 vim.cmd("set tabstop=2") -- 2 spaces for a tab
 vim.cmd("set softtabstop=2") -- 2 spaces for soft tab
