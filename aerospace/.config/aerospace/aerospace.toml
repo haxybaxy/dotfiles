@@ -146,10 +146,6 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.linear'
 run = 'move-node-to-workspace 3'
 
-[[on-window-detected]]
-if.app-id = 'come.linear'
-run = 'move-node-to-workspace 3'
-
 # Space 4: Communication
 
 [[on-window-detected]]
@@ -168,6 +164,9 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'move-node-to-workspace 4'
 
 # Space 5: Tools
 
