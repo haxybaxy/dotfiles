@@ -1,7 +1,7 @@
 -- obsidian.nvim — notes workflow over the iCloud Obsidian vault.
--- The built-in `ui` handles markdown concealing/rendering (this replaced
--- render-markdown.nvim). Completion is LSP-based and is picked up
--- automatically by blink.cmp's "lsp" source — see completions.lua.
+-- The built-in `ui` is disabled; render-markdown.nvim does the concealing and
+-- rendering instead — see render-markdown.lua. Completion is LSP-based and is
+-- picked up automatically by blink.cmp's "lsp" source — see completions.lua.
 
 vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim" })
 
@@ -70,9 +70,8 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("ObsidianNoteKeys", { clear = true }),
 	pattern = "markdown",
 	callback = function(args)
-		-- Keep markup visible (no concealing); obsidian UI is disabled above.
-		vim.opt_local.conceallevel = 0
-
+		-- conceallevel is left to render-markdown.nvim, which raises it while
+		-- rendering and drops it back for the cursor line / insert mode.
 		local function opts(desc)
 			return { buffer = args.buf, desc = desc }
 		end
