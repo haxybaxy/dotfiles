@@ -168,6 +168,10 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'com.apple.MobileSMS'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm'
+run = 'move-node-to-workspace 4'
+
 # Space 5: Tools
 
 [[on-window-detected]]
