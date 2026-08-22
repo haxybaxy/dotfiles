@@ -13,6 +13,8 @@ vim.cmd("set shiftwidth=2") -- 2 spaces for autoindent
 
 vim.o.undofile = true -- Enable persistent undo
 
+vim.o.makeprg = "just"
+
 vim.o.wrap = false -- Disable line wrapping
 
 vim.o.showbreak = "↪" -- Show a special character for wrapped lines
