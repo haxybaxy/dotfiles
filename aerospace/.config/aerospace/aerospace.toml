@@ -1,3 +1,4 @@
+config-version = 2
 start-at-login = true
 
 after-startup-command = [
@@ -17,6 +18,8 @@ exec-on-workspace-change = [
   '~/.config/aerospace/sticky.sh & sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 
 ]
+
+persistent-workspaces = ["1", "2", "3", "4", "5"]
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -80,6 +83,8 @@ alt-b = '''exec-and-forget sh -c "open -a 'Helium'"'''
 alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''
 alt-o = '''exec-and-forget sh -c "open -a 'Obsidian'"'''
 alt-m = '''exec-and-forget sh -c "open -a 'Spotify'"'''
+alt-r = '''exec-and-forget sh -c "open -a 'Reminders'"'''
+alt-c = '''exec-and-forget sh -c "open -a 'ChatGPT'"'''
 
 
 [mode.service.binding]
@@ -95,10 +100,10 @@ backspace = ['close-all-windows-but-current', 'mode main', 'exec-and-forget sket
 4 = ['move-node-to-workspace 4', 'workspace 4', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 5 = ['move-node-to-workspace 5', 'workspace 5', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
-alt-h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-alt-j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-alt-k = ['join-with up', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
-alt-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+h = ['join-with left', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+j = ['join-with down', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+k = ['join-with up', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
+l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=main']
 
 
 # Space 1: Code
@@ -106,6 +111,7 @@ alt-l = ['join-with right', 'mode main', 'exec-and-forget sketchybar --trigger a
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
+
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace 1'
