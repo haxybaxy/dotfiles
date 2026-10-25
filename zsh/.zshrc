@@ -55,7 +55,6 @@ source <(fzf --zsh)
 # Vim alias
 alias v="nvim"
 alias vim="nvim"
-alias nv="neovide &"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -63,9 +62,6 @@ export VISUAL="nvim"
 
 # Lazygit alias
 alias lg="lazygit"
-
-# Jump to Obsidian vault
-alias vault='cd "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/vault16"'
 
 # Env variables
 [ -f ~/.env.local.zsh ] && source ~/.env.local.zsh
@@ -201,3 +197,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 #  export AWS_ENDPOINT_URL=http://localhost:4566
+
+# Default AWS profile: zaid (account 899865356413, an `aws login` session; renew with `aws login`).
+# The [default] profile (account 511100781231, static keys) is still there: `--profile default`.
+export AWS_PROFILE=zaid
