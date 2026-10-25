@@ -22,7 +22,10 @@
       "space i h": "editor::ToggleInlayHints",
       "space l g": [
         "task::Spawn",
-        { "task_name": "start lazygit", "reveal_target": "center" }
+        {
+          "task_name": "start lazygit",
+          "reveal_target": "center"
+        }
       ]
     }
   },

@@ -28,7 +28,7 @@
   },
   "icon_theme": {
     "mode": "light",
-    "light": "Zed (Default)",
+    "light": "Material Icon Theme",
     "dark": "Zed (Default)",
   },
   "edit_predictions": {
@@ -79,5 +79,11 @@
     "mode": "dark",
     "light": "Catppuccin Frappé",
     "dark": "Catppuccin Mocha",
+  },
+  "context_servers": {
+    "posthog": {
+      "enabled": true,
+      "url": "https://mcp.posthog.com/mcp"
+    }
   },
 }
