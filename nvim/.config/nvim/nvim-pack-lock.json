@@ -272,6 +272,10 @@
       "rev": "123a9fb12e7229342f807ec9e6de478b1102b041",
       "src": "https://github.com/folke/ts-comments.nvim"
     },
+    "vague.nvim": {
+      "rev": "73f8aaa866bf3d14dd0b0ab9e48c11794c1cb7ab",
+      "src": "https://github.com/vague-theme/vague.nvim"
+    },
     "vim-matchup": {
       "rev": "0fb1e6b7cea34e931a2af50b8ad565c5c4fd8f4d",
       "src": "https://github.com/andymass/vim-matchup"
