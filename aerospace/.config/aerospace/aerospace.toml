@@ -77,7 +77,7 @@ alt-tab = 'workspace-back-and-forth'
 alt-semicolon = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=service'] # command to notify sketchybar of mode change
 
 # these open the apps if they are not already open
-alt-t = '''exec-and-forget sh -c "open -a 'Ghostty'"'''
+alt-t = '''exec-and-forget sh -c "open -a 'Rex Beta'"'''
 alt-z = '''exec-and-forget sh -c "open -a 'Zed'"'''
 alt-b = '''exec-and-forget sh -c "open -a 'Helium'"'''
 alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''

@@ -144,6 +144,10 @@
       "rev": "e6df4f1892f6137f58135917db24d1655937d831",
       "src": "https://github.com/nvim-neotest/neotest-python"
     },
+    "nightfox.nvim": {
+      "rev": "4dacd3f0185a2227bdf3b6c0975a8f0bf87cac9a",
+      "src": "https://github.com/EdenEast/nightfox.nvim"
+    },
     "noice.nvim": {
       "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
       "src": "https://github.com/folke/noice.nvim"
