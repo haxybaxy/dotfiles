@@ -1,6 +1,7 @@
 vim.pack.add({ { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } })
 vim.pack.add({ { src = "https://github.com/EdenEast/nightfox.nvim" } })
 vim.pack.add({ { src = "https://github.com/webhooked/kanso.nvim" } })
+vim.pack.add({ { src = "https://github.com/oxfist/night-owl.nvim" } })
 vim.pack.add({ { src = "https://github.com/f-person/auto-dark-mode.nvim" } })
 
 require("catppuccin").setup({
