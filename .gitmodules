@@ -1,0 +1,6 @@
+[submodule "rex/.config/rex/rex-sessionizer"]
+	path = rex/.config/rex/rex-sessionizer
+	url = https://github.com/haxybaxy/rex-sessionizer
+[submodule "rex/.config/rex/rex-worktrunk"]
+	path = rex/.config/rex/rex-worktrunk
+	url = https://github.com/haxybaxy/rex-worktrunk
