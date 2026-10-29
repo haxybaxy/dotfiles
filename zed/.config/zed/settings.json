@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "search": {
+    "button": false
+  },
   "outline_panel": {
     "dock": "right",
   },
@@ -78,7 +81,7 @@
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Frappé",
-    "dark": "Catppuccin Mocha",
+    "dark": "Nightfox - opaque",
   },
   "context_servers": {
     "posthog": {

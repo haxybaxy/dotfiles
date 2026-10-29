@@ -248,6 +248,10 @@
       "rev": "f422cb5c6855f150e2ddcfaf44e7157b98b34f6a",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
+    "rex-navigator.nvim": {
+      "rev": "09c8da1c2696bdabbf37a773fbe8ee8779c9b8c1",
+      "src": "https://github.com/baggiponte/rex-navigator.nvim"
+    },
     "rose-pine": {
       "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
       "src": "https://github.com/rose-pine/neovim.git"
