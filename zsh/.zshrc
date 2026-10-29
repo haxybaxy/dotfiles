@@ -7,6 +7,7 @@ compinit
 # enable prompt command substitution so $(...) runs every time the prompt is drawn
 setopt PROMPT_SUBST
 
+
 autoload -U colors && colors
 
 # # custom prompt
@@ -73,7 +74,7 @@ bindkey '^[[1;3D' backward-word
 # Edit command in nvim
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey '^E' edit-command-line
+bindkey '^G' edit-command-line
 
 # Take out and bring back programs
 function fancy-ctrl-z() {
@@ -124,18 +125,7 @@ fi
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Auto suggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-auto-notify (vendored — desktop notification when a long command finishes)
-# Source/customize: $XDG_CONFIG_HOME/zsh/plugins/auto-notify.plugin.zsh
-# AUTO_NOTIFY_PLUGIN="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins/auto-notify.plugin.zsh"
-# if [[ -f "$AUTO_NOTIFY_PLUGIN" ]]; then
-#   # Customize before sourcing, e.g.:
-#   #   AUTO_NOTIFY_THRESHOLD=30          # seconds before a command qualifies (default 10)
-#   source "$AUTO_NOTIFY_PLUGIN"
-#   # AUTO_NOTIFY_IGNORE+=(yazi lazygit)  # extra commands to skip (after sourcing)
-# fi
-# unset AUTO_NOTIFY_PLUGIN
+if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then source "$HOME/.local/share/deja/init.zsh"; else eval "$(deja init zsh)"; fi
 
 # Path config
 export PATH="$HOME/.local/bin:$PATH"
@@ -150,12 +140,17 @@ fi
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
-setopt SHARE_HISTORY         # share and sync history across sessions
-setopt EXTENDED_HISTORY      # save timestamp and duration for each command
-setopt HIST_IGNORE_ALL_DUPS  # drop older duplicates so fzf shows each command once
-setopt HIST_IGNORE_SPACE     # don't record commands prefixed with a space
-setopt HIST_REDUCE_BLANKS    # trim redundant whitespace before saving
-setopt HIST_VERIFY           # show a recalled command before running it
+setopt extended_history      # save timestamp and duration for each command
+setopt hist_ignore_all_dups  # drop older duplicates so fzf shows each command once
+setopt hist_ignore_space     # don't record commands prefixed with a space
+setopt hist_reduce_blanks    # trim redundant whitespace before saving
+setopt hist_verify           # show a recalled command before running it
+setopt append_history
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt no_beep
+setopt inc_append_history
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -183,21 +178,9 @@ auto_activate_venv() {
 add-zsh-hook chpwd auto_activate_venv
 auto_activate_venv
 
-# Yazi changes cwd
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
-#  export AWS_ENDPOINT_URL=http://localhost:4566
 
-# Default AWS profile: zaid (account 899865356413, an `aws login` session; renew with `aws login`).
-# The [default] profile (account 511100781231, static keys) is still there: `--profile default`.
 export AWS_PROFILE=zaid
