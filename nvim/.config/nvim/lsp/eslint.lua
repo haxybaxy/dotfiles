@@ -1,4 +1,21 @@
 -- npm install -g vscode-langservers-extracted
+local js_root = require("js_root")
+
+local config_files = {
+	"eslint.config.js",
+	"eslint.config.mjs",
+	"eslint.config.cjs",
+	"eslint.config.ts",
+	"eslint.config.mts",
+	"eslint.config.cts",
+	".eslintrc",
+	".eslintrc.js",
+	".eslintrc.cjs",
+	".eslintrc.json",
+	".eslintrc.yml",
+	".eslintrc.yaml",
+}
+
 ---@type vim.lsp.Config
 return {
 	cmd = { "vscode-eslint-language-server", "--stdio" },
@@ -8,17 +25,14 @@ return {
 		"typescript",
 		"typescriptreact",
 	},
-	root_markers = {
-		"eslint.config.js",
-		"eslint.config.mjs",
-		"eslint.config.cjs",
-		".eslintrc",
-		".eslintrc.js",
-		".eslintrc.json",
-		".eslintrc.yml",
-		"package.json",
-		".git",
-	},
+	root_dir = function(bufnr, on_dir)
+		local root = js_root.find(bufnr, config_files, function(pkg)
+			return pkg.eslintConfig ~= nil
+		end)
+		if root then
+			on_dir(root)
+		end
+	end,
 	settings = {
 		validate = "on",
 		packageManager = vim.NIL,
