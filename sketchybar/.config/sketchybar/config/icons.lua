@@ -71,6 +71,7 @@ local apps = {
 	["Docker Desktop"] = ":docker:",
 	["GrandTotal"] = ":dollar:",
 	["Receipts"] = ":dollar:",
+	["Rex Beta"] = ":rex:",
 	["Double Commander"] = ":doublecmd:",
 	["Drafts"] = ":drafts:",
 	["Dropbox"] = ":dropbox:",
