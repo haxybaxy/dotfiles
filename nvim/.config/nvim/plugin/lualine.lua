@@ -15,7 +15,7 @@ local function mode_text()
 		V = "V-LINE",
 		[""] = "V-BLOCK",
 		c = "COM",
-		R = "REPLACE",
+		R = "REP",
 	}
 	return mode_name[mode] or mode
 end
