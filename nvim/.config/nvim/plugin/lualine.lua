@@ -20,6 +20,9 @@ local function mode_text()
 	return mode_name[mode] or mode
 end
 
+-- noice builds status.* through a metatable, which LuaLS can't see through
+local noice_mode = require("noice").api.status.mode --[[@as table]]
+
 require("lualine").setup({
 	options = {
 		theme = {
@@ -71,8 +74,8 @@ require("lualine").setup({
 		lualine_c = {},
 		lualine_x = {
 			{
-				require("noice").api.status.mode.get,
-				cond = require("noice").api.status.mode.has,
+				noice_mode.get,
+				cond = noice_mode.has,
 			},
 		},
 		lualine_y = {

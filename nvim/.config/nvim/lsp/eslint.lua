@@ -54,9 +54,11 @@ return {
 		},
 	},
 	before_init = function(params, config)
+		-- root_dir only starts the client with a root, so this is never vim.NIL
+		local root = params.rootPath --[[@as string]]
 		config.settings.workspaceFolder = {
-			uri = params.rootPath,
-			name = vim.fn.fnamemodify(params.rootPath, ":t"),
+			uri = root,
+			name = vim.fn.fnamemodify(root, ":t"),
 		}
 	end,
 	handlers = {
