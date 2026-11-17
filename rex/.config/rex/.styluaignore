@@ -1,0 +1,3 @@
+# Submodules with their own hand-aligned style; stylua would rewrite them whole.
+rex-sessionizer/
+rex-worktrunk/
