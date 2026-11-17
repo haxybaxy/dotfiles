@@ -2,4 +2,9 @@
 pager = "delta --paging=never --width=$COLUMNS"
 
 [aliases]
-nt = "wt switch --create --base develop {{ args }}"
+nt = "wt switch --create --base main {{ args }}"
+
+# Close a removed worktree's Rex session, however it was removed (wt remove,
+# wt merge, or the rex-worktrunk picker). See rex-worktrunk's README.
+[post-remove]
+rex-session = "command -v rex >/dev/null 2>&1 && rex --autostart=false do worktree_close path={{ worktree_path }} main={{ primary_worktree_path }} >/dev/null 2>&1 || true"
