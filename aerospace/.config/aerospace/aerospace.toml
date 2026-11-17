@@ -12,10 +12,8 @@ on-focus-changed = [
   	'exec-and-forget sketchybar --trigger update_windows'
 ]
 
-# AeroSpace passes no mode env var to this callback, so ask for the current mode
-on-mode-changed = [
-  'exec-and-forget sketchybar --trigger aerospace_mode_changed CURRENT_MODE=$(aerospace list-modes --current)'
-]
+# sketchybar asks AeroSpace for the current mode itself (items/spaces.lua)
+on-mode-changed = ['exec-and-forget sketchybar --trigger aerospace_mode_changed']
 
 exec-on-workspace-change = [
   '/bin/zsh',

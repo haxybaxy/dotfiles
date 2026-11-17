@@ -49,9 +49,13 @@ local function onWorkspaceChanged(newWorkspace)
 	end
 end
 
-local function onModeChanged(newMode)
-	currentMode = newMode
-	updateAllWorkspaces()
+-- AeroSpace only announces that the mode changed, so ask which mode is active.
+-- A failed query yields no output and falls back to "main".
+local function refreshMode()
+	sbar.exec(constants.aerospace.GET_CURRENT_MODE, function(modeOutput)
+		currentMode = modeOutput:match("[^\r\n]+") or "main"
+		updateAllWorkspaces()
+	end)
 end
 
 local function createSpaces()
@@ -72,12 +76,7 @@ end
 local function initialize()
 	sbar.exec(constants.aerospace.GET_CURRENT_WORKSPACE, function(output)
 		focusedWorkspace = output:match("[^\r\n]+") or "1"
-
-		sbar.exec(constants.aerospace.GET_CURRENT_MODE, function(modeOutput)
-			currentMode = modeOutput:match("[^\r\n]+") or "main"
-
-			updateAllWorkspaces()
-		end)
+		refreshMode()
 	end)
 end
 
@@ -87,9 +86,7 @@ watcher:subscribe(constants.events.AEROSPACE_WORKSPACE_CHANGED, function(env)
 	onWorkspaceChanged(env.FOCUSED_WORKSPACE)
 end)
 
-watcher:subscribe(constants.events.AEROSPACE_MODE_CHANGED, function(env)
-	onModeChanged(env.CURRENT_MODE)
-end)
+watcher:subscribe(constants.events.AEROSPACE_MODE_CHANGED, refreshMode)
 
 createSpaces()
 initialize()
