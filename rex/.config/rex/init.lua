@@ -5,11 +5,15 @@
 -- switch sessions.
 
 -- Project picker: https://github.com/haxybaxy/rex-sessionizer
-require("rex-sessionizer").setup({ work_dir = "~/work" })
+-- Testing the native picker from the working copy (feature/native-picker).
+-- Go back to require("rex-sessionizer") once it's merged and the submodule is bumped.
+dofile(os.getenv("HOME") .. "/work/rex-sessionizer/init.lua").setup({ work_dir = "~/work", picker = "native" })
 rex.bind("ctrl+space>f", "sessionizer")
 
 -- Worktree pickers via worktrunk: https://github.com/haxybaxy/rex-worktrunk
-require("rex-worktrunk").setup({ base = "@" })
+-- Testing the native picker from the working copy (feature/native-picker).
+-- Go back to require("rex-worktrunk") once it's merged and the submodule is bumped.
+dofile(os.getenv("HOME") .. "/work/rex-worktrunk/init.lua").setup({ base = "@", picker = "native" })
 rex.bind("ctrl+space>g", "worktree")
 rex.bind("ctrl+space>d", "worktree_remove")
 

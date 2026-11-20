@@ -80,7 +80,7 @@ alt-tab = 'workspace-back-and-forth'
 alt-semicolon = 'mode service'
 
 # these open the apps if they are not already open
-alt-t = '''exec-and-forget sh -c "open -a 'Rex Beta'"'''
+alt-t = '''exec-and-forget sh -c "open -a 'Rex'"'''
 alt-z = '''exec-and-forget sh -c "open -a 'Zed'"'''
 alt-b = '''exec-and-forget sh -c "open -a 'Helium'"'''
 alt-f = '''exec-and-forget sh -c "open -a 'Finder'"'''
@@ -116,7 +116,7 @@ if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
+if.app-id = 'com.superlogical.rex'
 run = 'move-node-to-workspace 1'
 
 # Space 2: Browser
