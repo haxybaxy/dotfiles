@@ -13,7 +13,7 @@ rex.bind("ctrl+space>f", "sessionizer")
 -- Worktree pickers via worktrunk: https://github.com/haxybaxy/rex-worktrunk
 -- Testing the native picker from the working copy (feature/native-picker).
 -- Go back to require("rex-worktrunk") once it's merged and the submodule is bumped.
-dofile(os.getenv("HOME") .. "/work/rex-worktrunk/init.lua").setup({ base = "@", picker = "native" })
+dofile(os.getenv("HOME") .. "/work/rex-worktrunk/init.lua").setup({ base = "@", picker = "native", group = "tab" })
 rex.bind("ctrl+space>g", "worktree")
 rex.bind("ctrl+space>d", "worktree_remove")
 
