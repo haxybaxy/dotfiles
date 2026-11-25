@@ -29,16 +29,8 @@ local function updateWindows(windows)
 	sbar.remove("/" .. constants.items.FRONT_APPS .. "\\.*/")
 
 	frontApps = {}
-	local foundWindows = string.gmatch(windows, "[^\n]+")
-	for window in foundWindows do
-		local parsedWindow = {}
-		for key, value in string.gmatch(window, "(%w+)=([%w%s%-]+)") do
-			parsedWindow[key] = value
-		end
-
-		local windowId = parsedWindow["id"]
-		local windowName = parsedWindow["name"]
-		local monitorId = parsedWindow["monitor"]
+	-- App names can hold any character (e.g. "zoom.us", "哔哩哔哩"), so match up to the next field
+	for windowId, windowName, monitorId in string.gmatch(windows, "id=(%d+), name=([^\n]+), monitor=([^\n]+)") do
 		local icon = icons.apps[windowName] or settings.icons.apps["default"]
 
 		frontApps[windowName] = sbar.add("item", constants.items.FRONT_APPS .. "." .. windowName, {
